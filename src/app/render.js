@@ -1,6 +1,6 @@
 
 
-export function render(ctx) {
+export function renderBase(ctx) {
 
     /*var m_canvas = document.createElement('canvas');
     m_canvas.width = 64;
@@ -11,9 +11,14 @@ export function render(ctx) {
     function render() {
         context.drawImage(m_canvas, 0, 0);*/
 
-    ctx.font = '48px arial';
-    ctx.fillText('LOST RIVER', 50, 100);
-
     var path = new Path2D('M 540 480 H 660 L 1200 660 H 0 z');
     ctx.fill(path);
+}
+
+export function renderUI(ctx) {
+
+}
+
+export function renderGame(ctx) {
+
 }

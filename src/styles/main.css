@@ -9,11 +9,51 @@ body {
 }
 
 #app-container {
+  position: relative;
+  width: 1200px;
+  height: 660px;
+  background-image: url( '../assets/backdrop.jpg');
 }
 
-#app-canvas {
-  background-color: #111;
+#text-ui {
+  padding: 128px;
+  position: absolute;
+  overflow: hidden;
+  filter: grayscale(100%);
+}
+
+.fire {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal normal normal 40px/normal "Courier New";
+  color: rgba(255, 255, 255, 0.9);
+  -o-text-overflow: clip;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  to {text-shadow: 0 0 20px rgb(254,252,201) , -20px -20px 40px rgb(255,174,52) , 20px -40px 50px rgb(236,118,12) , -20px -60px 60px rgb(205,70,6) , 0 -80px 70px rgb(151,55,22) , 10px -90px 80px rgb(69,27,14) ;}
+}
+
+canvas {
+  position: absolute;
   display:block;
+  top: 0;
+  left: 0;
   width: 1200px;
   height: 660px;
 }
+
+#canvas-base {
+}
+
+#app-canvas2 {
+}
+
+#app-canvas3 {
+}
+
+
