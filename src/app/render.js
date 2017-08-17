@@ -1,18 +1,5 @@
 export function renderBase(ctx) {
 
-    /*var m_canvas = document.createElement('canvas');
-    m_canvas.width = 64;
-    m_canvas.height = 64;
-    var m_context = m_canvas.getContext(‘2d’);
-    drawMario(m_context);
-
-    function render() {
-        context.drawImage(m_canvas, 0, 0);*/
-
-    /*    var path = new Path2D('M 540 480 H 660 L 1200 660 H 0 z');
-        ctx.fill(path);*/
-
-
     ctx.save();
 
     ctx.globalAlpha = 0.7;
@@ -38,4 +25,19 @@ export function renderUI(ctx) {
 
 export function renderGame(ctx) {
 
+    var m_canvas = document.createElement('canvas');
+    m_canvas.width = 800;
+    m_canvas.height = 800;
+    var mx = m_canvas.getContext('2d');
+
+    mx.fillStyle = '#ccc';
+    mx.fill( new Path2D('M 240 159 L 400 199 L 320 719 L 40 679 z') );
+    mx.fillStyle = '#ddd';
+    mx.fill( new Path2D('M 399 200 L 479 120 L 239 160 z') );
+    mx.fillStyle = '#aaa';
+    mx.fill( new Path2D('M 479 120 L 599 640 L 479 720 L 400 200 z') );
+    mx.fillStyle = '#444';
+    mx.fill( new Path2D('M 400 200 L 480 720 H 320 z') );
+
+    ctx.drawImage(m_canvas, -50, -50, 200, 200);
 }
