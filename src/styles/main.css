@@ -49,12 +49,15 @@ canvas {
 }
 
 #canvas-base {
+
 }
 
-#app-canvas2 {
+#canvas-game{
+  display:none;
 }
 
-#app-canvas3 {
+#canvas-ui {
+  display:none;
 }
 
 

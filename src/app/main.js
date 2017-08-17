@@ -35,8 +35,6 @@ var loop = kontra.gameLoop({  // create the main game loop
         renderBase(document.getElementById('canvas-base').getContext('2d'));
         renderGame(document.getElementById('canvas-game').getContext('2d'));
         renderUI(document.getElementById('canvas-ui').getContext('2d'));
-
-        loop.stop();
     }
 });
 
