@@ -11,8 +11,8 @@ export function renderBase(ctx) {
     function render() {
         context.drawImage(m_canvas, 0, 0);*/
 
-    var path = new Path2D('M 540 480 H 660 L 1200 660 H 0 z');
-    ctx.fill(path);
+/*    var path = new Path2D('M 540 480 H 660 L 1200 660 H 0 z');
+    ctx.fill(path);*/
 }
 
 export function renderUI(ctx) {
