@@ -25,14 +25,43 @@ class Game {
         var layerBackdrop = document.getElementById('layer-backdrop');
         var layerGame = document.getElementById('layer-game');
 
-        this.addObject(layerGame, TextureManager.createCloud(), -350, -70, 768, 600);
-        this.addObject(layerGame, TextureManager.createCloud(1), 0, -150);
-        this.addObject(layerGame, TextureManager.createCloud(), -190, -170);
-        this.addObject(layerGame, TextureManager.createCloud(), 0, -50, 1024);
-        this.addObject(layerGame, TextureManager.createCloud(1), 450, -150);
-        this.addObject(layerGame, TextureManager.createCloud(), 650, -100, 1024, 768);
-        this.addObject(layerGame, TextureManager.createCloud(1), 750, -150);
-        this.addObject(layerGame, TextureManager.createCloud(), 700, 20);
+        this.addObject(layerGame, TextureManager.createMountain(3), -200, 100, 512, 320, 0);
+
+/*        this.addObject(layerGame, TextureManager.createCloud(1), -150, -100, 768, 768);
+        this.addObject(layerGame, TextureManager.createCloud(), -190, -170);*/
+
+        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(), -450, -100, 1024, 512), 'thunder', 2);
+        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(1), -450, -100, 1024, 512), 'thunder', 4);
+
+        this.addObject(layerGame, TextureManager.createCloud(), -50, 100, 1024, 256);
+        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
+
+        this.addObject(layerGame, TextureManager.createMountain(3), 100, 300, 400, 120, 0);
+        this.addObject(layerGame, TextureManager.createMountain(1), 400, -300, 512, 740, -8);
+        this.addObject(layerGame, TextureManager.createMountain(), 500, -150, 256, 600, 8);
+        this.addObject(layerGame, TextureManager.createMountain(), 350, 16, 512, 400, 0);
+        this.addObject(layerGame, TextureManager.createMountain(2), 460, 200, 100, 250, 8);
+
+        this.addObject(layerGame, TextureManager.createCloud(), 250, -100, 1024, 256);
+        this.addObject(layerGame, TextureManager.createCloud(1), 250, -50, 1024, 256);
+
+        this.addObject(layerGame, TextureManager.createMountain(1), 80, 300, 256, 120, 0);
+        this.addObject(layerGame, TextureManager.createMountain(), -50, 220, 256, 200, 0);
+        this.addObject(layerGame, TextureManager.createMountain(1), 750, 290, 256, 128, 0);
+        this.addObject(layerGame, TextureManager.createMountain(), 800, 200, 512, 256, 0);
+
+        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(), 450, 0, 1024, 256), 'thunder', 0);
+        this.addObject(layerGame, TextureManager.createCloud(1), 450, 50, 1024, 256);
+
+        this.addObject(layerGame, TextureManager.createCloud(), 200, -150, 1024, 512).classList.add('anm-fog', 'seq-2');
+        this.addObject(layerGame, TextureManager.createCloud(1), 400, -150, 1024, 512).classList.add('anm-fog', 'seq-3');
+
+        this.addObject(layerGame, TextureManager.createMountain(2), 960, 200, 200, 250, -24);
+        this.addObject(layerGame, TextureManager.createMountain(2), 100, 270, 100, 150, 0);
+        this.addObject(layerGame, TextureManager.createMountain(2), 60, 180, 100, 250, 0);
+
+        this.addObject(layerGame, TextureManager.createMountain(3), 660, 200, 200, 250, -24);
+        this.addObject(layerGame, TextureManager.createMountain(3), 560, 300, 200, 150, 4);
 
         this.addObject(layerGame, TextureManager.createRiver(), 0, 420, 1200);
 
@@ -48,6 +77,7 @@ class Game {
         this.addObject(layerGame, TextureManager.createIcePlate(), 980, 500, 512, 256, -8);
 
         this.addObject(layerGame, TextureManager.createFog(), -100, 360, 1400, 128).classList.add('anm-fog', 'seq-1');
+        this.addObject(layerGame, TextureManager.createFog(), -100, 320, 1400, 128).classList.add('anm-fog', 'seq-1');
         this.addObject(layerGame, TextureManager.createFog(), -100, 280, 1300, 300).classList.add('anm-fog', 'seq-2');
         this.addObject(layerGame, TextureManager.createFog(), -100, 200, 1300, 400).classList.add('anm-fog', 'seq-3');
         this.addObject(layerGame, TextureManager.createFog(), 400, 200, 800, 400).classList.add('anm-fog', 'seq-2');
@@ -75,6 +105,10 @@ class Game {
         if(e.which === 49) {
             document.getElementById('layer-backdrop-image').classList.toggle('hide');
         }
+    }
+
+    addTimedAnimation(element, className, delay) {
+        setTimeout(() => element.classList.add(className), delay*1000);
     }
 }
 

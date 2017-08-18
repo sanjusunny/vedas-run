@@ -13,6 +13,56 @@ export class TextureManager {
         return canvas;
     }
 
+    static createMountain(type = 0) {
+
+        var cloudTypes = [
+            [
+                '#eee',
+                'M 32 512 L 128 224 L 224 192 L 256 160 L 416 224 L 480 512',
+                '#777',
+                'M 320 512 V 256 L 352 224 L 256 160 L 416 224 L 448 512'
+            ],
+            [
+                '#fff',
+                'M 318 512 L 384 256 L 318 192 H 222 L 192 256 L 128 512',
+                '#999',
+                'M 318 512 L 384 256 L 318 192 H 222 L 352 160 L 480 512'
+            ],
+            [
+                '#fff',
+                'M 160 512 L 224 352 V 288 L 288 64 L 96 352 L 64 512',
+                '#999',
+                'M 160 512 L 224 352 V 288 L 288 64 L 256 352 L 288 512'
+            ],
+            [
+                '#777',
+                'M 64 416 L 224 192 L 96 224 L 224 128 L 256 224 L 224 352 L 288 288 L 384 512 H 64 L 160 352',
+                '#222',
+                'M 96 384 L 192 256 L 128 288 L 224 128 L 320 192 L 384 288 L 416 512 H 64'
+            ]
+        ]
+
+        var canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        var ctx = canvas.getContext('2d');
+
+        ctx.globalAlpha = 0.64;
+
+        ctx.shadowBlur = 4;
+        ctx.shadowOffsetX = -16;
+        ctx.shadowOffsetY = 16;
+
+        ctx.fillStyle = cloudTypes[type][0];
+        ctx.shadowColor = '#ccc';
+        ctx.fill(new Path2D(cloudTypes[type][1]));
+        ctx.fillStyle = cloudTypes[type][2];
+        ctx.shadowColor = '#ccc';
+        ctx.fill(new Path2D(cloudTypes[type][3]));
+
+        return canvas.toDataURL();
+    }
+
     static createWaterLine() {
         var canvas = document.createElement('canvas');
         canvas.width = 512;

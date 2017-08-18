@@ -60,3 +60,29 @@
         opacity: 0;
     }
 }
+
+.thunder {
+    animation: 5s infinite linear kf-thunder;
+}
+
+
+@keyframes kf-thunder {
+    0% {
+        filter: contrast(100%);
+    }
+    4% {
+        filter: contrast(200%);
+    }
+    8% {
+        filter: contrast(100%);
+    }
+    12% {
+        filter: contrast(250%);
+    }
+    20% {
+        filter: contrast(100%);
+    }
+    100% {
+
+    }
+}
