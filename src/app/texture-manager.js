@@ -15,15 +15,15 @@ export class TextureManager {
 
     static createMountain(type = 0) {
 
-        var cloudTypes = [
+        var types = [
             [
-                '#eee',
+                '#999',
                 'M 32 512 L 128 224 L 224 192 L 256 160 L 416 224 L 480 512',
                 '#777',
                 'M 320 512 V 256 L 352 224 L 256 160 L 416 224 L 448 512'
             ],
             [
-                '#fff',
+                '#444',
                 'M 318 512 L 384 256 L 318 192 H 222 L 192 256 L 128 512',
                 '#999',
                 'M 318 512 L 384 256 L 318 192 H 222 L 352 160 L 480 512'
@@ -31,13 +31,13 @@ export class TextureManager {
             [
                 '#fff',
                 'M 160 512 L 224 352 V 288 L 288 64 L 96 352 L 64 512',
-                '#999',
+                '#aaa',
                 'M 160 512 L 224 352 V 288 L 288 64 L 256 352 L 288 512'
             ],
             [
                 '#777',
                 'M 64 416 L 224 192 L 96 224 L 224 128 L 256 224 L 224 352 L 288 288 L 384 512 H 64 L 160 352',
-                '#222',
+                '#333',
                 'M 96 384 L 192 256 L 128 288 L 224 128 L 320 192 L 384 288 L 416 512 H 64'
             ]
         ]
@@ -49,16 +49,29 @@ export class TextureManager {
 
         ctx.globalAlpha = 0.64;
 
-        ctx.shadowBlur = 4;
-        ctx.shadowOffsetX = -16;
-        ctx.shadowOffsetY = 16;
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = -4;
+        ctx.shadowOffsetY = 4;
 
-        ctx.fillStyle = cloudTypes[type][0];
-        ctx.shadowColor = '#ccc';
-        ctx.fill(new Path2D(cloudTypes[type][1]));
-        ctx.fillStyle = cloudTypes[type][2];
-        ctx.shadowColor = '#ccc';
-        ctx.fill(new Path2D(cloudTypes[type][3]));
+        ctx.fillStyle = types[type][0];
+        ctx.shadowColor = '#777';
+        ctx.fill(new Path2D(types[type][1]));
+        ctx.fillStyle = types[type][2];
+        ctx.shadowColor = '#444';
+        ctx.fill(new Path2D(types[type][3]));
+
+        return canvas.toDataURL();
+    }
+
+    static createCastle() {
+
+        var canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, 100, 100);
 
         return canvas.toDataURL();
     }
@@ -139,7 +152,7 @@ export class TextureManager {
         var ctx = canvas.getContext('2d');
         ctx.fillStyle = '#111';
         ctx.filter = 'blur(12px)';
-        ctx.fill(new Path2D('M -64 256 L 160 0 H 352 L 576 256 z'));
+        ctx.fill(new Path2D('M 160 0 H 352 L 512 128 V 256 H 0 V 128 L 160 0 z'));
 
         return canvas.toDataURL();
     }
@@ -174,7 +187,7 @@ export class TextureManager {
         ctx.fill(new Path2D(plateTypes[type][2]));
         ctx.clip(new Path2D(plateTypes[type][2]));
 
-        ctx.drawImage( TextureManager.createIceTexture(), 0, 0, 512, 256);
+        ctx.drawImage(TextureManager.createIceTexture(), 0, 0, 512, 256);
 
         return canvas.toDataURL();
     }

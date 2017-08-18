@@ -30,20 +30,8 @@
     }
 }
 
-.anm-waterline {
+.shimmer {
     animation: 5s infinite linear kf-shimmer;
-}
-
-.anm-waterline.seq-1 {
-    animation-delay: 0s;
-}
-
-.anm-waterline.seq-2 {
-    animation-delay: 1s;
-}
-
-.anm-waterline.seq-3 {
-    animation-delay: 2s;
 }
 
 @keyframes kf-shimmer {
@@ -64,7 +52,6 @@
 .thunder {
     animation: 5s infinite linear kf-thunder;
 }
-
 
 @keyframes kf-thunder {
     0% {
