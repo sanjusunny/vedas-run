@@ -1,0 +1,50 @@
+* { margin:0; padding:0; } /* to remove the top and left whitespace */
+html, body { width:100%; height:100%; background-color: #000;} /* just to be sure these are full screen*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+#app-container {
+  position: relative;
+  width: 1200px;
+  height: 660px;
+}
+
+.game-layer {
+  position: absolute;
+  display:block;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  height: 660px;
+  overflow: hidden;
+}
+
+.game-layer > * {
+  position: absolute;
+}
+
+#layer-backdrop {
+  /* Permalink : use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f2f2+0,dbdbdb+36,ffffff+39,dbdbdb+48,a3a3a3+48,d1d1d1+60,d1d1d1+60,ffffff+60,ffffff+60,ededed+70,d8d8d8+100 */
+  background: linear-gradient(to bottom, #919191 0%,#b7b7b7 10%,#cecece 41%,#ffffff 46%,#ffffff 54%,#a8a8a8 55%,#878787 55%,#dbdbdb 64%,#ffffff 64%,#d1d1d1 80%,#d8d8d8 100%);
+
+}
+
+#layer-backdrop-image {
+  background-image: url( '../assets/backdrop.jpg');
+  filter: grayscale(100%) contrast(200%);
+}
+
+#layer-ui {
+  padding: 32px;
+  color: rgb(255, 255, 255);
+  font: normal normal normal 40px/normal "Courier New";
+}

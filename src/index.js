@@ -1,2 +1,2 @@
-import './app/main'
-import './styles/main.css'
+import './app/game'
+import './styles/game.css'

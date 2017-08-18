@@ -8,12 +8,15 @@
 
 <body>
 <div id="app-container">
-    <canvas id="canvas-base"></canvas>
-    <canvas id="canvas-game"></canvas>
-    <canvas id="canvas-ui"></canvas>
-    <div id="text-ui" class="fire">
+    <div id="layer-intro" class="game-layer"></div>
+    <div id="layer-backdrop" class="game-layer"></div>
+
+    <div id="layer-game" class="game-layer"></div>
+    <div id="layer-text" class="game-layer"></div>
+    <div id="layer-ui" class="game-layer hide">
         <span>Lost River</span>
     </div>
+    <div id="layer-backdrop-image" class="game-layer hide"></div>
     <!--    <div class="snow-container">
           <div class="snow foreground"></div>
           <div class="snow foreground layered"></div>
