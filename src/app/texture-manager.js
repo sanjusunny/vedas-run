@@ -13,8 +13,37 @@ export class TextureManager {
         return canvas;
     }
 
-    static createShard() {
+    static createWaterLine() {
+        var canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 128;
+        var ctx = canvas.getContext('2d');
 
+        ctx.globalAlpha = 0.5;
+        ctx.fillStyle = '#222';
+        ctx.filter = 'blur(10px)';
+        ctx.fill(new Path2D('M 32 64 L 128 32 L 224 64 H 320 H 480 L 288 96 L 96 64 z'));
+
+        return canvas.toDataURL();
+    }
+
+    static createFog() {
+        var canvas = document.createElement('canvas');
+        canvas.width = 1024;
+        canvas.height = 256;
+        var ctx = canvas.getContext('2d');
+
+        ctx.globalCompositeOperation = 'multiply';
+
+        ctx.fillStyle = '#ccc';
+        ctx.filter = 'blur(24px)';
+        ctx.fill(new Path2D('M 128 192 L 192 64 V 128 L 224 64 V 160 L 448 128 L 480 32 V 192 L 512 96 L 544 192 V 128 V 64 L 576 96 L 608 32'));
+
+        ctx.filter = 'blur(24px)';
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(150, 100, 700, 56);
+
+        return canvas.toDataURL();
     }
 
     static createCloud(type = 0) {

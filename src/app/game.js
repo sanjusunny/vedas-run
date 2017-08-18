@@ -41,15 +41,22 @@ class Game {
         this.addObject(layerGame, TextureManager.createIcePlate(), -140, 420, 512, 256, 9);
         this.addObject(layerGame, TextureManager.createIcePlate(1), -320, 520, 600);
 
-        /*this.addObject(layerGame, TextureManager.createIcePlate(), -200, 500, 512, 128);
-        this.addObject(layerGame, TextureManager.createIcePlate(), -300, 500, 512, 256, -8);*/
-
         this.addObject(layerGame, TextureManager.createIcePlate(), 720, 394, 256, 128, 4);
         this.addObject(layerGame, TextureManager.createIcePlate(1), 720, 360, 600);
         this.addObject(layerGame, TextureManager.createIcePlate(), 900, 364, 512, 256, 3);
         this.addObject(layerGame, TextureManager.createIcePlate(), 860, 500, 512, 128);
         this.addObject(layerGame, TextureManager.createIcePlate(), 980, 500, 512, 256, -8);
 
+        this.addObject(layerGame, TextureManager.createFog(), -100, 360, 1400, 128).classList.add('anm-fog', 'seq-1');
+        this.addObject(layerGame, TextureManager.createFog(), -100, 280, 1300, 300).classList.add('anm-fog', 'seq-2');
+        this.addObject(layerGame, TextureManager.createFog(), -100, 200, 1300, 400).classList.add('anm-fog', 'seq-3');
+        this.addObject(layerGame, TextureManager.createFog(), 400, 200, 800, 400).classList.add('anm-fog', 'seq-2');
+
+        this.addObject(layerGame, TextureManager.createWaterLine(), 400, 500, 256, 16).classList.add('anm-waterline', 'seq-1');
+        this.addObject(layerGame, TextureManager.createWaterLine(), 500, 480, 256, 16).classList.add('anm-waterline', 'seq-2');
+        this.addObject(layerGame, TextureManager.createWaterLine(), 500, 600, 512, 32).classList.add('anm-waterline', 'seq-3');
+        this.addObject(layerGame, TextureManager.createWaterLine(), 300, 540, 300, 16).classList.add('anm-waterline', 'seq-2');
+        this.addObject(layerGame, TextureManager.createWaterLine(), 400, 550, 300, 24).classList.add('anm-waterline', 'seq-3');
     }
 
     addObject(parent, texture, x, y, width, height, rotate) {
@@ -61,6 +68,7 @@ class Game {
         img.style.top = y + 'px';
         if(rotate) img.style.transform = 'rotate(' + rotate + 'deg)';
         parent.appendChild(img);
+        return img;
     }
 
     keyHandler(e) {
