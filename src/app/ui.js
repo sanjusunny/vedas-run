@@ -1,15 +1,19 @@
 import {TextureManager} from "./texture-manager";
+import {xId} from "./utils";
 
 export class UI {
     static init() {
-        document.getElementById('logo-bg-1').src = TextureManager.createUIBG();
-        document.getElementById('logo-bg-2').src = TextureManager.createUIBG();
-        document.getElementById('logo-fg').src = TextureManager.createUIFG();
+        if (xId('layer-ui')) {
+            xId('logo-bg').src = TextureManager.createUIBG();
+            xId('logo-bg-1').src = TextureManager.createUIBG();
+            xId('logo-bg-2').src = TextureManager.createUIBG();
+            xId('logo-fg').src = TextureManager.createUIFG();
 
-        document.getElementById('btn-start').addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            document.getElementById('layer-ui').classList.add('hide');
-        });
+            xId('btn-start').addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                xId('layer-ui').classList.add('tx-hide');
+            });
+        }
     }
 }

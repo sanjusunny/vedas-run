@@ -286,19 +286,19 @@ export class TextureManager {
         canvas.height = 256;
         var ctx = canvas.getContext('2d');
 
-        ctx.filter = 'blur(20px)';
+        ctx.filter = 'blur(25px)';
         ctx.fillStyle = '#000';
         ctx.font = "64px Arial";
-        ctx.fillText("!@$!^$_&___%*",30,170);
-        ctx.filter = 'blur(24px)';
+        ctx.fillText("!@$!^$_&___%*",50,170);
+        ctx.filter = 'blur(32px)';
         ctx.fillText("&*((___12$^_d",70,180);
-        ctx.filter = 'blur(20px)';
+        ctx.filter = 'blur(28px)';
         ctx.fillStyle = '#000';
         ctx.font = "64px Arial";
-        ctx.fillText("--_9_)*&&",40,190);
+        ctx.fillText("--_9_)*&&",60,190);
         ctx.fillStyle = '#000';
         ctx.font = "48px Arial";
-        ctx.fillText("AFSY$%GDC",20,140);
+        ctx.fillText("AFSY$%GDC",50,140);
 
         return canvas.toDataURL();
     }
