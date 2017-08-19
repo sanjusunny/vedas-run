@@ -70,8 +70,17 @@ export class TextureManager {
         canvas.height = 512;
         var ctx = canvas.getContext('2d');
 
-        ctx.fillStyle = '#000';
-        ctx.fillRect(0, 0, 100, 100);
+        ctx.globalAlpha = 0.4;
+        ctx.globalCompositeOperation = 'multiply';
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = -4;
+        ctx.shadowOffsetY = 4;
+        ctx.shadowColor = '#777';
+
+        ctx.fillStyle = '#444';
+
+        ctx.fill(new Path2D('M 64 288 L 96 320 V 128 L 128 160 V 224 L 160 256 H 192 V 192 L 160 160 L 210 96 L 256 160 L 224 192 V 288 L 288 384 L 352 160 L 384 96 V 32 L 416 0 V 416 H 448 L 480 384 L 512 512 H 0 L 32 256 L 64 224 z'));
+        ctx.fillRect(24, 0, 24, 512);
 
         return canvas.toDataURL();
     }
