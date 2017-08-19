@@ -1,5 +1,5 @@
 * { margin:0; padding:0; } /* to remove the top and left whitespace */
-html, body { width:100%; height:100%; background-color: #000;} /* just to be sure these are full screen*/
+html, body { width:100%; height:100%; background-color: #000; font-family:"Courier New";} /* just to be sure these are full screen*/
 
 body {
   display: flex;
@@ -41,10 +41,4 @@ body {
 #layer-backdrop-image {
   background-image: url( '../assets/backdrop.jpg');
   filter: grayscale(100%) contrast(200%);
-}
-
-#layer-ui {
-  padding: 32px;
-  color: rgb(255, 255, 255);
-  font: normal normal normal 40px/normal "Courier New";
 }

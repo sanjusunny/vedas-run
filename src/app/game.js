@@ -1,4 +1,5 @@
-import {TextureManager} from "./texture-manager";
+import {TextureManager} from './texture-manager';
+import {UI} from './ui'
 
 window.onerror = function (msg, url, lineNo, columnNo, error) {
     document.getElementById('app-container').style.border = 'solid 4px #ff4444';
@@ -24,6 +25,8 @@ class Game {
 
         var layerPlayer = document.getElementById('layer-player');
         var layerGame = document.getElementById('layer-game');
+
+        UI.init();
 
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
         this.addObject(layerGame, TextureManager.createCastle(), 150, 150, 256, 256);
@@ -98,6 +101,7 @@ class Game {
 
     addObject(parent, texture, x, y, width, height, rotate) {
         var img = document.createElement('img');
+        img.crossOrigin = 'anonymous';
         img.src = texture;
         if(width) img.width = width;
         if(height) img.height = height;

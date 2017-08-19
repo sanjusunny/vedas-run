@@ -12,13 +12,13 @@ export class TextureManager {
         ctx.shadowColor = '#999';
 
         // boat
-/*        ctx.fillStyle = '#333';
-        ctx.fill(new Path2D('M 64 192 H 48 L 32 208 L 16 224 L 0 256 H 128 L 112 224 L 96 208 L 80 192 H 64'));
+        /*        ctx.fillStyle = '#333';
+                ctx.fill(new Path2D('M 64 192 H 48 L 32 208 L 16 224 L 0 256 H 128 L 112 224 L 96 208 L 80 192 H 64'));
 
-        ctx.fillStyle = '#222';
-        ctx.shadowOffsetX = 2;
-        ctx.shadowOffsetY = -2;
-        ctx.fill(new Path2D('M 80 208 H 48 L 32 224 L 16 256 H 112 L 96 224 L 80 208'));*/
+                ctx.fillStyle = '#222';
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = -2;
+                ctx.fill(new Path2D('M 80 208 H 48 L 32 224 L 16 256 H 112 L 96 224 L 80 208'));*/
 
         // body
         ctx.shadowColor = '#777';
@@ -46,12 +46,12 @@ export class TextureManager {
         // head
         ctx.fillStyle = '#111';
         ctx.beginPath();
-        ctx.ellipse(64, 160, 15,25, 0 * Math.PI/180, 0, 2 * Math.PI);
+        ctx.ellipse(64, 160, 15, 25, 0 * Math.PI / 180, 0, 2 * Math.PI);
         ctx.fill();
 
         ctx.fillStyle = '#141414';
         ctx.beginPath();
-        ctx.ellipse(60, 190, 15, 30, 15 * Math.PI/180, 0, 2 * Math.PI);
+        ctx.ellipse(60, 190, 15, 30, 15 * Math.PI / 180, 0, 2 * Math.PI);
         ctx.fill();
 
         return canvas.toDataURL();
@@ -243,7 +243,6 @@ export class TextureManager {
         canvas.height = 256;
         var ctx = canvas.getContext('2d');
 
-
         ctx.globalAlpha = '0.7';
         ctx.fillStyle = plateTypes[type][0];
         ctx.shadowColor = '#ccc';
@@ -254,6 +253,52 @@ export class TextureManager {
         ctx.clip(new Path2D(plateTypes[type][2]));
 
         ctx.drawImage(TextureManager.createIceTexture(), 0, 0, 512, 256);
+
+        return canvas.toDataURL();
+    }
+
+    static createUIFG() {
+
+        var canvas = document.createElement('canvas');
+        canvas.width = 576;
+        canvas.height = 256;
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0,0,576,256);
+
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fill(new Path2D('M 0 32 H 48 V 160 H 112 L 128 208 H 0 V 32'));
+        ctx.fill(new Path2D('M 144 208 V 32 H 272 V 208 H 144'));
+        ctx.fill(new Path2D('M 288 144 V 32 H 416 V 80 H 352 L 368 96 H 416 V 208 H 288 V 160 H 352 L 336 144 H 288'));
+        ctx.fill(new Path2D('M 432 32 H 560 L 576 80 H 528 V 208 H 464 V 80 H 432 V 32'));
+
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fill(new Path2D('M 208 81 L 224 97 V 161 H 192 L 208 81'));
+
+        return canvas.toDataURL();
+    }
+
+    static createUIBG() {
+
+        var canvas = document.createElement('canvas');
+        canvas.width = 576;
+        canvas.height = 256;
+        var ctx = canvas.getContext('2d');
+
+        ctx.filter = 'blur(20px)';
+        ctx.fillStyle = '#000';
+        ctx.font = "64px Arial";
+        ctx.fillText("!@$!^$_&___%*",30,170);
+        ctx.filter = 'blur(24px)';
+        ctx.fillText("&*((___12$^_d",70,180);
+        ctx.filter = 'blur(20px)';
+        ctx.fillStyle = '#000';
+        ctx.font = "64px Arial";
+        ctx.fillText("--_9_)*&&",40,190);
+        ctx.fillStyle = '#000';
+        ctx.font = "48px Arial";
+        ctx.fillText("AFSY$%GDC",20,140);
 
         return canvas.toDataURL();
     }

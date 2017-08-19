@@ -16,6 +16,10 @@ if (isProduction) {
 }
 
 let config = {
+    devServer: {
+        host: '10.0.0.100',
+        disableHostCheck: true
+    },
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, 'dist'),
