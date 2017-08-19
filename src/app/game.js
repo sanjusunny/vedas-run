@@ -63,8 +63,9 @@ class Game {
         this.addObject(layerGame, TextureManager.createMountain(3), 660, 200, 200, 250, -24);
         this.addObject(layerGame, TextureManager.createMountain(3), 560, 300, 200, 150, 4);
 
-        this.addObject(layerGame, TextureManager.createRiver(), -100, 420, 1400);
+        this.addObject(layerGame, TextureManager.createRiver(), 0, 420, 1200);
 
+        // ice plates
         this.addObject(layerGame, TextureManager.createIcePlate(), 480, 410, 256, 32, 1);
         this.addObject(layerGame, TextureManager.createIcePlate(), 200, 410, 256, 64, 1);
         this.addObject(layerGame, TextureManager.createIcePlate(1), -240, 320, 600);
@@ -84,12 +85,14 @@ class Game {
         this.addObject(layerGame, TextureManager.createMountain(2), 1156, 380, 60, 40, -8);
         this.addObject(layerGame, TextureManager.createMountain(2), 1080, 392, 40, 20, -8);
 
+        // fog
         this.addObject(layerGame, TextureManager.createFog(), -100, 360, 1400, 128).classList.add('anm-fog', 'seq-1');
         this.addObject(layerGame, TextureManager.createFog(), -100, 320, 1400, 128).classList.add('anm-fog', 'seq-1');
         this.addObject(layerGame, TextureManager.createFog(), -100, 280, 1300, 300).classList.add('anm-fog', 'seq-2');
         this.addObject(layerGame, TextureManager.createFog(), -100, 200, 1300, 400).classList.add('anm-fog', 'seq-3');
         this.addObject(layerGame, TextureManager.createFog(), 400, 200, 800, 400).classList.add('anm-fog', 'seq-2');
 
+        // waves
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 400, 500, 256, 16), 'shimmer', 0);
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 500, 480, 256, 16), 'shimmer', 1);
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 500, 600, 512, 32), 'shimmer', 2);

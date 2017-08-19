@@ -43,3 +43,7 @@ body {
   background-image: url( '../assets/backdrop.jpg');
   filter: grayscale(100%) contrast(200%);
 }
+
+.anm-fog {
+  display: none !important;
+}

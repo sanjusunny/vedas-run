@@ -218,7 +218,7 @@ export class TextureManager {
         var ctx = canvas.getContext('2d');
         ctx.fillStyle = '#111';
         ctx.filter = 'blur(12px)';
-        ctx.fill(new Path2D('M 160 0 H 352 L 512 128 V 256 H 0 V 128 L 160 0 z'));
+        ctx.fill(new Path2D('M 160 0 H 384 L 512 80 V 256 H 0 V 80 L 112 0 z'));
 
         return canvas.toDataURL();
     }
