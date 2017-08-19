@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89b704a1-de39-4972-bba1-a8ae779cf05c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/game.js" afterPath="$PROJECT_DIR$/src/app/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/texture-manager.js" afterPath="$PROJECT_DIR$/src/app/texture-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/game.css" afterPath="$PROJECT_DIR$/src/styles/game.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="texture-manager.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="texture-manager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/texture-manager.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
@@ -76,6 +73,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -111,7 +118,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/app/blur.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/styles/ui.css" />
         <option value="$PROJECT_DIR$/src/app/utils.js" />
         <option value="$PROJECT_DIR$/src/app/ui.js" />
@@ -119,6 +125,7 @@
         <option value="$PROJECT_DIR$/src/styles/game.css" />
         <option value="$PROJECT_DIR$/src/app/game.js" />
         <option value="$PROJECT_DIR$/src/app/texture-manager.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -171,23 +178,6 @@
             <path>
               <item name="lost-river" type="b2602c69:ProjectViewProjectNode" />
               <item name="lost-river" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lost-river" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lost-river" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lost-river" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lost-river" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lost-river" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lost-river" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,7 +234,7 @@
       <workItem from="1503109314166" duration="4327000" />
       <workItem from="1503152663987" duration="522000" />
       <workItem from="1503153520578" duration="8260000" />
-      <workItem from="1503178674760" duration="3663000" />
+      <workItem from="1503178674760" duration="3837000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1502911677411</created>
@@ -344,11 +334,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503181199880</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Updates">
+      <created>1503182397733</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1503182397734</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67053000" />
+    <option name="totallyTimeSpent" value="67227000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -708,14 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/ui.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="606">
@@ -796,6 +785,14 @@
             <element signature="n#!!block;n#createUIFG#0;n#TextureManager#0" expanded="false" />
             <element signature="n#!!block;n#createUIBG#0;n#TextureManager#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
