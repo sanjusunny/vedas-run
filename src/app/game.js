@@ -22,16 +22,13 @@ class Game {
 
     render() {
 
-        var layerBackdrop = document.getElementById('layer-backdrop');
+        var layerPlayer = document.getElementById('layer-player');
         var layerGame = document.getElementById('layer-game');
 
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
         this.addObject(layerGame, TextureManager.createCastle(), 150, 150, 256, 256);
         this.addObject(layerGame, TextureManager.createCastle(), 270, 220, 100, 160);
         this.addObject(layerGame, TextureManager.createMountain(3), -200, 100, 512, 320, 0);
-
-/*        this.addObject(layerGame, TextureManager.createCloud(1), -150, -100, 768, 768);
-        this.addObject(layerGame, TextureManager.createCloud(), -190, -170);*/
 
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(), -450, -100, 1024, 512), 'thunder', 2);
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(1), -450, -100, 1024, 512), 'thunder', 4);
@@ -95,6 +92,8 @@ class Game {
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 500, 600, 512, 32), 'shimmer', 2);
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 300, 540, 300, 16), 'shimmer', 3);
         this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 400, 550, 300, 24), 'shimmer', 4);
+
+        this.addObject(layerPlayer, TextureManager.createPlayer(), 500, 404);
     }
 
     addObject(parent, texture, x, y, width, height, rotate) {

@@ -1,5 +1,62 @@
 export class TextureManager {
 
+    static createPlayer() {
+        var canvas = document.createElement('canvas');
+        canvas.width = 128;
+        canvas.height = 512;
+        var ctx = canvas.getContext('2d');
+
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = -4;
+        ctx.shadowOffsetY = 2;
+        ctx.shadowColor = '#999';
+
+        // boat
+/*        ctx.fillStyle = '#333';
+        ctx.fill(new Path2D('M 64 192 H 48 L 32 208 L 16 224 L 0 256 H 128 L 112 224 L 96 208 L 80 192 H 64'));
+
+        ctx.fillStyle = '#222';
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = -2;
+        ctx.fill(new Path2D('M 80 208 H 48 L 32 224 L 16 256 H 112 L 96 224 L 80 208'));*/
+
+        // body
+        ctx.shadowColor = '#777';
+        ctx.fillStyle = '#444';
+        ctx.shadowOffsetX = -2;
+        ctx.shadowOffsetY = -1;
+        ctx.fill(new Path2D('M 80 176 H 48 L 32 192 L 38 256 H 90 L 96 192 L 80 176'));
+
+        // cape
+        ctx.shadowColor = '#777';
+        ctx.fillStyle = '#444';
+        ctx.shadowOffsetX = -2;
+        ctx.shadowOffsetY = -1;
+        ctx.fill(new Path2D('M 80 176 L 59 175 L 44 204 L 10 255 L 90 256 L 87 226 L 80 176'));
+        ctx.save();
+        ctx.fillStyle = '#555';
+        ctx.translate(10, 0);
+        ctx.fill(new Path2D('M 80 176 L 59 175 L 44 204 L 10 255 L 90 256 L 87 226 L 80 176'));
+        ctx.fillStyle = '#666';
+        ctx.translate(10, 0);
+        ctx.fill(new Path2D('M 80 176 L 59 175 L 44 204 L 10 255 L 90 256 L 87 226 L 80 176'));
+        ctx.restore();
+
+
+        // head
+        ctx.fillStyle = '#111';
+        ctx.beginPath();
+        ctx.ellipse(64, 160, 15,25, 0 * Math.PI/180, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = '#141414';
+        ctx.beginPath();
+        ctx.ellipse(60, 190, 15, 30, 15 * Math.PI/180, 0, 2 * Math.PI);
+        ctx.fill();
+
+        return canvas.toDataURL();
+    }
+
     static createIceTexture() {
         var canvas = document.createElement('canvas');
         canvas.width = 64;

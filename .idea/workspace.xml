@@ -5,7 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/game.js" afterPath="$PROJECT_DIR$/src/app/game.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/texture-manager.js" afterPath="$PROJECT_DIR$/src/app/texture-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/animations.css" afterPath="$PROJECT_DIR$/src/styles/animations.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,25 +24,20 @@
       <file leaf-file-name="animations.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/animations.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="0">
               <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="texture-manager.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="texture-manager.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/texture-manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="308">
+              <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="20" selection-end-column="90" />
               <folding>
-                <element signature="n#!!block;n#createIceTexture#0;n#TextureManager#0" expanded="false" />
-                <element signature="n#!!block;n#createWaterLine#0;n#TextureManager#0" expanded="false" />
-                <element signature="n#!!block;n#createFog#0;n#TextureManager#0" expanded="false" />
-                <element signature="n#!!block;n#createCloud#0;n#TextureManager#0" expanded="false" />
-                <element signature="n#!!block;n#createRiver#0;n#TextureManager#0" expanded="false" />
-                <element signature="n#!!block;n#createIcePlate#0;n#TextureManager#0" expanded="false" />
+                <element signature="n#!!block;n#createMountain#0;n#TextureManager#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -50,18 +46,8 @@
       <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state relative-caret-position="418">
+              <caret line="95" column="75" lean-forward="false" selection-start-line="95" selection-start-column="75" selection-end-line="95" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -89,12 +75,12 @@
         <option value="$PROJECT_DIR$/src/styles/main.css" />
         <option value="$PROJECT_DIR$/src/app/render.js" />
         <option value="$PROJECT_DIR$/src/styles/snow.css" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/styles/game.css" />
         <option value="$PROJECT_DIR$/src/styles/animations.css" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/game.js" />
         <option value="$PROJECT_DIR$/src/app/texture-manager.js" />
-        <option value="$PROJECT_DIR$/src/index.html" />
       </list>
     </option>
   </component>
@@ -139,7 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,6 +160,7 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -221,7 +207,8 @@
       <workItem from="1503001287383" duration="16232000" />
       <workItem from="1503071216445" duration="11911000" />
       <workItem from="1503094774995" duration="5365000" />
-      <workItem from="1503100610622" duration="249000" />
+      <workItem from="1503100610622" duration="1254000" />
+      <workItem from="1503109314166" duration="3721000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1502911677411</created>
@@ -286,24 +273,31 @@
       <option name="project" value="LOCAL" />
       <updated>1503098255933</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updates">
+      <created>1503100881037</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1503100881037</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49276000" />
+    <option name="totallyTimeSpent" value="54002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1924" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2717102" sideWeight="0.6635945" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2717102" sideWeight="0.6578341" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2717102" sideWeight="0.33640552" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2717102" sideWeight="0.3421659" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -340,6 +334,40 @@
     <entry file="file://$PROJECT_DIR$/src/styles/animations.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/texture-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#createMountain#0;n#TextureManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/animations.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
           <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
@@ -350,12 +378,7 @@
         <state relative-caret-position="1782">
           <caret line="81" column="233" lean-forward="false" selection-start-line="81" selection-start-column="233" selection-end-line="81" selection-end-column="233" />
           <folding>
-            <element signature="n#!!block;n#createIceTexture#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createWaterLine#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createFog#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createCloud#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createRiver#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createIcePlate#0;n#TextureManager#0" expanded="false" />
+            <element signature="n#!!block;n#createMountain#0;n#TextureManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -381,12 +404,7 @@
         <state relative-caret-position="1078">
           <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
           <folding>
-            <element signature="n#!!block;n#createIceTexture#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createWaterLine#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createFog#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createCloud#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createRiver#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createIcePlate#0;n#TextureManager#0" expanded="false" />
+            <element signature="n#!!block;n#createMountain#0;n#TextureManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -411,7 +429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1144">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="56" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -420,7 +437,7 @@
         <state relative-caret-position="44">
           <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding>
-            <element signature="e#0#19#0" expanded="false" />
+            <element signature="e#57#83#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -445,12 +462,7 @@
         <state relative-caret-position="1606">
           <caret line="73" column="54" lean-forward="false" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
           <folding>
-            <element signature="n#!!block;n#createIceTexture#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createWaterLine#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createFog#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createCloud#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createRiver#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createIcePlate#0;n#TextureManager#0" expanded="false" />
+            <element signature="n#!!block;n#createMountain#0;n#TextureManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -475,7 +487,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="false" />
+            <element signature="e#57#83#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -516,7 +528,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="false" />
+            <element signature="e#57#83#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -641,60 +653,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/game.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="706">
           <caret line="49" column="1" lean-forward="false" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/animations.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
+        <state relative-caret-position="0">
           <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/game.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/texture-manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="22">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="36" />
           <folding>
-            <element signature="n#!!block;n#createIceTexture#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createWaterLine#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createFog#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createCloud#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createRiver#0;n#TextureManager#0" expanded="false" />
-            <element signature="n#!!block;n#createIcePlate#0;n#TextureManager#0" expanded="false" />
+            <element signature="e#57#83#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="330">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="95" column="75" lean-forward="false" selection-start-line="95" selection-start-column="75" selection-end-line="95" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/texture-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="20" selection-end-column="90" />
+          <folding>
+            <element signature="n#!!block;n#createMountain#0;n#TextureManager#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
