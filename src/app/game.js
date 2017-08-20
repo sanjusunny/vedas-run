@@ -1,8 +1,12 @@
+import {xId} from './utils';
 import {TextureManager} from './texture-manager';
 import {UI} from './ui'
-import {xId} from "./utils";
+import {state} from './game-state';
+import {Player} from "./entities/player";
+import {Probe} from "./entities/probe";
 
 window.onerror = function (msg, url, lineNo, columnNo, error) {
+    state.isRunning = false;
     document.getElementById('app-container').style.border = 'solid 4px #ff4444';
     return false;
 };
@@ -10,26 +14,81 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
 class Game {
     constructor() {
         this.initialized = false;
+        this.accumulator = 0;
+        this.delta = 1000 / state.fps;  // delta between performance.now timings (in ms)
+        this.step = 1 / state.fps;
+        this.last = 0;
+        this.rAF = null;
+        this.now = 0;
+        this.dt = 0;
     }
 
     init() {
         if (!this.initialized) {
             this.initialized = true;
 
-            addEventListener('keydown', this.keyHandler);
+            addEventListener('keydown', this.keydownEventHandler);
+            addEventListener('keyup', this.keyupEventHandler);
 
-            this.render();
+            state.plane = xId('game-plane');
+            state.player = new Player(state);
+            for (var i = 0; i < 10; i++) {
+                state.probes.push(new Probe(state));
+            }
+
+            this.startLoop();
+            //this.preRender();
         }
+    }
+
+    startLoop() {
+        state.isRunning = true;
+        this.last = performance.now();
+        window.requestAnimationFrame(this.frame.bind(this));
+    }
+
+    frame() {
+        if(!state.isRunning) return false;
+
+        this.rAF = window.requestAnimationFrame(this.frame.bind(this));
+
+        this.now = performance.now();
+        this.dt = this.now - this.last;
+        this.last = this.now;
+
+        // prevent updating the game with a very large dt if the game were to lose focus
+        // and then regain focus later
+        if (this.dt > 1000) {
+            return;
+        }
+
+        this.accumulator += this.dt;
+
+        while (this.accumulator >= this.delta) {
+            this.update(this.step);
+
+            this.accumulator -= this.delta;
+        }
+
+        this.render();
+    }
+
+    update() {
+        state.player.update(state);
     }
 
     render() {
 
-        var layerPlayer = document.getElementById('layer-player');
-        var layerGame = document.getElementById('layer-game');
+    }
+
+    preRender() {
+
+        var layerPlayer = xId('layer-player');
+        var layerGame = xId('layer-game');
 
         UI.init();
 
-        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
+        /*this.addTimedAnimation(this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
         this.addObject(layerGame, TextureManager.createCastle(), 150, 150, 256, 256);
         this.addObject(layerGame, TextureManager.createCastle(), 270, 220, 100, 160);
         this.addObject(layerGame, TextureManager.createMountain(3), -200, 100, 512, 320, 0);
@@ -100,14 +159,14 @@ class Game {
         this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 300, 540, 300, 16), 'shimmer', 3);
         this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 400, 550, 300, 24), 'shimmer', 4);
 
-        this.addObject(layerPlayer, TextureManager.createPlayer(), 500, 404);
+        this.addObject(layerPlayer, TextureManager.createPlayer(), 500, 404);*/
 
         for (var i = 0; i < 10; i++) {
             var el = document.createElement('div');
             el.classList.add('nmy');
             el.style.top = i * 20 + 'px';
             el.style.left = i * 100 + 'px'
-            el.style.animationDelay = i/2 + 's';
+            el.style.animationDelay = i / 2 + 's';
             xId('game-plane').appendChild(el);
         }
     }
@@ -125,10 +184,15 @@ class Game {
         return img;
     }
 
-    keyHandler(e) {
+    keydownEventHandler(e) {
+        state.pressedKeys[e.which.toString()] = true;
         if (e.which === 49) {
             document.getElementById('layer-backdrop-image').classList.toggle('hide');
         }
+    }
+
+    keyupEventHandler(e) {
+        state.pressedKeys[e.which.toString()] = false;
     }
 
     addTimedAnimation(element, className, delay) {
@@ -137,6 +201,5 @@ class Game {
 }
 
 const game = new Game();
-game.init();
 
 document.addEventListener('DOMContentLoaded', () => game.init());

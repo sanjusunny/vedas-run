@@ -1,15 +1,21 @@
 #layer-3d {
-    perspective: 200px;
+    perspective: 400px;
 }
 
 #game-plane {
     width: 1200px;
-    /*background-color: rgba(0,0,0,0.2);*/
-    height: 500px;
-    top: 270px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 660px;
+    top: 0px;
     left: 0px;
-    transform: rotateX(80deg) scaleY(0.7);
+    transform: rotateX(80deg) translateZ(-20px) translateY(220px) scaleY(0.4)  scaleX(0.4);
     transform-style: preserve-3d;
+    background-size: 60px 60px;
+    background-image: linear-gradient(to right, #ddd 1px, transparent 1px), linear-gradient(to bottom, #ddd 1px, transparent 1px);
+}
+
+#game-plane * {
+    position: absolute;
 }
 
 .nmy {
