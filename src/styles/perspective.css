@@ -1,0 +1,36 @@
+#layer-3d {
+    perspective: 200px;
+}
+
+#game-plane {
+    width: 1200px;
+    /*background-color: rgba(0,0,0,0.2);*/
+    height: 500px;
+    top: 270px;
+    left: 0px;
+    transform: rotateX(80deg) scaleY(0.7);
+    transform-style: preserve-3d;
+}
+
+.nmy {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 100px;
+    left: 200px;
+    background-color: #efefef;
+    animation: 2s infinite ease-in kf-nmy;
+    filter: blur(5px);
+}
+
+@keyframes kf-nmy {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0px, 0px, 40px);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}

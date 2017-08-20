@@ -13,6 +13,7 @@ export class UI {
                 e.preventDefault();
                 e.stopPropagation();
                 xId('layer-ui').classList.add('tx-hide');
+                setTimeout(()=> xId('layer-story').classList.add('reveal'), 3000);
             });
         }
     }

@@ -1,5 +1,6 @@
 import {TextureManager} from './texture-manager';
 import {UI} from './ui'
+import {xId} from "./utils";
 
 window.onerror = function (msg, url, lineNo, columnNo, error) {
     document.getElementById('app-container').style.border = 'solid 4px #ff4444';
@@ -12,7 +13,7 @@ class Game {
     }
 
     init() {
-        if(!this.initialized) {
+        if (!this.initialized) {
             this.initialized = true;
 
             addEventListener('keydown', this.keyHandler);
@@ -28,15 +29,15 @@ class Game {
 
         UI.init();
 
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
         this.addObject(layerGame, TextureManager.createCastle(), 150, 150, 256, 256);
         this.addObject(layerGame, TextureManager.createCastle(), 270, 220, 100, 160);
         this.addObject(layerGame, TextureManager.createMountain(3), -200, 100, 512, 320, 0);
 
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(), -450, -100, 1024, 512), 'thunder', 2);
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(1), -450, -100, 1024, 512), 'thunder', 4);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createCloud(), -450, -100, 1024, 512), 'thunder', 2);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createCloud(1), -450, -100, 1024, 512), 'thunder', 4);
         this.addObject(layerGame, TextureManager.createCloud(), -50, 100, 1024, 256);
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createCloud(), 450, 0, 1024, 256), 'thunder', 0);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createCloud(), 450, 0, 1024, 256), 'thunder', 0);
 
 
         this.addObject(layerGame, TextureManager.createMountain(3), 100, 300, 400, 120, 0);
@@ -93,36 +94,45 @@ class Game {
         this.addObject(layerGame, TextureManager.createFog(), 400, 200, 800, 400).classList.add('anm-fog', 'seq-2');
 
         // waves
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 400, 500, 256, 16), 'shimmer', 0);
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 500, 480, 256, 16), 'shimmer', 1);
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 500, 600, 512, 32), 'shimmer', 2);
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 300, 540, 300, 16), 'shimmer', 3);
-        this.addTimedAnimation( this.addObject(layerGame, TextureManager.createWaterLine(), 400, 550, 300, 24), 'shimmer', 4);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 400, 500, 256, 16), 'shimmer', 0);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 500, 480, 256, 16), 'shimmer', 1);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 500, 600, 512, 32), 'shimmer', 2);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 300, 540, 300, 16), 'shimmer', 3);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 400, 550, 300, 24), 'shimmer', 4);
 
         this.addObject(layerPlayer, TextureManager.createPlayer(), 500, 404);
+
+        for (var i = 0; i < 10; i++) {
+            var el = document.createElement('div');
+            el.classList.add('nmy');
+            el.style.top = i * 20 + 'px';
+            el.style.left = i * 100 + 'px'
+            el.style.animationDelay = i/2 + 's';
+            xId('game-plane').appendChild(el);
+        }
     }
 
     addObject(parent, texture, x, y, width, height, rotate) {
         var img = document.createElement('img');
         img.crossOrigin = 'anonymous';
         img.src = texture;
-        if(width) img.width = width;
-        if(height) img.height = height;
+        if (width) img.width = width;
+        if (height) img.height = height;
         img.style.left = x + 'px';
         img.style.top = y + 'px';
-        if(rotate) img.style.transform = 'rotate(' + rotate + 'deg)';
+        if (rotate) img.style.transform = 'rotate(' + rotate + 'deg)';
         parent.appendChild(img);
         return img;
     }
 
     keyHandler(e) {
-        if(e.which === 49) {
+        if (e.which === 49) {
             document.getElementById('layer-backdrop-image').classList.toggle('hide');
         }
     }
 
     addTimedAnimation(element, className, delay) {
-        setTimeout(() => element.classList.add(className), delay*1000);
+        setTimeout(() => element.classList.add(className), delay * 1000);
     }
 }
 
