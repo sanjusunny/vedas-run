@@ -14,10 +14,26 @@
     <div id="layer-game" class="game-layer"></div>
     <div id="layer-text" class="game-layer"></div>
     <div id="layer-player" class="game-layer"></div>
-    <div id="layer-3d" class="game-layer">
+    <div id="layer-3d" class="game-layer hide">
         <div id="game-plane">
             <div id="xPlayer">
                 <img src=<%=require("./assets/hero.png")%>/>
+            </div>
+        </div>
+    </div>
+    <div id="layer-sandbox" class="game-layer">
+        <div class='skeleton'>
+            <div class='head anm-head'></div>
+            <div class='hair anm-hair'></div>
+            <div class='torso'></div>
+            <div class='arm-left'></div>
+            <div class='arm-right'></div>
+            <div class='leg-left walk'></div>
+            <div class='leg-right walk'></div>
+            <div class='cape'>
+                <div class='cape-s1 subtle'></div>
+                <div class='cape-s2 subtle'></div>
+                <div class='cape-s3 subtle'></div>
             </div>
         </div>
     </div>
