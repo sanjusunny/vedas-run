@@ -9,5 +9,6 @@ export const state = {
     plane: null,
     player: null,
     probes: [],
-    pressedKeys: {}
+    pressedKeys: {},
+    iy: 0
 };

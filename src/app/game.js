@@ -75,6 +75,9 @@ class Game {
 
     update() {
         state.player.update(state);
+        for (var i = 0; i < 10; i++) {
+            state.probes[i].update(state);
+        }
     }
 
     render() {

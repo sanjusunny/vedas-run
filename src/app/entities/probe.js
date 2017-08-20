@@ -16,10 +16,12 @@ export class Probe {
         this.render(state);
     }
 
-    update() {
-        /*        this.x += 1;
-                if (this.x > 1200) this.x = 0;
-                this.mesh.style.left = this.x + 'px';*/
+    update(state) {
+        this.y = Math.pong(this.y + 4, 0, state.vh); //-state.iy;
+        this.mesh.style.top = this.y + 'px';
+
+        this.x = Math.clamp( this.x + 5 * Math.toggle(), 0, state.vw );
+        this.mesh.style.left = this.x + 'px';
     }
 
     render(state) {

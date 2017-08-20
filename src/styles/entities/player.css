@@ -1,2 +1,10 @@
-.xPlayer {
+#xPlayer {
+    transform-style: preserve-3d;
+}
+
+#xPlayer img {
+    width: 50px;
+    height: 50px;
+    transform-origin: 25px 25px;
+    transform: translateZ(12px) rotateX(-15deg);
 }
