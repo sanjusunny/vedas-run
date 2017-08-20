@@ -4,18 +4,19 @@
 
 #game-plane {
     width: 1200px;
-    background-color: rgba(255, 255, 255, 1);
     height: 660px;
     top: 0px;
     left: 0px;
-    transform: rotateX(80deg) translateZ(-20px) translateY(200px) scaleY(0.4)  scaleX(0.4);
     transform-style: preserve-3d;
     background-size: 60px 60px;
     background-image: linear-gradient(to right, #ddd 1px, transparent 1px), linear-gradient(to bottom, #ddd 1px, transparent 1px);
+    transform: rotateX(80deg) translateZ(-10px) translateY(200px) scaleY(0.4) scaleX(0.4);
+
 }
 
 #game-plane * {
-    position: absolute;
+/*    position: absolute;
+    transform-style: preserve-3d;*/
 }
 
 .nmy {

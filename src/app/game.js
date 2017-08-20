@@ -30,11 +30,13 @@ class Game {
             addEventListener('keydown', this.keydownEventHandler);
             addEventListener('keyup', this.keyupEventHandler);
 
+            UI.init();
+
             state.plane = xId('game-plane');
             state.player = new Player(state);
-            /*for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 10; i++) {
                 state.probes.push(new Probe(state));
-            }*/
+            }
 
             this.startLoop();
             //this.preRender();

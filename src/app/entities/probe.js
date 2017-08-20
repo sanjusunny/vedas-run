@@ -20,7 +20,7 @@ export class Probe {
         this.y = Math.pong(this.y + 4, 0, state.vh); //-state.iy;
         this.mesh.style.top = this.y + 'px';
 
-        this.x = Math.clamp( this.x + 5 * Math.toggle(), 0, state.vw );
+        this.x = Math.clamp( this.x + 4 * Math.toggle(), 0, state.vw );
         this.mesh.style.left = this.x + 'px';
     }
 

@@ -11,12 +11,8 @@ export class Player {
         this.y = state.vh - this.height * 2;
         this.h = 0;
 
-        /*this.mesh = document.createElement('div');
-        this.mesh.className = 'xPlayer';*/
         this.mesh = xId('xPlayer');
         this.mesh.style.cssText = `top: ${this.y}px; left: ${this.x}px; width: ${this.width}px; height: ${this.height}px;`;
-
-        //state.plane.appendChild(this.mesh);
 
         this.render(state);
     }

@@ -1,4 +1,5 @@
 .xProbe {
+    position: absolute;
     background-color: dodgerblue;
     opacity: 0.5;
 }
