@@ -1,5 +1,59 @@
 .xProbe {
     position: absolute;
-    background-color: dodgerblue;
-    opacity: 0.5;
+}
+
+@keyframes anm-hov {
+    0% {
+        transform: translateZ(0px);
+    }
+    100% {
+        transform: translateZ(-200px);
+    }
+}
+
+@keyframes anm-rot {
+    0% {
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.xProbe .skeleton {
+    transform: scale3d(0.2, 0.1, 0.1) rotateX(-10deg) translate3d(-200px, -150px, 0);
+    position: absolute;
+    //top: 200px;
+    //left: 200px;
+    //width: 200px;
+    //height: 400px;
+    transform-style: preserve-3d;
+}
+
+.xProbe .skeleton * {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.xProbe .base {
+    width: 200px;
+    height: 200px;
+    background: #e74c3c;
+    border-radius: 100px;
+}
+
+.xProbe .base.s1 {
+    background: rgba(10, 10, 10, 0.2);
+    animation: anm-hov 2s infinite;
+    animation-direction: alternate;
+}
+
+.xProbe .arm {
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    filter: blur(10px);
+    transform-origin: 80px 80px;
+    animation: anm-rot 2s linear infinite;
 }
