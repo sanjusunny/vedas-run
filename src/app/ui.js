@@ -12,6 +12,7 @@ export class UI {
             xId('btn-start').addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                document.body.classList.add('in-game');
                 xId('layer-ui').classList.add('tx-hide');
                 setTimeout(()=> xId('layer-story').classList.add('reveal'), 3000);
             });
