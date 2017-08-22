@@ -2,31 +2,21 @@
     position: absolute;
 }
 
-@keyframes anm-hov {
-    0% {
-        transform: translateZ(0px);
-    }
-    100% {
-        transform: translateZ(-200px);
-    }
+.xProbe {
+    transform: scale3d(0.2, 0.1, 0.1) rotateX(-10deg) translate3d(-210px, -150px, 100px);
+    position: absolute;
+    transform-style: preserve-3d;
 }
 
-@keyframes anm-rot {
-    0% {
-    }
-    100% {
-        transform: rotateZ(360deg);
-    }
-}
 
 .xProbe .skeleton {
-    transform: scale3d(0.2, 0.1, 0.1) rotateX(-10deg) translate3d(-200px, -150px, 0);
     position: absolute;
-    //top: 200px;
-    //left: 200px;
-    //width: 200px;
-    //height: 400px;
+    top: 200px;
+    left: 200px;
+    width: 200px;
+    height: 400px;
     transform-style: preserve-3d;
+    transform: translateZ(10px);
 }
 
 .xProbe .skeleton * {
@@ -34,26 +24,82 @@
     transform-style: preserve-3d;
 }
 
-.xProbe .base {
+.xProbe .shadow {
     width: 200px;
     height: 200px;
-    background: #e74c3c;
+    background: #111;
     border-radius: 100px;
 }
 
-.xProbe .base.s1 {
-    background: rgba(10, 10, 10, 0.2);
-    animation: anm-hov 2s infinite;
-    animation-direction: alternate;
+.xProbe.active .shadow {
+    animation: 1s linear 0s infinite alternate kf-hov-shadow;
 }
 
-.xProbe .arm {
+.xProbe.active .mine {
+    animation: 1s linear 0s infinite alternate kf-hov;
+}
+
+.xProbe .mine {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 100px;
+    border-width: 2px;
+    border-color: #bdc3c7;
+    border-style: dotted;
+}
+
+.xProbe .detail {
     top: 20px;
     left: 20px;
+    width: 160px;
+    height: 160px;
+    background-color:#ccc;
+    border-radius: 80px;
+    border-width: 1px;
+    border-color: #bdc3c7;
+    border-style: solid;
+}
+
+.xProbe .eye {
+    top:20px;
+    left:20px;
     width: 30px;
     height: 30px;
-    background-color: red;
-    filter: blur(10px);
+    border-radius: 15px;
+    background: #42dff4;
+    filter: blur(8px);
     transform-origin: 80px 80px;
-    animation: anm-rot 2s linear infinite;
+    animation: kf-rot 4s linear infinite;
+}
+
+.xProbe.alert .eye {
+    background: #d35400;
+}
+
+@keyframes kf-hov {
+    0% {
+        transform: translateZ(80px);
+    }
+    100% {
+        transform: translateZ(200px);
+    }
+}
+
+@keyframes kf-hov-shadow {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: scaleX(0.5) scaleY(0.5);
+        opacity: 0.05;
+    }
+}
+
+@keyframes kf-rot {
+    0% {
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }

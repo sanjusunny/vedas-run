@@ -32,6 +32,7 @@ class Game {
 
             UI.init();
 
+            state.console = xId('console');
             state.plane = xId('game-plane');
             state.player = new Player(state);
             for (var i = 0; i < 10; i++) {
@@ -41,6 +42,23 @@ class Game {
             this.startLoop();
             //this.preRender();
         }
+    }
+
+    update() {
+        state.player.update(state);
+        for (var i = 0; i < state.probes.length; i++) {
+            state.probes[i].update(state);
+        }
+
+        state.log(`P(${state.player.x},${state.player.y})`);
+    }
+
+    render() {
+
+    }
+
+    log(msg) {
+        state.console.innerText = msg;
     }
 
     startLoop() {
@@ -73,17 +91,6 @@ class Game {
         }
 
         this.render();
-    }
-
-    update() {
-        state.player.update(state);
-        for (var i = 0; i < state.probes.length; i++) {
-            state.probes[i].update(state);
-        }
-    }
-
-    render() {
-
     }
 
     preRender() {

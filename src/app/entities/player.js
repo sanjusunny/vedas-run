@@ -6,6 +6,7 @@ export class Player {
         this.width = 50;
         this.height = 50;
         this.jumpMax = 20;
+        this.walkInc = 0.5;
         this.isFalling = false;
         this.x = state.vw / 2 - this.width / 2;
         this.y = state.vh - this.height * 2;
@@ -19,23 +20,23 @@ export class Player {
 
     update(state) {
 
-        var oldX = this.y;
+        var oldY = this.y;
 
         if (state.pressedKeys['37']) {
-            this.x = (this.x - 1) % state.vw;
+            this.x = (this.x - this.walkInc) % state.vw;
             this.mesh.style.left = this.x + 'px';
 
         } else if (state.pressedKeys['39']) {
-            this.x = (this.x + 1) % state.vw;
+            this.x = (this.x + this.walkInc) % state.vw;
             this.mesh.style.left = this.x + 'px';
         }
 
         if (state.pressedKeys['38']) {
             this.y = (this.y - 1) % state.vh;
-            this.mesh.style.top = this.y + 'px';
+            //this.mesh.style.top = this.y + 'px';
         } else if (state.pressedKeys['40']) {
             this.y = (this.y + 1) % state.vh;
-            this.mesh.style.top = this.y + 'px';
+            //this.mesh.style.top = this.y + 'px';
         }
 
         if (state.pressedKeys['32'] && !this.isFalling) {
@@ -48,7 +49,8 @@ export class Player {
             this.isFalling = !(this.h === 0);
         }
 
-        state.iy = this.y - oldX;
+        state.iy = this.y - oldY;
+        this.y = oldY;
     }
 
     render(state) {

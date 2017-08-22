@@ -9,16 +9,25 @@ export function rnd(min, max) {
 }
 
 (function () {
+
+    // clamp between 2 values
     Math.clamp = function (a, b, c) {
         return Math.max(b, Math.min(c, a));
     }
 
+    // clamp and reset to lowest if the highest is hit
     Math.pong = function (a, b, c) {
         const val = Math.clamp(a, b, c);
         return (val === c) ? b : val;
     }
 
+    // get a random 1 or -1
     Math.toggle = function () {
         return (Math.random() >= 0.5) ? 1 : -1;
+    }
+
+    // check if a is within x units of b
+    Math.within = function (a, b, range) {
+        return (Math.abs(a - b) <= range);
     }
 })();

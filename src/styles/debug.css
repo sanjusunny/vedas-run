@@ -1,0 +1,9 @@
+#console {
+    right: 1rem;
+    top: 1rem;
+    width: 200px;
+    height: 40px;
+    padding: 2rem;
+    background: white;
+    color: #111;
+}
