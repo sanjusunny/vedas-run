@@ -53,24 +53,11 @@
     animation-delay: 15s;
 }
 
-@-webkit-keyframes snow {
-    0% {
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
-    }
-    100% {
-        -webkit-transform: translate3d(15%, 100%, 0);
-        transform: translate3d(15%, 100%, 0);
-    }
-}
-
 @keyframes snow {
     0% {
-        -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
     }
     100% {
-        -webkit-transform: translate3d(15%, 100%, 0);
         transform: translate3d(15%, 100%, 0);
     }
 }
