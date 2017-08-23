@@ -5,7 +5,7 @@ export class Probe {
         this.width = 50;
         this.height = 50;
         this.x = rnd(0, state.vw);
-        this.y = 300;
+        this.y = 500;
 
         this.mesh = document.querySelector("#templates > .xProbe:first-of-type").cloneNode(true);
         this.mesh.style.cssText = `top: ${this.y}px; left: ${this.x}px; width: ${this.width}px; height: ${this.height}px;`;

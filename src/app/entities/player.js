@@ -9,6 +9,7 @@ export class Player {
         this.xInc = 2;
         this.yInc = 0.5;
         this.isFalling = false;
+        this.isWalking = false;
         this.x = state.vw / 2 - this.width / 2;
         this.y = state.vh - this.height * 2;
         this.h = 0;
@@ -51,6 +52,14 @@ export class Player {
         }
 
         state.iy = this.y - oldY;
+        if(state.iy<0) {
+            if(!this.isWalking) this.mesh.classList.add('w-f');
+            this.isWalking = true;
+        } else {
+            if(this.isWalking) this.mesh.classList.remove('w-f');
+            this.isWalking = false;
+        }
+
         this.y = oldY;
     }
 

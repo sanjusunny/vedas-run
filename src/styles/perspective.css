@@ -1,5 +1,5 @@
 #layer-3d {
-    perspective: 400px;
+    perspective: 390px;
 }
 
 #game-plane {
@@ -9,35 +9,7 @@
     left: 0px;
     transform-style: preserve-3d;
     background-size: 60px 60px;
-    background-image: linear-gradient(to right, #ddd 1px, transparent 1px), linear-gradient(to bottom, #ddd 1px, transparent 1px);
+    //background-image: linear-gradient(to right, #ddd 1px, transparent 1px), linear-gradient(to bottom, #ddd 1px, transparent 1px);
     transform: rotateX(80deg) translateZ(-10px) translateY(200px) scaleY(0.4) scaleX(0.4);
 
-}
-
-#game-plane * {
-/*    position: absolute;
-    transform-style: preserve-3d;*/
-}
-
-.nmy {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 100px;
-    left: 200px;
-    background-color: #efefef;
-    animation: 2s infinite ease-in kf-nmy;
-    filter: blur(5px);
-}
-
-@keyframes kf-nmy {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    50% {
-        transform: translate3d(0px, 0px, 40px);
-    }
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
 }

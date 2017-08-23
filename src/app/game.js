@@ -35,12 +35,12 @@ class Game {
             state.console = xId('console');
             state.plane = xId('game-plane');
             state.player = new Player(state);
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 5; i++) {
                 state.probes.push(new Probe(state));
             }
 
             this.startLoop();
-            //this.preRender();
+            this.preRender();
         }
     }
 
@@ -98,9 +98,7 @@ class Game {
         var layerPlayer = xId('layer-player');
         var layerGame = xId('layer-game');
 
-        UI.init();
-
-        /*this.addTimedAnimation(this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
+        this.addTimedAnimation(this.addObject(layerGame, TextureManager.createCloud(1), -50, 100, 1024, 256), 'thunder', 6);
         this.addObject(layerGame, TextureManager.createCastle(), 150, 150, 256, 256);
         this.addObject(layerGame, TextureManager.createCastle(), 270, 220, 100, 160);
         this.addObject(layerGame, TextureManager.createMountain(3), -200, 100, 512, 320, 0);
@@ -171,16 +169,6 @@ class Game {
         this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 300, 540, 300, 16), 'shimmer', 3);
         this.addTimedAnimation(this.addObject(layerGame, TextureManager.createWaterLine(), 400, 550, 300, 24), 'shimmer', 4);
 
-        this.addObject(layerPlayer, TextureManager.createPlayer(), 500, 404);*/
-
-        for (var i = 0; i < 10; i++) {
-            var el = document.createElement('div');
-            el.classList.add('nmy');
-            el.style.top = i * 20 + 'px';
-            el.style.left = i * 100 + 'px'
-            el.style.animationDelay = i / 2 + 's';
-            xId('game-plane').appendChild(el);
-        }
     }
 
     addObject(parent, texture, x, y, width, height, rotate) {

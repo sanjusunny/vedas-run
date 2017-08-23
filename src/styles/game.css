@@ -49,7 +49,9 @@ body.in-game {
   filter: grayscale(100%) contrast(200%);
 }
 
+/*
 .anm-fog {
   display: none !important;
 }
+*/
 

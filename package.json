@@ -2,7 +2,8 @@
   "name": "js13k-setup",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --progress --disable-host-check --host 10.0.0.100",
+    "start": "webpack-dev-server --progress",
+    "local": "webpack-dev-server --progress --disable-host-check --host 10.0.0.100",
     "build": "webpack -p --progress",
     "postbuild": "node postbuild.js"
   },
