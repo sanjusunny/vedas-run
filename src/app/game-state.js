@@ -6,10 +6,11 @@ export const state = {
     vw: 1200,
     vh: 660,
     grid: 60,
-    plane: null,
+    plane: null, // 3d plane
     player: null,
     probes: [],
     pressedKeys: {},
+    ix: 0,
     iy: 0, /* forward movement made by player each turn */
     console: null,
     log: (msg) => state.console.innerText = msg

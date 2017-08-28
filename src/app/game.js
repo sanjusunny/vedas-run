@@ -2,8 +2,11 @@ import {xId} from './utils';
 import {TextureManager} from './texture-manager';
 import {UI} from './ui'
 import {state} from './game-state';
-import {Player} from "./entities/player";
-import {Probe} from "./entities/probe";
+import {Player} from './entities/player';
+import {Probe} from './entities/probe';
+import {Stats} from './utils/stats';
+import {Plane} from "./entities/plane";
+import {Backdrop} from "./entities/backdrop";
 
 window.onerror = function (msg, url, lineNo, columnNo, error) {
     state.isRunning = false;
@@ -21,6 +24,7 @@ class Game {
         this.rAF = null;
         this.now = 0;
         this.dt = 0;
+        this.stats = new Stats();
     }
 
     init() {
@@ -33,7 +37,8 @@ class Game {
             UI.init();
 
             state.console = xId('console');
-            state.plane = xId('game-plane');
+            state.plane = new Plane();
+            state.backdrop = new Backdrop();
             state.player = new Player(state);
             for (var i = 0; i < 5; i++) {
                 state.probes.push(new Probe(state));
@@ -49,12 +54,14 @@ class Game {
         for (var i = 0; i < state.probes.length; i++) {
             state.probes[i].update(state);
         }
+        state.plane.update(state);
+        state.backdrop.update(state);
 
-        state.log(`P(${state.player.x},${state.player.y})`);
+        //state.log(`P(${state.player.x},${state.player.y})`);
     }
 
     render() {
-
+        this.stats.render();
     }
 
     log(msg) {
@@ -67,10 +74,8 @@ class Game {
         window.requestAnimationFrame(this.frame.bind(this));
     }
 
-    frame() {
+    frame(timestamp) {
         if(!state.isRunning) return false;
-
-        this.rAF = window.requestAnimationFrame(this.frame.bind(this));
 
         this.now = performance.now();
         this.dt = this.now - this.last;
@@ -90,7 +95,10 @@ class Game {
             this.accumulator -= this.delta;
         }
 
+        this.stats.update();
         this.render();
+
+        this.rAF = window.requestAnimationFrame(this.frame.bind(this));
     }
 
     preRender() {

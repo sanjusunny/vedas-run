@@ -19,7 +19,7 @@
     position: absolute;
     //width: 200px;
     //height: 400px;
-    transform: scale3d(0.24, 0.12, 0.12) rotateX(-80deg) translate3d(50px,-200px,200px);
+    transform: scale3d(0.24, 0.12, 0.12) rotateX(-90deg) translate3d(50px,-240px,200px);
 }
 
 .xPlayer .arm-left {

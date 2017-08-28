@@ -3,7 +3,7 @@
 }
 
 .xProbe {
-    transform: scale3d(0.2, 0.1, 0.1) rotateX(-10deg) translate3d(-210px, -150px, 100px);
+    transform: scale3d(0.2, 0.1, 0.1) rotateX(90deg) translate3d(-210px, -150px, 100px);
     position: absolute;
     transform-style: preserve-3d;
 }
