@@ -7,7 +7,7 @@ export class Player {
         this.height = 50;
         this.jumpMax = 20;
         this.xInc = 2;
-        this.yInc = 2;
+        this.yInc = 10;
         this.isFalling = false;
         this.isWalking = false;
         this.x = state.vw / 2 - this.width / 2;

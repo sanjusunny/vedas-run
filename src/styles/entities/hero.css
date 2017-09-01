@@ -1,0 +1,41 @@
+.c_hero {
+    border: solid 1px white;
+}
+
+.c_head {
+    background-color: white;
+}
+
+.c_torso {
+    background-color: red;
+}
+
+.c_left-leg,
+.c_right-leg {
+    background-color: white;
+}
+
+.c_left-leg .c_lower,
+.c_right-leg .c_lower {
+    background-color: blue;
+}
+
+.c_left-leg .c_foot,
+.c_right-leg .c_foot {
+    background-color: yellow;
+}
+
+.c_left-arm,
+.c_right-arm {
+    background-color: green;
+}
+
+.c_left-arm .c_lower,
+.c_right-arm .c_lower {
+    background-color: orange;
+}
+
+.c_left-arm .c_lower .c_hand,
+.c_right-arm .c_lower .c_hand {
+    background-color: deeppink;
+}

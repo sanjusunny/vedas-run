@@ -7,6 +7,7 @@ import {Probe} from './entities/probe';
 import {Stats} from './utils/stats';
 import {Plane} from "./entities/plane";
 import {Backdrop} from "./entities/backdrop";
+import {Hero} from "./entities/hero";
 
 window.onerror = function (msg, url, lineNo, columnNo, error) {
     state.isRunning = false;
@@ -39,23 +40,24 @@ class Game {
             state.console = xId('console');
             state.plane = new Plane();
             state.backdrop = new Backdrop();
-            state.player = new Player(state);
-            for (var i = 0; i < 5; i++) {
+            state.player = new Hero(state);
+            //state.player = new Player(state);
+            /*for (var i = 0; i < 5; i++) {
                 state.probes.push(new Probe(state));
             }
-
+*/
             this.startLoop();
-            this.preRender();
+            //this.preRender();
         }
     }
 
     update() {
         state.player.update(state);
-        for (var i = 0; i < state.probes.length; i++) {
+        /*for (var i = 0; i < state.probes.length; i++) {
             state.probes[i].update(state);
         }
         state.plane.update(state);
-        state.backdrop.update(state);
+        state.backdrop.update(state);*/
 
         //state.log(`P(${state.player.x},${state.player.y})`);
     }
