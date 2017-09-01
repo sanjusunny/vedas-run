@@ -39,3 +39,14 @@
 .c_right-arm .c_lower .c_hand {
     background-color: deeppink;
 }
+
+#hero {
+    border: solid 4px red;
+    width: 200px;
+    height: 260px;
+    top: 270px;
+    left: 480px;
+    position: absolute;
+    transform: rotateY(80deg);
+
+}

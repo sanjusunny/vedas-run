@@ -17,7 +17,7 @@ export class Object3D {
 
         this.el = document.createElement('div');
         this.el.className = 'c_' + name;
-        this.el.style.cssText = 'position:absolute; opacity: 0.8; transform-origin: 50% 0';
+        this.el.style.cssText = 'position:absolute; transform-origin: 50% 0;';
         this.el.style.top = this.top + 'px';
         this.el.style.left = this.left + 'px';
         this.el.style.width = this.w + 'px';
@@ -39,6 +39,6 @@ export class Object3D {
         this.rotX = matrix[3];
         this.rotY = matrix[4];
         this.rotZ = matrix[5];
-        this.el.style.transform = `translateX(${this.x}px) translateY(${this.y}px) rotateX(${this.rotX}deg) rotateY(${this.rotY}deg) rotateZ(${this.rotZ}deg)`;
+        this.el.style.transform = `translateX(${this.x}px) translateY(${this.y}px) translateZ(${this.z}px) rotateX(${this.rotX}deg) rotateY(${this.rotY}deg) rotateZ(${this.rotZ}deg)`;
     }
 }

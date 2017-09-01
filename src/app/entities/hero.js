@@ -4,7 +4,7 @@ import {Object3D} from "../utils/obj3d";
 export class Hero {
 
     constructor(state) {
-        this.hero = new Object3D('hero', 170, 210, 60, 260);
+        this.hero = new Object3D('hero', 0, 0, 60, 260);
         this.hero.el.style.transformOrigin = '50% 50%';
 
         this.leftLeg = this.hero.addChild(new Object3D('left-leg', -10, 110, 20, 90));
@@ -26,8 +26,8 @@ export class Hero {
         this.rightArmLower = this.hero.mesh['right-arm'].addChild(new Object3D('lower', 0, 50, 20, 50));
         this.rightArmHand = this.hero.mesh['right-arm'].mesh['lower'].addChild(new Object3D('hand', 0, 40, 20, 20));
 
-        state.plane.mesh.appendChild(this.hero.el);
-
+        //state.plane.mesh.appendChild(this.hero.el);
+        xId('hero').appendChild(this.hero.el);
 
         this.meshMap = [
             this.hero,
@@ -48,52 +48,61 @@ export class Hero {
         ];
 
         this.baseFrame = [
-            [0, 0, 0, 0, 0, 0], // hero
-            [0, 0, 0, 0, 0, 0], // head
-            [0, 0, 0, 0, 0, 0], // torso
-            [0, 0, 0, 0, 0, 0], // leftLeg
+            [0, -20, 0, 0, 0, 0], // hero
+            [0, 0, 0, 0, 90, 0], // head
+            [0, 0, 0, 0, 90, 0], // torso
+            [0, 0, -15, 0, 0, 0], // leftLeg
             [0, 0, 0, 0, 0, 0], // leftLegLower
             [0, 0, 0, 0, 0, 0], // leftLegFoot
-            [0, 0, 0, 0, 0, 0], // leftArm
+            [0, 0, -20, 0, 0, 0], // leftArm
             [0, 0, 0, 0, 0, 0], // leftArmLower
             [0, 0, 0, 0, 0, 0], // leftArmHand
-            [0, 0, 0, 0, 0, 0], // leftLeg
-            [0, 0, 0, 0, 0, 0], // leftLegLower
-            [0, 0, 0, 0, 0, 0], // leftLegFoot
-            [0, 0, 0, 0, 0, 0], // leftArm
-            [0, 0, 0, 0, 0, 0], // leftArmLower
-            [0, 0, 0, 0, 0, 0] // leftArmHand
+            [0, 0, 15, 0, 0, 0], // rightLeg
+            [0, 0, 0, 0, 0, 0], // rightLegLower
+            [0, 0, 0, 0, 0, 0], // rightLegFoot
+            [0, 0, 20, 0, 0, 0], // rightArm
+            [0, 0, 0, 0, 0, 0], // rightArmLower
+            [0, 0, 0, 0, 0, 0] // rightArmHand
         ];
 
-        let frame2 = [
+        let rightMax = [
             [0, 0, 0, 0, 0, 18], // hero
-            [0, 0, 0, 0, 0, 5], // head
-            [0, 0, 0, 0, 0, 5], // torso
-            [0, 0, 0, 0, 0, -50], // leftLeg
-            [0, 0, 0, 0, 0, 10], // leftLegLower
-            [0, 0, 0, 0, 0, -10], // leftLegFoot
-            [0, 0, 0, 0, 0, -70], // leftArm
-            [0, 0, 0, 0, 0, -90], // leftArmLower
-            [0, 0, 0, 0, 0, -10], // leftArmHand
-            [0, 0, 0, 0, 0, 10], // leftLeg ***
-            [0, 0, 0, 0, 0, 70], // leftLegLower
-            [0, 0, 0, 0, 0, 20], // leftLegFoot
-            [0, 0, 0, 0, 0, 65], // leftArm
+            [0, 0, 0, 0, 90, 5], // head
+            [0, 0, 0, 0, 90, 5], // torso
+            [0, 0, -15, 0, 0, -60], // leftLeg
+            [0, 0, 0, 0, 0, 20], // leftLegLower
+            [0, 0, 0, 0, 0, 10], // leftLegFoot
+            [0, 0, -20, 0, 0, 65], // leftArm
             [0, 0, 0, 0, 0, -80], // leftArmLower
             [0, 0, 0, 0, 0, -10], // leftArmHand
+            [0, 0, 15, 0, 0, 10], // rightLeg
+            [0, 0, 0, 0, 0, 70], // rightLegLower
+            [0, 0, 0, 0, 0, 20], // rightLegFoot
+            [0, 0, 20, 0, 0, -70], // rightArm
+            [0, 0, 0, 0, 0, -90], // rightArmLower
+            [0, 0, 0, 0, 0, -10], // rightArmHand
         ];
 
-        /*this.baseFrame = [
+        let leftMax = [
             [0, 0, 0, 0, 0, 18], // hero
-            [0, 0, 0, 0, 0, 5], // head
-            [0, 0, 0, 0, 0, 5], // torso
-            [0, 0, 0, 0, 0, 10], // leftLeg
-            [0, 0, 0, 0, 0, 70], // leftLegLower
-            [0, 0, 0, 0, 0, 20], // leftLegFoot
-            [0, 0, 0, 0, 0, 65], // leftArm
+            [0, 0, 0, 0, 90, 5], // head
+            [0, 0, 0, 0, 90, 5], // torso
+            [0, 0, -15, 0, 0, 10], // rightLeg
+            [0, 0, 0, 0, 0, 70], // rightLegLower
+            [0, 0, 0, 0, 0, 20], // rightLegFoot
+            [0, 0, -20, 0, 0, -70], // rightArm
+            [0, 0, 0, 0, 0, -90], // rightArmLower
+            [0, 0, 0, 0, 0, -10], // rightArmHand
+            [0, 0, 15, 0, 0, -60], // leftLeg
+            [0, 0, 0, 0, 0, 20], // leftLegLower
+            [0, 0, 0, 0, 0, 10], // leftLegFoot
+            [0, 0, 20, 0, 0, 65], // leftArm
             [0, 0, 0, 0, 0, -80], // leftArmLower
             [0, 0, 0, 0, 0, -10] // leftArmHand
-        ];*/
+        ];
+
+        this.frames = [this.baseFrame, rightMax, this.baseFrame, leftMax];
+        this.currFrame = 0;
 
         addEventListener('keydown', (e) => {
             if (e.which === 37) {
@@ -108,21 +117,19 @@ export class Hero {
         });
 
         this.a_isAnimating = false;
-        this.a_startFrame = frame2;//this.baseFrame;
-        this.a_endFrame = frame2;
+        this.a_startFrame = this.frames[0];
+        this.a_endFrame = this.frames[1];
         this.a_fn = 0;
         this.a_fmax = 30;
-
-        this.increment();
     }
 
     increment() {
         if (this.a_fn >= this.a_fmax) {
-            this.a_isAnimating = false;
+            //this.a_isAnimating = false;
             this.a_startFrame = this.a_endFrame;
-            this.a_endFrame = null;
+            this.a_endFrame = this.getNextFrame();
             this.a_fn = 0;
-            return;
+            //return;
         }
 
         let matrix = [this.baseFrame[0].length];
@@ -136,9 +143,15 @@ export class Hero {
     }
 
     update(state) {
-        if (this.a_isAnimating) {
+        this.increment();
+        /*if (this.a_isAnimating) {
             this.increment();
-        }
+        }*/
+    }
+
+    getNextFrame() {
+        this.currFrame = (this.currFrame+1)%this.frames.length;
+        return this.frames[this.currFrame];
     }
 
     render(state) {
