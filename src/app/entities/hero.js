@@ -127,6 +127,8 @@ export class Hero {
 
         this.xInc = 2;
         this.zInc = 10;
+        this.x = state.vw/2;
+        this.z = 0;
         this.transform = 'translateZ(200px) rotateY(70deg) scale3d(0.44,0.44,0.44)';
     }
 
@@ -166,13 +168,17 @@ export class Hero {
             newTransform = 'translateZ(200px) rotateY(90deg) scale3d(0.44,0.44,0.44)';
         }
 
-        if (state.pressedKeys[Keys.UP]) {
-            state.iz = this.zInc;
-            this.a_isAnimating = true;
-        }
+        if (state.pressedKeys[Keys.UP] || state.pressedKeys[Keys.DOWN]) {
+            if (state.pressedKeys[Keys.UP]) {
+                state.iz = this.zInc;
+                this.a_isAnimating = true;
+            }
 
-        if (state.pressedKeys[Keys.DOWN]) {
-            state.iz = 0;
+            if (state.pressedKeys[Keys.DOWN]) {
+                state.iz = -this.zInc;
+                this.a_isAnimating = true;
+            }
+        } else {
             this.a_isAnimating = false;
         }
 
@@ -180,6 +186,9 @@ export class Hero {
             this.transform = newTransform;
             this.el.style.transform = this.transform;
         }
+
+        this.z += state.iz;
+        this.x += state.ix;
     }
 
     update(state) {
