@@ -1,4 +1,4 @@
-import {rnd, xId} from '../utils';
+import {rnd, xId} from '../utils/utils';
 
 export class Backdrop {
     constructor(state) {

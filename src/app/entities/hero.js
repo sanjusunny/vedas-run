@@ -1,4 +1,4 @@
-import {xId} from "../utils";
+import {xId} from "../utils/utils";
 import {Object3D} from "../utils/obj3d";
 
 export class Hero {
@@ -11,9 +11,9 @@ export class Hero {
         this.leftLegLower = this.hero.mesh['left-leg'].addChild(new Object3D('lower', 0, 80, 18, 80));
         this.leftLegFoot = this.hero.mesh['left-leg'].mesh['lower'].addChild(new Object3D('foot', 0, 70, 40, 10));
 
-        this.leftArm = this.hero.addChild(new Object3D('left-arm', 0, 38, 16, 60));
-        this.leftArmLower = this.hero.mesh['left-arm'].addChild(new Object3D('lower', 0, 50, 10, 50));
-        this.leftArmHand = this.hero.mesh['left-arm'].mesh['lower'].addChild(new Object3D('hand', 0, 40, 14, 20));
+        this.leftArm = this.hero.addChild(new Object3D('left-arm', 0, 38, 16, 62));
+        this.leftArmLower = this.hero.mesh['left-arm'].addChild(new Object3D('lower', 0, 48, 10, 50));
+        this.leftArmHand = this.hero.mesh['left-arm'].mesh['lower'].addChild(new Object3D('hand', 0, 48, 4, 20));
 
         this.head = this.hero.addChild(new Object3D('head', 10, 0, 20, 40));
         this.torso = this.hero.addChild(new Object3D('torso', -10, 35, 40, 90));
@@ -22,9 +22,9 @@ export class Hero {
         this.rightLegLower = this.hero.mesh['right-leg'].addChild(new Object3D('lower', 0, 80, 18, 80));
         this.rightLegFoot = this.hero.mesh['right-leg'].mesh['lower'].addChild(new Object3D('foot', 0, 70, 40, 10));
 
-        this.rightArm = this.hero.addChild(new Object3D('right-arm', 0, 38, 16, 60));
-        this.rightArmLower = this.hero.mesh['right-arm'].addChild(new Object3D('lower', 0, 50, 10, 50));
-        this.rightArmHand = this.hero.mesh['right-arm'].mesh['lower'].addChild(new Object3D('hand', 0, 40, 14, 20));
+        this.rightArm = this.hero.addChild(new Object3D('right-arm', 0, 38, 16, 62));
+        this.rightArmLower = this.hero.mesh['right-arm'].addChild(new Object3D('lower', 0, 48, 10, 55));
+        this.rightArmHand = this.hero.mesh['right-arm'].mesh['lower'].addChild(new Object3D('hand', 0, 48, 14, 20));
 
         this.cape = this.hero.addChild(new Object3D('cape', -34, 105, 40, 70));
 
@@ -68,7 +68,7 @@ export class Hero {
             [0, 0, 0, 0, 0, 0], // rightArmLower
             [0, 0, 0, 0, 0, 0], // rightArmHand
 
-            [0, 0, 0, 0, 0, 40] // cape
+            [0, 0, 0, 0, 0, 32] // cape
         ];
 
         let rightMax = [
@@ -120,13 +120,7 @@ export class Hero {
 
         addEventListener('keydown', (e) => {
             if (e.which === 37) {
-                this.a_isAnimating = true;
-                this.a_endFrame = this.baseFrame;
-            }
-
-            if (e.which === 39) {
-                this.a_isAnimating = true;
-                this.a_endFrame = frame2;
+                this.a_isAnimating = !this.a_isAnimating;
             }
         });
 
@@ -139,11 +133,9 @@ export class Hero {
 
     increment() {
         if (this.a_fn >= this.a_fmax) {
-            //this.a_isAnimating = false;
             this.a_startFrame = this.a_endFrame;
             this.a_endFrame = this.getNextFrame();
             this.a_fn = 0;
-            //return;
         }
 
         let matrix = [this.baseFrame[0].length];
@@ -157,10 +149,9 @@ export class Hero {
     }
 
     update(state) {
-        this.increment();
-        /*if (this.a_isAnimating) {
+        if (this.a_isAnimating) {
             this.increment();
-        }*/
+        }
     }
 
     getNextFrame() {

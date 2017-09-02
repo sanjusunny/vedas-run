@@ -1,5 +1,5 @@
 import {TextureManager} from "./texture-manager";
-import {xId} from "./utils";
+import {xId} from "./utils/utils";
 
 export class UI {
     static init() {

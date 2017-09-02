@@ -1,4 +1,4 @@
-import {xId} from "../utils";
+import {xId} from "../utils/utils";
 
 export class Player {
 

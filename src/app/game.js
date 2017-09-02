@@ -1,4 +1,4 @@
-import {xId} from './utils';
+import {xId} from './utils/utils';
 import {TextureManager} from './texture-manager';
 import {UI} from './ui'
 import {state} from './game-state';
