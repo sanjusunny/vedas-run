@@ -31,3 +31,11 @@ export function rnd(min, max) {
         return (Math.abs(a - b) <= range);
     }
 })();
+
+export const Keys = {
+    LEFT: 37,
+    RIGHT: 39,
+    UP: 38,
+    DOWN: 40,
+    SPACE: 32
+};

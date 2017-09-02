@@ -11,7 +11,8 @@ export const state = {
     probes: [],
     pressedKeys: {},
     ix: 0,
-    iy: 0, /* forward movement made by player each turn */
+    iy: 0,
+    iz: 0, /* forward movement made by player each turn */
     console: null,
     log: (msg) => state.console.innerText = msg
 };

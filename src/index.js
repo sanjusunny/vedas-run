@@ -1,7 +1,5 @@
-/*import './app/blur'*/
 import './app/game'
-import './app/sound'
-/*import './styles/animations.css'*/
+/*import './app/sound'*/
 import './styles/weather.css'
 import './styles/perspective.css'
 import './styles/debug.css'

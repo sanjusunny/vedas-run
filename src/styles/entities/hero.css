@@ -67,7 +67,8 @@
     width: 200px;
     height: 260px;
     top: 270px;
-    left: 502px;
+    left: 50%;
     position: absolute;
-    transform: rotateY(90deg);
+    transform-origin: 0% 50%;
+    transform: translateZ(200px) rotateY(90deg) scale3d(0.44,0.44,0.44);
 }

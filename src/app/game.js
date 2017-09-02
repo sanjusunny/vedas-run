@@ -2,7 +2,6 @@ import {xId} from './utils/utils';
 import {TextureManager} from './texture-manager';
 import {UI} from './ui'
 import {state} from './game-state';
-import {Player} from './entities/player';
 import {Probe} from './entities/probe';
 import {Stats} from './utils/stats';
 import {Plane} from "./entities/plane";
@@ -52,7 +51,15 @@ class Game {
     }
 
     update() {
+
+        // reset state
+        state.ix = 0;
+        state.iy = 0;
+        state.iz = 0;
+
         state.player.update(state);
+        state.plane.update(state);
+
         /*for (var i = 0; i < state.probes.length; i++) {
             state.probes[i].update(state);
         }
@@ -195,14 +202,14 @@ class Game {
     }
 
     keydownEventHandler(e) {
-        state.pressedKeys[e.which.toString()] = true;
+        state.pressedKeys[e.which] = true;
         if (e.which === 49) {
             document.getElementById('layer-backdrop-image').classList.toggle('hide');
         }
     }
 
     keyupEventHandler(e) {
-        state.pressedKeys[e.which.toString()] = false;
+        state.pressedKeys[e.which] = false;
     }
 
     addTimedAnimation(element, className, delay) {
