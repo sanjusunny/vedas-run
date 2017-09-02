@@ -1,28 +1,35 @@
-.c_hero {
-    border: solid 1px white;
+.c_hero > .c_seg1,
+.c_hero > .c_seg2 {
+    border: none;
+}
+
+.c_hero * {
+    border-radius: 2px;
+    border: solid 1px rgba(0,0,0,0.2);
 }
 
 .c_head {
-    background-color: white;
+    background-color: orange;
 }
 
 .c_torso {
-    background-color: red;
+    background-color: green;
 }
 
 .c_left-leg,
 .c_right-leg {
-    background-color: white;
+    background-color: greenyellow;
 }
 
 .c_left-leg .c_lower,
 .c_right-leg .c_lower {
-    background-color: blue;
+    background-color: #9ae32a;
 }
 
 .c_left-leg .c_foot,
 .c_right-leg .c_foot {
     background-color: yellow;
+    display: none;
 }
 
 .c_left-arm,
@@ -37,16 +44,19 @@
 
 .c_left-arm .c_lower .c_hand,
 .c_right-arm .c_lower .c_hand {
-    background-color: deeppink;
+    background-color: #de9000;
+}
+
+.c_cape {
+    background-color: green;
+    border-top: none;
 }
 
 #hero {
-    border: solid 4px red;
     width: 200px;
     height: 260px;
     top: 270px;
     left: 480px;
     position: absolute;
-    transform: rotateY(80deg);
-
+    transform: rotateY(90deg);
 }
