@@ -11,22 +11,22 @@ export class Hero {
         this.leftLegLower = this.hero.mesh['left-leg'].addChild(new Object3D('lower', 0, 80, 18, 80));
         this.leftLegFoot = this.hero.mesh['left-leg'].mesh['lower'].addChild(new Object3D('foot', 0, 70, 40, 10));
 
-        this.leftArm = this.hero.addChild(new Object3D('left-arm', 0, 38, 16, 62));
+        this.leftArm = this.hero.addChild(new Object3D('left-arm', 0, 38, 16, 68));
         this.leftArmLower = this.hero.mesh['left-arm'].addChild(new Object3D('lower', 0, 48, 10, 50));
-        this.leftArmHand = this.hero.mesh['left-arm'].mesh['lower'].addChild(new Object3D('hand', 0, 48, 4, 20));
+        this.leftArmHand = this.hero.mesh['left-arm'].mesh['lower'].addChild(new Object3D('hand', 2, 48, 4, 20));
 
-        this.head = this.hero.addChild(new Object3D('head', 10, 0, 20, 40));
+        this.head = this.hero.addChild(new Object3D('head', 10, 0, 18, 32));
         this.torso = this.hero.addChild(new Object3D('torso', -10, 35, 40, 90));
 
         this.rightLeg = this.hero.addChild(new Object3D('right-leg', -10, 110, 18, 90));
         this.rightLegLower = this.hero.mesh['right-leg'].addChild(new Object3D('lower', 0, 80, 18, 80));
         this.rightLegFoot = this.hero.mesh['right-leg'].mesh['lower'].addChild(new Object3D('foot', 0, 70, 40, 10));
 
-        this.rightArm = this.hero.addChild(new Object3D('right-arm', 0, 38, 16, 62));
+        this.rightArm = this.hero.addChild(new Object3D('right-arm', 0, 38, 16, 68));
         this.rightArmLower = this.hero.mesh['right-arm'].addChild(new Object3D('lower', 0, 48, 10, 55));
-        this.rightArmHand = this.hero.mesh['right-arm'].mesh['lower'].addChild(new Object3D('hand', 0, 48, 14, 20));
+        this.rightArmHand = this.hero.mesh['right-arm'].mesh['lower'].addChild(new Object3D('hand', 2, 48, 4, 20));
 
-        this.cape = this.hero.addChild(new Object3D('cape', -34, 105, 40, 70));
+        this.cape = this.hero.addChild(new Object3D('cape', -34, 105, 38, 70));
 
         xId('hero').appendChild(this.hero.el);
 
@@ -79,7 +79,7 @@ export class Hero {
             [0, 0, -12, 0, 0, -60], // leftLeg
             [0, 0, 0, 0, 0, 20], // leftLegLower
             [0, 0, 0, 0, 0, 10], // leftLegFoot
-            [0, 0, -25, 0, 0, 65], // leftArm
+            [0, 0, -25, -20, 0, 65], // leftArm
             [0, 0, 0, 0, 0, -80], // leftArmLower
             [0, 0, 0, 0, 0, -10], // leftArmHand
 
@@ -108,7 +108,7 @@ export class Hero {
             [0, 0, 12, 0, 0, -60], // leftLeg
             [0, 0, 0, 0, 0, 20], // leftLegLower
             [0, 0, 0, 0, 0, 10], // leftLegFoot
-            [0, 0, 20, 0, 0, 65], // leftArm
+            [0, 0, 20, 20, 0, 65], // leftArm
             [0, 0, 0, 0, 0, -80], // leftArmLower
             [0, 0, 0, 0, 0, -10], // rightArmHand
 
@@ -124,7 +124,7 @@ export class Hero {
             }
         });
 
-        this.a_isAnimating = false;
+        this.a_isAnimating = true;
         this.a_startFrame = this.frames[0];
         this.a_endFrame = this.frames[1];
         this.a_fn = 0;

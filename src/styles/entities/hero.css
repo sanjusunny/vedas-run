@@ -1,3 +1,14 @@
+:root {
+    --c_col1: rgb(43, 38, 34);
+    --c_col2: rgb(89,110,127);
+    --c_col3: #ffcc6b;
+    --c_col4: #444;
+    --c_col5: #363636;
+    --c_col6: #444;
+    --c_col7: #ffcc6b;
+    --c_col8: rgb(38, 34, 30);
+}
+
 .c_hero > .c_seg1,
 .c_hero > .c_seg2 {
     border: none;
@@ -9,21 +20,21 @@
 }
 
 .c_head {
-    background-color: orange;
+    background-color: var(--c_col3);
 }
 
 .c_torso {
-    background-color: green;
+    background-color: var(--c_col1);
 }
 
 .c_left-leg,
 .c_right-leg {
-    background-color: greenyellow;
+    background-color: var(--c_col5);
 }
 
 .c_left-leg .c_lower,
 .c_right-leg .c_lower {
-    background-color: #9ae32a;
+    background-color: var(--c_col6);
 }
 
 .c_left-leg .c_foot,
@@ -34,21 +45,21 @@
 
 .c_left-arm,
 .c_right-arm {
-    background-color: green;
+    background-color: var(--c_col1);
 }
 
 .c_left-arm .c_lower,
 .c_right-arm .c_lower {
-    background-color: orange;
+    background-color: var(--c_col2);
 }
 
 .c_left-arm .c_lower .c_hand,
 .c_right-arm .c_lower .c_hand {
-    background-color: orange;
+    background-color: var(--c_col7);
 }
 
 .c_cape {
-    background-color: green;
+    background-color: var(--c_col8);
     border-top: none;
 }
 
@@ -56,7 +67,7 @@
     width: 200px;
     height: 260px;
     top: 270px;
-    left: 480px;
+    left: 502px;
     position: absolute;
     transform: rotateY(90deg);
 }
