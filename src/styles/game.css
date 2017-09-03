@@ -1,6 +1,11 @@
 * { margin:0; padding:0; } /* to remove the top and left whitespace */
 html, body { width:100%; height:100%; background-color: #fff; font-family:"Courier New";} /* just to be sure these are full screen*/
 
+:root {
+
+}
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -42,8 +47,6 @@ body.in-game {
   background: linear-gradient(to bottom, #a6e0ec 0%,#d4f2fa 58.5%,#277c88 58.5%,#74abb3 100%);
 }
 
-#layer-backdrop-image {
-  background-image: url( '../assets/backdrop.jpg');
-  filter: grayscale(100%) contrast(200%);
-}
+.b_sky {
 
+}

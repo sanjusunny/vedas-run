@@ -33,13 +33,22 @@
     height: 660px;
 }
 
-.w_fog {
+#w_fog {
     top: 100px;
     left: 0px;
     height: 100px;
     width: 1200px;
     opacity: 0.8;
-    background: linear-gradient(to bottom, #2ea6a7 0%,#dbf2f4 40%,rgba(219,242,244,0.2) 80%);
+    background: linear-gradient(to bottom, #2ea6a7 0%,#dbf2f4 40%,rgba(219,242,244,0.2) 80%, transparent 100%);
     transform-origin: 50% 0%;
     transform: rotateX(90deg) rotateZ(0deg) translateZ(-300px) scaleX(3) scaleY(2);
 }
+
+/*
+#b_sky {
+    top: 0px;
+    left: 0px;
+    height: 400px;
+    width: 1200px;
+    background: linear-gradient(to top, #7BCEF0 0%,#19587B 100%);
+}*/

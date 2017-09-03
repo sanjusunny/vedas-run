@@ -9,13 +9,17 @@
 <body>
 <div id="app-container">
     <div id="layer-intro" class="game-layer"></div>
-    <div id="layer-backdrop" class="game-layer"></div>
+    <div id="layer-backdrop" class="game-layer">
+    </div>
     <div id="layer-game" class="game-layer"></div>
     <div id="layer-text" class="game-layer"></div>
     <div id="layer-player" class="game-layer"></div>
     <div id="layer-3d" class="game-layer">
-        <div id="game-plane">
-            <div class="w_fog"></div>
+        <div id="b_sky">
+            <canvas id="b_stars" width="1200px" height="400px"></canvas>
+        </div>
+        <div id="game-plane" class="hide">
+            <div id="w_fog"></div>
             <div id="templates" class="hide">
                 <div class="xProbe">
                     <div class='skeleton alert'>

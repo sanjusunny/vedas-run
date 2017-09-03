@@ -14,5 +14,5 @@ export const state = {
     iy: 0,
     iz: 0, /* forward movement made by player each turn */
     console: null,
-    log: (msg) => state.console.innerText = msg
+    log: (msg) => {state.console.style.display = 'block';state.console.innerText = msg;}
 };
