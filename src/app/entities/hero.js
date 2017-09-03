@@ -127,7 +127,7 @@ export class Hero {
 
         this.xInc = 5;
         this.yInc = 5;
-        this.zInc = 5;
+        this.zInc = 2;
         this.x = state.vw / 2;
         this.z = 0;
         this.transform = 'translateZ(200px) rotateY(70deg) scale3d(0.44,0.44,0.44)';
@@ -179,13 +179,6 @@ export class Hero {
                 state.iz = -this.zInc;
                 this.a_isAnimating = true;
             }
-        } else {
-            this.a_isAnimating = false;
-        }
-
-        if (state.pressedKeys[Keys.SPACE]) {
-            state.iy = -this.yInc;
-            this.a_isAnimating = true;
         } else {
             this.a_isAnimating = false;
         }

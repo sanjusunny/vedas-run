@@ -26,12 +26,12 @@ export class Plane {
     generateMap() {
         let map = [];
         let mapSrc = new Map([
-            ['0.10', 1],
+            ['100.6', 2],
             ['200.10', 1],
-            ['300.11', 1],
+            ['300.11', 2],
             ['400.12', 1],
-            ['500.10', 1],
-            ['650.8', 1],
+            ['500.10', 2],
+            ['650.8', 2],
             ['800.12', 1],
             ['900.10', 1],
             ['1250.8', 1]
@@ -40,11 +40,8 @@ export class Plane {
         for (let i = 0; i < this.mapLength; i++) {
             map[i] = [];
             for (let j = 0; j < this.mapWidth; j++) {
-                if (mapSrc.get(`${i}.${j}`) !== undefined) {
-                    map[i][j] = 1;
-                } else {
-                    map[i][j] = 0;
-                }
+                var val = mapSrc.get(`${i}.${j}`);
+                map[i][j] = (val !== undefined) ? val : 0
             }
         }
 
@@ -63,10 +60,8 @@ export class Plane {
 
         for (let i = z1; i < z2; i++) {
             for (let j = 0; j < this.mapWidth; j++) {
-                if (this.map[i][j] === 1) {
-                    addEntity('PLATE-1', seg, j * this.gridSize, this.segmentLength - (i-z1));
-                } else {
-                    //addEntity('PLATE-2', seg, j * this.gridSize, (i-z1) * this.gridSize);
+                if (this.map[i][j] > 0) {
+                    addEntity('PLATE-' + this.map[i][j], seg, j * this.gridSize, this.segmentLength - (i - z1));
                 }
             }
         }

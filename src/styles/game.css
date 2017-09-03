@@ -39,19 +39,11 @@ body.in-game {
 }
 
 #layer-backdrop {
-  /* Permalink : use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f2f2+0,dbdbdb+36,ffffff+39,dbdbdb+48,a3a3a3+48,d1d1d1+60,d1d1d1+60,ffffff+60,ffffff+60,ededed+70,d8d8d8+100 */
-  //background: linear-gradient(to bottom, #919191 0%,#b7b7b7 10%,#cecece 41%,#ffffff 46%,#ffffff 54%,#a8a8a8 55%,#878787 55%,#dbdbdb 64%,#ffffff 64%,#d1d1d1 80%,#d8d8d8 100%);
-
+  background: linear-gradient(to bottom, #a6e0ec 0%,#d4f2fa 58.5%,#277c88 58.5%,#74abb3 100%);
 }
 
 #layer-backdrop-image {
   background-image: url( '../assets/backdrop.jpg');
   filter: grayscale(100%) contrast(200%);
 }
-
-/*
-.anm-fog {
-  display: none !important;
-}
-*/
 
