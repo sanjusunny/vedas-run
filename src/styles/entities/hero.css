@@ -9,8 +9,7 @@
     --c_col8: rgb(38, 34, 30);
 }
 
-.c_hero > .c_seg1,
-.c_hero > .c_seg2 {
+.c_hero > .c_seg {
     border: none;
 }
 

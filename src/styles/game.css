@@ -51,3 +51,50 @@ body.in-game {
 .b_sky {
 
 }
+
+.a_over {
+  animation: 4s ease k_exp;
+  animation-fill-mode: forwards;
+}
+
+@keyframes k_exp {
+  0% {
+    filter: blur(0px) brightness(100%);
+  }
+  50% {
+    filter: blur(0px) brightness(110%);
+  }
+  52% {
+    filter: blur(10px) brightness(150%);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    filter: blur(20px) brightness(500%);
+    opacity: 0;
+  }
+}
+
+.a_hit {
+  animation: 0.3s ease k_hit;
+}
+
+@keyframes k_hit {
+  0% {
+    filter: blur(0px) brightness(100%);
+  }
+  30% {
+    transform: translateX(-2px) rotateZ(0.5deg);
+  }
+  40% {
+    transform: translateZ(2px) rotateZ(-0.5deg);
+    filter: blur(10px) brightness(120%) hue-rotate(140deg);
+  }
+  70% {
+    transform: translateZ(-2px) rotateZ(0.5deg);
+  }
+  100% {
+    filter: blur(0px) brightness(100%) hue-rotate(0deg);;
+  }
+}

@@ -126,7 +126,6 @@ export class Hero {
         this.a_fmax = 10;
 
         this.xInc = 5;
-        this.yInc = 5;
         this.zInc = 2;
         this.x = state.vw / 2;
         this.z = 0;

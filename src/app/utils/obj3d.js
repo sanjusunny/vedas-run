@@ -26,7 +26,7 @@ export class Object3D {
         // create segments
         this.seg1 = document.createElement('div');
         this.seg1.className = 'c_' + name;
-        this.seg1.classList.add('c_seg1');
+        this.seg1.classList.add('c_seg');
         this.seg1.style.cssText = 'position:absolute; transform-origin: 0 0; top: 0px; left: 0px;';
         this.seg1.style.width = this.w + 'px';
         this.seg1.style.height = this.h + 'px';
@@ -34,7 +34,7 @@ export class Object3D {
 
         this.seg2 = document.createElement('div');
         this.seg2.className = 'c_' + name;
-        this.seg2.classList.add('c_seg2');
+        this.seg2.classList.add('c_seg');
         this.seg2.style.cssText = 'position:absolute; transform-origin: 0 0; top: 0px; left: 0px;';
         this.seg2.style.width = this.w + 'px';
         this.seg2.style.height = this.h + 'px';
@@ -43,8 +43,6 @@ export class Object3D {
 
         this.el.appendChild(this.seg1);
         this.el.appendChild(this.seg2);
-
-        //this.el.style.transform = `translate3d(${this.x}px,${this.y}px,${this.z}px) rotate3d(${this.rotX}deg,${this.rotY}deg,${this.rotZ}deg)`;
     }
 
     addChild(child) {

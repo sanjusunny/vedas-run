@@ -5,10 +5,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/entities/hero.js" afterPath="$PROJECT_DIR$/src/app/entities/hero.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/entities/plane.js" afterPath="$PROJECT_DIR$/src/app/entities/plane.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/game.js" afterPath="$PROJECT_DIR$/src/app/game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/obj3d.js" afterPath="$PROJECT_DIR$/src/app/utils/obj3d.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/entities/entities.css" afterPath="$PROJECT_DIR$/src/styles/entities/entities.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/entities/hero.css" afterPath="$PROJECT_DIR$/src/styles/entities/hero.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/game.css" afterPath="$PROJECT_DIR$/src/styles/game.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/perspective.css" afterPath="$PROJECT_DIR$/src/styles/perspective.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,30 +25,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="hero.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/entities/hero.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="134" column="31" lean-forward="false" selection-start-line="134" selection-start-column="31" selection-end-line="134" selection-end-column="31" />
-              <folding>
-                <element signature="e#1847#2304#0" expanded="false" />
-                <element signature="e#2332#3077#0" expanded="false" />
-                <element signature="e#3103#3667#0" expanded="false" />
-                <element signature="e#3692#4245#0" expanded="false" />
-                <element signature="n#!!block;n#updateAnimation#0;n#Hero#0" expanded="false" />
-                <element signature="n#!!block;n#updateState#0;n#Hero#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="plane.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/entities/plane.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="50" column="47" lean-forward="false" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+            <state relative-caret-position="812">
+              <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
+                <element signature="n#!!block;n#generateMap#0;n#Plane#0" expanded="false" />
+                <element signature="n#!!block;n#renderSegment#0;n#Plane#0" expanded="false" />
+                <element signature="n#!!block;n#update#0;n#Plane#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -55,8 +43,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="792">
+              <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
               <folding>
                 <element signature="n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -65,31 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entities.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="obj3d.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/utils/obj3d.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-288">
+              <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entities.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/styles/entities/entities.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="902">
-              <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/game.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="perspective.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/perspective.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="132" />
+            <state relative-caret-position="922">
+              <caret line="51" column="57" lean-forward="false" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -112,6 +90,8 @@
       <find>`</find>
       <find>url</find>
       <find>reference</find>
+      <find>prerender</find>
+      <find>c_seg</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,21 +124,21 @@
         <option value="$PROJECT_DIR$/src/app/utils/tween.js" />
         <option value="$PROJECT_DIR$/src/app/utils.js" />
         <option value="$PROJECT_DIR$/src/styles/entities/player.css" />
-        <option value="$PROJECT_DIR$/src/app/utils/obj3d.js" />
         <option value="$PROJECT_DIR$/src/app/sound.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/styles/entities/hero.css" />
         <option value="$PROJECT_DIR$/src/app/utils/utils.js" />
-        <option value="$PROJECT_DIR$/src/app/game.js" />
         <option value="$PROJECT_DIR$/src/app/entities/entityMgr.js" />
         <option value="$PROJECT_DIR$/src/styles/debug.css" />
         <option value="$PROJECT_DIR$/src/app/game-state.js" />
-        <option value="$PROJECT_DIR$/src/app/entities/plane.js" />
-        <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/styles/game.css" />
-        <option value="$PROJECT_DIR$/src/styles/entities/entities.css" />
         <option value="$PROJECT_DIR$/src/styles/perspective.css" />
         <option value="$PROJECT_DIR$/src/app/entities/hero.js" />
+        <option value="$PROJECT_DIR$/src/styles/game.css" />
+        <option value="$PROJECT_DIR$/src/app/game.js" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/app/utils/obj3d.js" />
+        <option value="$PROJECT_DIR$/src/app/entities/plane.js" />
+        <option value="$PROJECT_DIR$/src/styles/entities/entities.css" />
       </list>
     </option>
   </component>
@@ -268,7 +248,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;perspec&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;utils&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/utils.js&#10;package&#9;FILE&#9;file://C:/Code/js13k/lost-river/package.json&#10;game&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/game.js&#10;in&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/index.html&#10;pers&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;ga&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/game-state.js" />
+    <property name="SearchEverywhereHistoryKey" value="index.html&#9;FILE&#9;file://C:/Code/js13k/lost-river/dist/index.html&#10;perspec&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;utils&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/utils.js&#10;package&#9;FILE&#9;file://C:/Code/js13k/lost-river/package.json&#10;game&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/game.js&#10;in&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/index.html&#10;pers&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;ga&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/game-state.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -340,7 +320,7 @@
       <workItem from="1504272737009" duration="21687000" />
       <workItem from="1504364826659" duration="2940000" />
       <workItem from="1504380961499" duration="21339000" />
-      <workItem from="1504433180322" duration="4439000" />
+      <workItem from="1504433180322" duration="11274000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1502911677411</created>
@@ -622,11 +602,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504436421442</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="sky">
+      <created>1504437629595</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1504437629595</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180499000" />
+    <option name="totallyTimeSpent" value="187334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -641,7 +628,7 @@
     <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1592256" sideWeight="0.6066236" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22007112" sideWeight="0.6066236" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -649,7 +636,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1592256" sideWeight="0.3933764" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22007112" sideWeight="0.3933764" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -796,17 +783,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/entities/player.css" />
-    <entry file="file://$PROJECT_DIR$/src/app/utils/obj3d.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/sound.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="966">
           <caret line="475" column="2" lean-forward="false" selection-start-line="475" selection-start-column="2" selection-end-line="475" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -833,6 +814,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -844,33 +826,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8679">
-          <caret line="6" column="2051" lean-forward="true" selection-start-line="6" selection-start-column="2051" selection-end-line="6" selection-end-column="2051" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="61" column="16" lean-forward="true" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="n#!!block;n#frame#0;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#preRender#0;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#addObject#0;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#keydownEventHandler#0;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#keyupEventHandler#0;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#addTimedAnimation#0;n#Game#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -890,26 +850,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/game-state.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/debug.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/entities/hero.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1606">
-          <caret line="73" column="6" lean-forward="false" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -930,43 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/entities/plane.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="50" column="47" lean-forward="false" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding>
-            <element signature="n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/game.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/entities/entities.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/perspective.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -975,10 +882,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="92" column="22341" lean-forward="false" selection-start-line="92" selection-start-column="22332" selection-end-line="92" selection-end-column="22341" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/game-state.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/game.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="94" column="24" lean-forward="true" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/entities/hero.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="134" column="31" lean-forward="false" selection-start-line="134" selection-start-column="31" selection-end-line="134" selection-end-column="31" />
+        <state relative-caret-position="132">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="56" />
           <folding>
             <element signature="e#1847#2304#0" expanded="false" />
             <element signature="e#2332#3077#0" expanded="false" />
@@ -987,6 +918,67 @@
             <element signature="n#!!block;n#updateAnimation#0;n#Hero#0" expanded="false" />
             <element signature="n#!!block;n#updateState#0;n#Hero#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="62" column="27" lean-forward="false" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="n#!!block;n#frame#0;n#Game#0" expanded="false" />
+            <element signature="n#!!block;n#keydownEventHandler#0;n#Game#0" expanded="false" />
+            <element signature="n#!!block;n#keyupEventHandler#0;n#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding>
+            <element signature="n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/entities/hero.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/utils/obj3d.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/entities/plane.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <element signature="n#!!block;n#generateMap#0;n#Plane#0" expanded="false" />
+            <element signature="n#!!block;n#renderSegment#0;n#Plane#0" expanded="false" />
+            <element signature="n#!!block;n#update#0;n#Plane#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/entities/entities.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="922">
+          <caret line="51" column="57" lean-forward="false" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

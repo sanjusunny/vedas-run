@@ -1,6 +1,7 @@
 import {rnd, xId} from '../utils/utils';
 import {addEntity} from "./entityMgr";
 import {state} from "../game-state";
+import {Object3D} from "../utils/obj3d";
 
 export class Plane {
     constructor(state) {
@@ -56,6 +57,13 @@ export class Plane {
             ctx.fillStyle = `rgba(255,255,255,${rnd(2,10)/10})`;
             ctx.fill();
         }
+
+        // mountains
+        xId('b_base').appendChild((new Object3D('shard', 270, 220, 80, 200)).el);
+        xId('b_base').appendChild((new Object3D('shard', 210, 260, 40, 160)).el);
+        xId('b_base').appendChild((new Object3D('shard', 140, 160, 60, 260)).el);
+        xId('b_base').appendChild((new Object3D('shard', 10, 220, 40, 190)).el);
+        xId('b_base').appendChild((new Object3D('shard', 60, 100, 60, 320)).el);
     }
 
     generateMap() {
