@@ -5,7 +5,7 @@ export function addEntity(type,parent,x,y) {
         case 'PLATE-1':
 
             var el = document.createElement('div');
-            el.style.cssText = `top:${x}px;left:${y}px;`;
+            el.style.cssText = `left:${x}px;top:${y}px;`;
             el.className = 'e_plate-1';
             return parent.appendChild(el);
 

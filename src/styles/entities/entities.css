@@ -1,9 +1,12 @@
 .e_plate-1 {
     position: absolute;
-    width: 40px;
-    height: 80px;
-    background-color:red;
-    transform: rotateX(45deg);
+    width: 64px;
+    height: 72px;
+    opacity: 0.5;
+    background-color:#e74c3c;
+    border: solid 1px #c0392b;
+    transform-origin: 50% 0%;
+    transform: rotateX(90deg);
 }
 
 .e_segment-1 {
@@ -12,9 +15,9 @@
     left: 0px;
     width: 1200px;
     height: 660px;
-    //background-color:#16a085;
-    background-size: 60px 60px;
-    background-image: linear-gradient(to right, #ccc 2px, transparent 2px), linear-gradient(to bottom, #ccc 2px, transparent 2px);
+    background-color:#ccc;
+    //background-size: 60px 60px;
+    //background-image: linear-gradient(to right, #ccc 2px, transparent 2px), linear-gradient(to bottom, #ccc 2px, transparent 2px);
 }
 
 .e_segment-2 {
@@ -23,7 +26,7 @@
     left: 0px;
     width: 1200px;
     height: 660px;
-    //background-color:#2980b9;
-    background-size: 60px 60px;
-    background-image: linear-gradient(to right, #ccc 2px, transparent 2px), linear-gradient(to bottom, #ccc 2px, transparent 2px);
+    background-color:#ccc;
+    //background-size: 60px 60px;
+    //background-image: linear-gradient(to right, #ccc 2px, transparent 2px), linear-gradient(to bottom, #ccc 2px, transparent 2px);
 }

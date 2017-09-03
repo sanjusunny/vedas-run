@@ -4,49 +4,72 @@ import {addEntity} from "./entityMgr";
 export class Plane {
     constructor(state) {
         this.x = 0;
+        this.y = 0;
         this.z = 0;
         this.mesh = xId('game-plane');
 
-        this.map = [];
-
         this.gridSize = 60;
-        this.mapWidth = 10;
+        this.mapWidth = 20;
         this.segmentLength = 660;
         this.mapLength = this.segmentLength * 10;
 
-        this.segs = [addEntity('SEGMENT-1', this.mesh, 0, 0),
+        this.segs = [
+            addEntity('SEGMENT-1', this.mesh, 0, 0),
             addEntity('SEGMENT-2', this.mesh, 0, 0)];
+
+        this.map = this.generateMap();
+
         this.activeSeg = 0;
-        this.renderSegment(this.activeSeg);
+        this.renderSegment(this.activeSeg, 0);
     }
 
     generateMap() {
+        let map = [];
         let mapSrc = new Map([
-            ['4.4', 1],
-            ['10.8', 1],
-            ['11.15', 1]
+            ['0.10', 1],
+            ['200.10', 1],
+            ['300.11', 1],
+            ['400.12', 1],
+            ['500.10', 1],
+            ['650.8', 1],
+            ['800.12', 1],
+            ['900.10', 1],
+            ['1250.8', 1]
         ]);
 
-        let objIndex = 0;
-        let currObj = mapSrc[objIndex];
-
-        let baseLayer = [];
-        let objLayer = [];
-
         for (let i = 0; i < this.mapLength; i++) {
-            this.map[i] = [];
+            map[i] = [];
             for (let j = 0; j < this.mapWidth; j++) {
                 if (mapSrc.get(`${i}.${j}`) !== undefined) {
-                    this.map[i][j] = addEntity('PLATE-1', this.mesh, j * this.gridSize, i * this.gridSize);
+                    map[i][j] = 1;
                 } else {
-                    this.map[i][j] = addEntity('PLATE-2', this.mesh, j * this.gridSize, i * this.gridSize);
+                    map[i][j] = 0;
                 }
             }
         }
+
+        return map;
     }
 
-    renderSegment(id) {
-        console.warn('Rendering new segment');
+    renderSegment(id, segNum) {
+
+        let seg = this.segs[id];
+        while (seg.hasChildNodes()) {
+            seg.removeChild(seg.lastChild);
+        }
+
+        let z1 = segNum * this.segmentLength;
+        let z2 = z1 + this.segmentLength;
+
+        for (let i = z1; i < z2; i++) {
+            for (let j = 0; j < this.mapWidth; j++) {
+                if (this.map[i][j] === 1) {
+                    addEntity('PLATE-1', seg, j * this.gridSize, this.segmentLength - (i-z1));
+                } else {
+                    //addEntity('PLATE-2', seg, j * this.gridSize, (i-z1) * this.gridSize);
+                }
+            }
+        }
     }
 
     update(state) {
@@ -56,15 +79,16 @@ export class Plane {
         this.z = (this.z + state.iz);
 
         var delta = this.z % this.segmentLength;
-        var currSeg = Math.floor(this.z / this.segmentLength) % 2;
+        var segNum = Math.floor(this.z / this.segmentLength);
+        var currSeg = segNum % 2;
         var nextSeg = Math.abs(currSeg - 1);
 
-        if(currSeg !== this.activeSeg) {
-            this.renderSegment(nextSeg);
+        if (currSeg !== this.activeSeg) {
+            this.renderSegment(nextSeg, segNum);
             this.activeSeg = currSeg;
         }
 
-        state.log(state.player.x);
+        state.log(segNum);
 
         this.segs[currSeg].style.transform = `translateX(${this.x}px) translateY(${delta}px)`;
         this.segs[nextSeg].style.transform = `translateX(${this.x}px) translateY(${-this.segmentLength + delta}px)`;
