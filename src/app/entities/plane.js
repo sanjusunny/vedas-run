@@ -48,6 +48,7 @@ export class Plane {
         ctx.fillRect(0, 0, w, h);
 
         ctx.globalAlpha = 1;
+        ctx.globalCompositeOperation = 'lighten';
 
         for(let i=0;i<100;i++) {
             ctx.beginPath();

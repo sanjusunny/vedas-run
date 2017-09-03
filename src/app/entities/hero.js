@@ -131,6 +131,8 @@ export class Hero {
         this.x = state.vw / 2;
         this.z = 0;
         this.transform = 'translateZ(200px) rotateY(70deg) scale3d(0.44,0.44,0.44)';
+
+        this.updateAnimation();
     }
 
     updateAnimation() {

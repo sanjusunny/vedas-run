@@ -5,15 +5,15 @@
     opacity: 1;
     transform-origin: 50% 0%;
     transform: rotateX(90deg) rotateZ(0deg);
-    background: linear-gradient(to bottom, #2ea6a7 0%,#dbf2f4 40%,#e6f1f2 78%,#dbf2f4 100%);
+    background: linear-gradient(to bottom, #B8EBF3 0%,#dbf2f4 40%,#dbf2f4 100%);
     //animation: 1s linear 0s infinite alternate kf-hov;
 }
 
 .e_plate-2 {
     position: absolute;
     width: 180px;
-    height: 60px;
-    background-color: #2D808B;
+    height: 30px;
+    background-color: #B8EBF3;
 }
 
 @keyframes kf-hov {
@@ -38,17 +38,8 @@
     left: 0px;
     height: 100px;
     width: 1200px;
-    opacity: 0.8;
-    background: linear-gradient(to bottom, #2ea6a7 0%,#dbf2f4 40%,rgba(219,242,244,0.2) 80%, transparent 100%);
+    opacity: 0.7;
+    background: linear-gradient(to bottom, #fff 0%,#dbf2f4 40%,rgba(219,242,244,0.2) 80%, transparent 100%);
     transform-origin: 50% 0%;
     transform: rotateX(90deg) rotateZ(0deg) translateZ(-300px) scaleX(3) scaleY(2);
 }
-
-/*
-#b_sky {
-    top: 0px;
-    left: 0px;
-    height: 400px;
-    width: 1200px;
-    background: linear-gradient(to top, #7BCEF0 0%,#19587B 100%);
-}*/
