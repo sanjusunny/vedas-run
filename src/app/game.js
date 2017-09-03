@@ -54,7 +54,6 @@ class Game {
 
         // reset state
         state.ix = 0;
-        state.iy = 0;
         state.iz = 0;
 
         state.player.update(state);

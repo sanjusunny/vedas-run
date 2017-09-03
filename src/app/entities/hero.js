@@ -127,9 +127,12 @@ export class Hero {
 
         this.xInc = 5;
         this.zInc = 2;
+        this.yInc = 1;
+        this.yMax = 50; // max jump height
+        this.isInFall = false;
         this.x = state.vw / 2;
         this.z = 0;
-        this.transform = 'translateZ(200px) rotateY(70deg) scale3d(0.44,0.44,0.44)';
+        this.transform = 'translateZ(200px) rotateY(90deg) scale3d(0.44,0.44,0.44)';
 
         this.updateAnimation();
     }
@@ -184,6 +187,21 @@ export class Hero {
             this.a_isAnimating = false;
         }
 
+        if (state.pressedKeys[Keys.SPACE] && !this.isInFall) {
+            state.iy = Math.clamp(state.iy + this.yInc, 0, this.yMax);
+            if (state.iy === this.yMax) {
+                this.isInFall = true;
+            }
+            newTransform = newTransform.replace('200', (200 - state.iy).toString());
+
+        } else {
+            state.iy = Math.clamp(state.iy - this.yInc, 0, this.yMax);
+            if (state.iy === 0) {
+                this.isInFall = false;
+            }
+            newTransform = newTransform.replace('200', (200 - state.iy).toString());
+        }
+
         if (newTransform !== this.transform) {
             this.transform = newTransform;
             this.el.style.transform = this.transform;
@@ -191,6 +209,8 @@ export class Hero {
 
         this.z += state.iz;
         this.x += state.ix;
+
+        this.a_fmax = (state.iy > 0 && !this.isInFall) ? 30 : 10;
     }
 
     update(state) {

@@ -33,7 +33,7 @@ export class Plane {
         let w = state.vw;
         let h = 400;
 
-        let g = ctx.createLinearGradient(0,0,0,h);
+        let g = ctx.createLinearGradient(0, 0, 0, h);
         g.addColorStop(0, '#19587B');
         g.addColorStop(1, '#7BCEF0');
         ctx.fillStyle = g;
@@ -41,7 +41,7 @@ export class Plane {
 
         ctx.globalCompositeOperation = 'overlay';
 
-        g = ctx.createRadialGradient(w/2,h,h/2,w/2,h/1.5,h);
+        g = ctx.createRadialGradient(w / 2, h, h / 2, w / 2, h / 1.5, h);
         g.addColorStop(0.0, '#fff');
         g.addColorStop(0.4, '#7BCEF0');
         g.addColorStop(1.0, 'rgba(25,88,123,0.5)');
@@ -52,27 +52,27 @@ export class Plane {
         ctx.globalAlpha = 1;
         ctx.globalCompositeOperation = 'lighten';
 
-        for(let i=0;i<100;i++) {
+        for (let i = 0; i < 100; i++) {
             ctx.beginPath();
-            ctx.arc( rnd(10,w), rnd(10,h*0.8), rnd(0,20)/10, 0, 2 * Math.PI, false);
-            ctx.fillStyle = `rgba(255,255,255,${rnd(2,10)/10})`;
+            ctx.arc(rnd(10, w), rnd(10, h * 0.8), rnd(0, 20) / 10, 0, 2 * Math.PI, false);
+            ctx.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
             ctx.fill();
         }
 
         let ctx2 = xId('b_lake').getContext('2d');
         ctx2.save();
-        ctx2.scale(1,-1);
+        ctx2.scale(1, -1);
         ctx2.globalAlpha = 0.85;
-        ctx2.drawImage(xId('b_stars'), 0, -260, 1200,260);
+        ctx2.drawImage(xId('b_stars'), 0, -260, 1200, 260);
 
         let fxCvs = document.createElement('canvas');
         fxCvs.width = 20;
         fxCvs.height = 50;
         let ctx3 = fxCvs.getContext('2d');
-        for(let i=0;i<100;i++) {
-            ctx3.fillStyle = `rgba(255,255,255,${rnd(2,10)/10})`;
+        for (let i = 0; i < 100; i++) {
+            ctx3.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
             ctx3.beginPath();
-            ctx3.arc( rnd(0,fxCvs.width), rnd(0,fxCvs.height), rnd(0,20)/10, 0, 2 * Math.PI, false);
+            ctx3.arc(rnd(0, fxCvs.width), rnd(0, fxCvs.height), rnd(0, 20) / 10, 0, 2 * Math.PI, false);
             ctx3.fill();
         }
 
@@ -146,13 +146,14 @@ export class Plane {
             this.activeSeg = currSeg;
         }
 
-        //state.log(segNum);
-
         this.segs[currSeg].style.transform = `translateX(${this.x}px) translateY(${delta}px)`;
         this.segs[nextSeg].style.transform = `translateX(${this.x}px) translateY(${-this.segmentLength + delta}px)`;
+
+        if (state.iy > 0) {
+            this.mesh.style.transform = `rotateX(97deg) translateZ(${-82 - state.iy}px) translateY(72px) scaleY(0.8) scaleX(0.5)`;
+        }
     }
 
     render(state) {
-        renderSegment();
     }
 }
