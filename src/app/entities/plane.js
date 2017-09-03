@@ -22,7 +22,8 @@ export class Plane {
         this.map = this.generateMap();
 
         this.activeSeg = 0;
-        this.renderSegment(this.activeSeg, 0);
+        this.renderSegment(0, 0);
+        this.renderSegment(1, 1);
 
         this.renderOnce();
     }
@@ -58,26 +59,41 @@ export class Plane {
             ctx.fill();
         }
 
-        // mountains
-        xId('b_base').appendChild((new Object3D('shard', 270, 220, 80, 200)).el);
-        xId('b_base').appendChild((new Object3D('shard', 210, 260, 40, 160)).el);
-        xId('b_base').appendChild((new Object3D('shard', 140, 160, 60, 260)).el);
-        xId('b_base').appendChild((new Object3D('shard', 10, 220, 40, 190)).el);
-        xId('b_base').appendChild((new Object3D('shard', 60, 100, 60, 320)).el);
+        let ctx2 = xId('b_lake').getContext('2d');
+        ctx2.save();
+        ctx2.scale(1,-1);
+        ctx2.globalAlpha = 0.85;
+        ctx2.drawImage(xId('b_stars'), 0, -260, 1200,260);
+
+        let fxCvs = document.createElement('canvas');
+        fxCvs.width = 20;
+        fxCvs.height = 50;
+        let ctx3 = fxCvs.getContext('2d');
+        for(let i=0;i<100;i++) {
+            ctx3.fillStyle = `rgba(255,255,255,${rnd(2,10)/10})`;
+            ctx3.beginPath();
+            ctx3.arc( rnd(0,fxCvs.width), rnd(0,fxCvs.height), rnd(0,20)/10, 0, 2 * Math.PI, false);
+            ctx3.fill();
+        }
+
+        ctx2.restore();
+        ctx2.globalAlpha = 0.75;
+        ctx2.globalCompositeOperation = 'overlay';
+        ctx2.drawImage(fxCvs, 0, 0, 1200, 1000);
     }
 
     generateMap() {
         let map = [];
         let mapSrc = new Map([
-            ['100.6', 2],
+            ['100.6', 1],
             ['200.10', 1],
-            ['300.11', 2],
+            ['300.11', 1],
             ['400.12', 1],
-            ['500.10', 2],
-            ['650.8', 2],
-            ['800.12', 1],
-            ['900.10', 1],
-            ['1250.8', 1]
+            ['500.10', 1],
+            ['600.8', 1],
+            ['700.12', 1],
+            ['800.10', 1],
+            ['1200.8', 1]
         ]);
 
         for (let i = 0; i < this.mapLength; i++) {
@@ -97,6 +113,10 @@ export class Plane {
         while (seg.hasChildNodes()) {
             seg.removeChild(seg.lastChild);
         }
+
+        let sp = document.createElement('div');
+        sp.className = 'e_snowplate';
+        seg.appendChild(sp);
 
         let z1 = segNum * this.segmentLength;
         let z2 = z1 + this.segmentLength;

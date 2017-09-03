@@ -9,11 +9,10 @@
     top: 0px;
     left: 0px;
     transform-style: preserve-3d;
-/*    background-color: rgba(255,255,255,0.5);
-    background-color: #2ea6a7;*/
+    /*background-color: #2D9CCA;*/
     /*background-size: 60px 60px;
     background-image: linear-gradient(to right, #ccc 2px, transparent 2px), linear-gradient(to bottom, #ccc 2px, transparent 2px);*/
-    transform: rotateX(95deg) translateZ(-70px) translateY(72px) scaleY(0.8) scaleX(0.5);
+    transform: rotateX(97deg) translateZ(-82px) translateY(72px) scaleY(0.8) scaleX(0.5);
 }
 
 #layer-3d * {
