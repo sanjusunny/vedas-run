@@ -132,8 +132,8 @@ export class Hero {
         this.isInFall = false;
         this.x = state.vw / 2;
         this.z = 0;
-        this.baseTransform = 'translateZ(200px) rotateY(90deg) scale3d(0.4,0.4,0.4)';
-        this.currTransform = this.baseTransform;
+        this.baseTransform = 'translateZ(280px) rotateY(90deg) scale3d(0.27,0.27,0.27)';
+        this.currTransform = null;
 
         this.updateAnimation();
     }
@@ -153,7 +153,6 @@ export class Hero {
             this.meshMap[i].transform(matrix);
         }
         this.a_fn++;
-        /*this.a_isAnimating = false;*/
     }
 
     updateState() {
@@ -182,14 +181,13 @@ export class Hero {
             if (state.iy === this.yMax) {
                 this.isInFall = true;
             }
-            newTransform = newTransform.replace('200', (200 - state.iy).toString());
-
+            newTransform = newTransform.replace('280', (280 - state.iy).toString());
         } else {
             state.iy = Math.clamp(state.iy - this.yInc, 0, this.yMax);
             if (state.iy === 0) {
                 this.isInFall = false;
             }
-            newTransform = newTransform.replace('200', (200 - state.iy).toString());
+            newTransform = newTransform.replace('280', (280 - state.iy).toString());
         }
 
         if (newTransform !== this.currTransform) {

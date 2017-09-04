@@ -23,7 +23,7 @@
 
 .b_edge {
     position: absolute;
-    top: 0px;
+    top: -200px;
     left: 0px;
     width: 100px;
     height: 800px;
