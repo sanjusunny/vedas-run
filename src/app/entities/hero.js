@@ -132,7 +132,8 @@ export class Hero {
         this.isInFall = false;
         this.x = state.vw / 2;
         this.z = 0;
-        this.transform = 'translateZ(200px) rotateY(90deg) scale3d(0.44,0.44,0.44)';
+        this.baseTransform = 'translateZ(200px) rotateY(90deg) scale3d(0.4,0.4,0.4)';
+        this.currTransform = this.baseTransform;
 
         this.updateAnimation();
     }
@@ -157,18 +158,16 @@ export class Hero {
 
     updateState() {
 
-        let newTransform = this.transform;
+        let newTransform = this.baseTransform;
 
         if (state.pressedKeys[Keys.LEFT] || state.pressedKeys[Keys.RIGHT]) {
             if (state.pressedKeys[Keys.LEFT]) {
                 state.ix = -this.xInc;
-                newTransform = 'translateZ(200px) rotateY(110deg) scale3d(0.44,0.44,0.44)';
+                newTransform = newTransform.replace('90deg','110deg');
             } else {
                 state.ix = this.xInc;
-                newTransform = 'translateZ(200px) rotateY(70deg) scale3d(0.44,0.44,0.44)';
+                newTransform = newTransform.replace('90deg','70deg');
             }
-        } else {
-            newTransform = 'translateZ(200px) rotateY(90deg) scale3d(0.44,0.44,0.44)';
         }
 
         if (state.pressedKeys[Keys.UP] || state.pressedKeys[Keys.DOWN]) {
@@ -193,9 +192,9 @@ export class Hero {
             newTransform = newTransform.replace('200', (200 - state.iy).toString());
         }
 
-        if (newTransform !== this.transform) {
-            this.transform = newTransform;
-            this.el.style.transform = this.transform;
+        if (newTransform !== this.currTransform) {
+            this.currTransform = newTransform;
+            this.el.style.transform = newTransform;
         }
 
         this.z += state.iz;

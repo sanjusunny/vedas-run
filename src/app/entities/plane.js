@@ -53,13 +53,6 @@ export class Plane {
         ctx.globalAlpha = 1;
         ctx.globalCompositeOperation = 'lighten';
 
-        for (let i = 0; i < 100; i++) {
-            ctx.beginPath();
-            ctx.arc(rnd(10, w), rnd(10, h * 0.8), rnd(0, 20) / 10, 0, 2 * Math.PI, false);
-            ctx.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
-            ctx.fill();
-        }
-
         let ctx2 = xId('b_lake').getContext('2d');
         ctx2.save();
         ctx2.scale(1, -1);
@@ -79,6 +72,14 @@ export class Plane {
         ctx2.globalAlpha = 0.75;
         ctx2.globalCompositeOperation = 'overlay';
         ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
+
+        // star
+        for (let i = 0; i < 100; i++) {
+            ctx.beginPath();
+            ctx.arc(rnd(10, w), rnd(10, h * 0.8), rnd(0, 20) / 10, 0, 2 * Math.PI, false);
+            ctx.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
+            ctx.fill();
+        }
 
         // draw edges
         addEl(this.edges,'div','edge',1);
