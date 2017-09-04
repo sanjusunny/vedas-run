@@ -76,7 +76,7 @@ export class Backdrop {
         c.globalCompositeOperation = 'screen';
         c.translate(200, 400);
         c.scale(1, -1);
-        c.fillRect(6, 0, 2, 380);
+        c.fillRect(6, 0, 2, 280);
         c.fillRect(-10, 0, 2, 200);
         c.fillRect(0, 0, 24, 100);
         c.fillRect(-20, 0, 32, 150);

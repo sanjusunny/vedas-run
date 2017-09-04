@@ -1,12 +1,12 @@
 :root {
-    --c_col1: rgb(43, 38, 34);
+    --c_col1: #1A2123;
     --c_col2: rgb(89,110,127);
     --c_col3: #ffcc6b;
     --c_col4: #444;
     --c_col5: #363636;
     --c_col6: #444;
     --c_col7: #ffcc6b;
-    --c_col8: rgb(38, 34, 30);
+    --c_col8: #1A2123;
 }
 
 .c_hero > .c_seg {
