@@ -46,7 +46,6 @@ body.in-game {
 
 #layer-backdrop {
   background: linear-gradient(to bottom, #a6e0ec 0%,#d4f2fa 58.5%,#277c88 58.5%,#74abb3 100%);
-  background: white;
 }
 
 .b_sky {

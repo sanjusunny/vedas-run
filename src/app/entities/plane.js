@@ -69,8 +69,11 @@ export class Plane {
         }
 
         ctx2.restore();
+        ctx2.fillStyle = '#fff';
+        ctx2.globalAlpha = 0.5;
+        ctx2.fillRect(0,0,1200,660);
+        ctx2.globalCompositeOperation = 'soft-light';
         ctx2.globalAlpha = 0.75;
-        ctx2.globalCompositeOperation = 'overlay';
         ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
 
         // star
