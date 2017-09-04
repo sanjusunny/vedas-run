@@ -52,25 +52,20 @@ class Game {
 
     update() {
 
+        state.ts++;
+
         // reset state
         state.ix = 0;
         state.iz = 0;
 
         state.player.update();
         state.plane.update();
+        state.backdrop.update();
 
         if(state.player.z%400 === 50) {
-            xId('app-container').classList.add('a_hit');
-            setTimeout(()=>xId('app-container').classList.remove('a_hit'),500);
+            //xId('app-container').classList.add('a_hit');
+            //setTimeout(()=>xId('app-container').classList.remove('a_hit'),500);
         }
-
-        /*for (var i = 0; i < state.probes.length; i++) {
-            state.probes[i].update(state);
-        }
-        state.plane.update(state);
-        state.backdrop.update(state);*/
-
-        //state.log(`P(${state.player.x},${state.player.y})`);
     }
 
     render() {

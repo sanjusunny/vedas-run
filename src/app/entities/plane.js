@@ -30,101 +30,11 @@ export class Plane {
     }
 
     renderOnce() {
-        let ctx = xId('b_stars').getContext('2d');
-        let w = state.vw;
-        let h = 400;
-
-        let g = ctx.createLinearGradient(0, 0, 0, h);
-        g.addColorStop(0, '#19587B');
-        g.addColorStop(1, '#7BCEF0');
-        ctx.fillStyle = g;
-        ctx.fillRect(0, 0, w, h);
-
-        ctx.globalCompositeOperation = 'overlay';
-
-        g = ctx.createRadialGradient(w / 2, h, h / 2, w / 2, h / 1.5, h);
-        g.addColorStop(0.0, '#fff');
-        g.addColorStop(0.4, '#7BCEF0');
-        g.addColorStop(1.0, 'rgba(25,88,123,0.5)');
-        ctx.globalAlpha = 0.8;
-        ctx.fillStyle = g;
-        ctx.fillRect(0, 0, w, h);
-
-        ctx.globalAlpha = 1;
-        ctx.globalCompositeOperation = 'lighten';
-
-        let ctx2 = xId('b_lake').getContext('2d');
-        ctx2.save();
-        ctx2.scale(1, -1);
-        ctx2.globalAlpha = 0.85;
-        ctx2.drawImage(xId('b_stars'), 0, -260, 1200, 260);
-
-        let fxCvs = document.createElement('canvas');
-        fxCvs.width = 5;
-        fxCvs.height = 50;
-        let ctx3 = fxCvs.getContext('2d');
-        for (let i = 0; i < 100; i++) {
-            ctx3.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
-            ctx3.fillRect(rnd(0, fxCvs.width), rnd(0, fxCvs.height), rnd(1, fxCvs.width/5), 2);
-        }
-
-        ctx2.restore();
-        ctx2.fillStyle = '#fff';
-        ctx2.globalAlpha = 0.5;
-        ctx2.fillRect(0,0,1200,660);
-        ctx2.globalCompositeOperation = 'soft-light';
-        ctx2.globalAlpha = 0.75;
-        ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
-
-        // star
-        for (let i = 0; i < 100; i++) {
-            ctx.beginPath();
-            ctx.arc(rnd(10, w), rnd(10, h * 0.8), rnd(0, 20) / 10, 0, 2 * Math.PI, false);
-            ctx.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
-            ctx.fill();
-        }
-
         // draw edges
         addEl(this.edges,'div','edge',1);
         addEl(this.edges,'div','edge',2);
         addEl(this.edges,'div','edge',3);
         addEl(this.edges,'div','edge',4);
-
-        this.renderTower();
-    }
-
-    renderTower() {
-        let c = xId('b_tower').getContext('2d');
-        c.fillStyle = '#2C99C9';
-        c.globalAlpha = '0.9';
-        c.translate(600, 400);
-        c.scale(1, -1);
-        c.fillRect(-10,0,2,200);
-        c.fillRect(10,0,4,300);
-        c.fillRect(0,0,24,100);
-        c.fillRect(-20,0,32,150);
-
-        c.globalCompositeOperation = 'screen';
-        c.globalAlpha = '0.4';
-        c.filter = 'blur(2px)';
-        c.fillStyle = '#94EBF2';
-        c.fillRect(-14,0,28,400);
-        c.globalAlpha = '1';
-        c.fillStyle = '#fff';
-        c.fillRect(-4,0,8,400);
-        c.filter = 'blur(0px)';
-
-        c.globalCompositeOperation = 'overlay';
-        c.globalAlpha = '0.4';
-        c.fillStyle = '#2C99C9';
-
-        c.beginPath();
-        c.arc(-40, 80, 100, 0, 2 * Math.PI, false);
-        c.lineWidth = 16;
-        c.strokeStyle = '#2C99C9';
-        c.stroke();
-        c.fillRect(-100,0,150,60);
-        c.fillRect(-60,0,70,80);
     }
 
     generateMap() {
@@ -180,6 +90,7 @@ export class Plane {
 
         this.x = (this.x - state.ix);
         this.z = (this.z + state.iz);
+        state.tz = this.z;
 
         var delta = this.z % this.segmentLength;
         var segNum = Math.floor(this.z / this.segmentLength);

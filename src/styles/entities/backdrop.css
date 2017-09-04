@@ -1,0 +1,39 @@
+#b_base {
+    width:1200px;
+    height:720px;
+    transform-origin: 50% 50%;
+}
+
+#b_lake {
+    top: 400px;
+}
+
+#b_tower {
+    top: 0px;
+    left: 400px;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    filter: blur(1px);
+}
+
+.b_twr-flr {
+    background-color:rgba(255,255,255,0.2);
+    border: 4px solid rgba(255,255,255,0.9);
+    mix-blend-mode: multiply;
+    height: 30px;
+    width: 30px;
+    border-radius: 75px;
+    transform: translateX(180px) rotateX(85deg);
+    opacity:0;
+}
+
+.b_twr-beam{
+    mix-blend-mode: screen;
+    height: 400px;
+    width: 4px;
+    left:195px;
+    background-color:white;
+    filter:blur(2px);
+    transition: all 0.8s;
+}

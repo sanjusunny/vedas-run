@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89b704a1-de39-4972-bba1-a8ae779cf05c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/styles/entities/backdrop.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/entities/hero.js" afterPath="$PROJECT_DIR$/src/app/entities/hero.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/entities/backdrop.js" afterPath="$PROJECT_DIR$/src/app/entities/backdrop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/entities/plane.js" afterPath="$PROJECT_DIR$/src/app/entities/plane.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/game-state.js" afterPath="$PROJECT_DIR$/src/app/game-state.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/game.js" afterPath="$PROJECT_DIR$/src/app/game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/utils.js" afterPath="$PROJECT_DIR$/src/app/utils/utils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/entities/hero.css" afterPath="$PROJECT_DIR$/src/styles/entities/hero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/entities/entities.css" afterPath="$PROJECT_DIR$/src/styles/entities/entities.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/perspective.css" afterPath="$PROJECT_DIR$/src/styles/perspective.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,81 +26,133 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="plane.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/entities/plane.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="113" column="22" lean-forward="false" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-              <folding>
-                <element signature="n#!!block;n#constructor#0;n#Plane#0" expanded="false" />
-                <element signature="e#508#615#0" expanded="false" />
-                <element signature="n#!!block;n#renderOnce#0;n#Plane#0" expanded="false" />
-                <element signature="e#1906#2082#0" expanded="false" />
-                <element signature="e#2400#2623#0" expanded="false" />
-                <element signature="n#!!block;n#generateMap#0;n#Plane#0" expanded="false" />
-                <element signature="e#3887#4142#0" expanded="false" />
-                <element signature="e#3901#4132#0" expanded="false" />
-                <element signature="e#4195#4408#0" expanded="false" />
-                <element signature="e#4274#4398#0" expanded="false" />
-                <element signature="n#!!block;n#renderSegment#0;n#Plane#0" expanded="false" />
-                <element signature="e#4539#4594#0" expanded="false" />
-                <element signature="e#4839#5091#0" expanded="false" />
-                <element signature="e#4893#5081#0" expanded="false" />
-                <element signature="e#4935#5067#0" expanded="false" />
-                <element signature="n#!!block;n#update#0;n#Plane#0" expanded="false" />
-                <element signature="e#5468#5566#0" expanded="false" />
-                <element signature="e#5871#6013#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-              <folding>
-                <element signature="n#div#2;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hero.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/entities/hero.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="185" column="54" lean-forward="false" selection-start-line="185" selection-start-column="54" selection-end-line="185" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entities.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/entities/entities.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1210">
-              <caret line="55" column="71" lean-forward="false" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="perspective.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/perspective.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.64952976">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file leaf-file-name="plane.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/entities/plane.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="132">
+                  <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#!!block;n#constructor#0;n#Plane#0" expanded="false" />
+                    <element signature="e#508#615#0" expanded="false" />
+                    <element signature="n#!!block;n#generateMap#0;n#Plane#0" expanded="false" />
+                    <element signature="e#1076#1331#0" expanded="false" />
+                    <element signature="e#1090#1321#0" expanded="false" />
+                    <element signature="e#1384#1597#0" expanded="false" />
+                    <element signature="e#1463#1587#0" expanded="false" />
+                    <element signature="n#!!block;n#renderSegment#0;n#Plane#0" expanded="false" />
+                    <element signature="e#1728#1783#0" expanded="false" />
+                    <element signature="e#2028#2280#0" expanded="false" />
+                    <element signature="e#2082#2270#0" expanded="false" />
+                    <element signature="e#2124#2256#0" expanded="false" />
+                    <element signature="e#2684#2782#0" expanded="false" />
+                    <element signature="e#3087#3229#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="15" column="58" lean-forward="false" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+                  <folding>
+                    <element signature="n#div#2;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                    <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                    <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="backdrop.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/app/entities/backdrop.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="22">
+                  <caret line="76" column="26" lean-forward="true" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#0#54#0" expanded="true" />
+                    <element signature="e#1455#1631#0" expanded="false" />
+                    <element signature="e#1949#2172#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/game.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="460">
+                  <caret line="67" column="9" lean-forward="false" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+                  <folding>
+                    <element signature="n#!!block;n#frame#0;n#Game#0" expanded="false" />
+                    <element signature="n#!!block;n#keydownEventHandler#0;n#Game#0" expanded="false" />
+                    <element signature="n#!!block;n#keyupEventHandler#0;n#Game#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="game-state.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/game-state.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="hero.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/entities/hero.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="658">
+                  <caret line="197" column="27" lean-forward="false" selection-start-line="197" selection-start-column="27" selection-end-line="197" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/utils/utils.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="374">
+                  <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="entities.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/styles/entities/entities.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="778">
+                  <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="backdrop.css" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/styles/entities/backdrop.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="462">
+                  <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -113,12 +171,20 @@
       <find>reference</find>
       <find>prerender</find>
       <find>c_seg</find>
-      <find>b_base</find>
       <find>overflow:</find>
       <find>grad</find>
       <find>render(state</find>
       <find>b_lake</find>
       <find>0.44</find>
+      <find>xId('b_tower')</find>
+      <find>b_tower</find>
+      <find>isRunning</find>
+      <find>lake</find>
+      <find>position:abso</find>
+      <find>anim</find>
+      <find>keyfra</find>
+      <find>fog</find>
+      <find>b_base</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,26 +212,27 @@
         <option value="$PROJECT_DIR$/src/app/utils/stats.js" />
         <option value="$PROJECT_DIR$/src/styles/entities/probe.css" />
         <option value="$PROJECT_DIR$/src/app/entities/probe.js" />
-        <option value="$PROJECT_DIR$/src/app/entities/backdrop.js" />
         <option value="$PROJECT_DIR$/src/app/entities/player.js" />
         <option value="$PROJECT_DIR$/src/app/utils/tween.js" />
         <option value="$PROJECT_DIR$/src/app/utils.js" />
         <option value="$PROJECT_DIR$/src/styles/entities/player.css" />
         <option value="$PROJECT_DIR$/src/app/sound.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/styles/entities/hero.css" />
         <option value="$PROJECT_DIR$/src/app/entities/entityMgr.js" />
         <option value="$PROJECT_DIR$/src/styles/debug.css" />
-        <option value="$PROJECT_DIR$/src/app/game-state.js" />
         <option value="$PROJECT_DIR$/src/app/utils/obj3d.js" />
-        <option value="$PROJECT_DIR$/src/app/game.js" />
-        <option value="$PROJECT_DIR$/src/app/utils/utils.js" />
         <option value="$PROJECT_DIR$/src/styles/game.css" />
-        <option value="$PROJECT_DIR$/src/app/entities/plane.js" />
-        <option value="$PROJECT_DIR$/src/styles/entities/entities.css" />
+        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/styles/perspective.css" />
-        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/app/utils/utils.js" />
+        <option value="$PROJECT_DIR$/src/styles/entities/entities.css" />
+        <option value="$PROJECT_DIR$/src/app/game-state.js" />
         <option value="$PROJECT_DIR$/src/app/entities/hero.js" />
+        <option value="$PROJECT_DIR$/src/app/entities/plane.js" />
+        <option value="$PROJECT_DIR$/src/app/game.js" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/app/entities/backdrop.js" />
+        <option value="$PROJECT_DIR$/src/styles/entities/backdrop.css" />
       </list>
     </option>
   </component>
@@ -189,8 +256,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-6" />
-    <option name="width" value="795" />
-    <option name="height" value="431" />
+    <option name="width" value="636" />
+    <option name="height" value="345" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -240,7 +307,21 @@
               <item name="lost-river" type="b2602c69:ProjectViewProjectNode" />
               <item name="lost-river" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lost-river" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lost-river" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lost-river" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lost-river" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,20 +336,20 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="index.html&#9;FILE&#9;file://C:/Code/js13k/lost-river/dist/index.html&#10;perspec&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;utils&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/utils.js&#10;package&#9;FILE&#9;file://C:/Code/js13k/lost-river/package.json&#10;game&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/game.js&#10;in&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/index.html&#10;pers&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;ga&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/game-state.js" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/entities/backdrop.css&#10;index.html&#9;FILE&#9;file://C:/Code/js13k/lost-river/dist/index.html&#10;perspec&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;utils&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/utils.js&#10;package&#9;FILE&#9;file://C:/Code/js13k/lost-river/package.json&#10;game&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/game.js&#10;in&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/index.html&#10;pers&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/styles/perspective.css&#10;ga&#9;FILE&#9;file://C:/Code/js13k/lost-river/src/app/game-state.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Code\js13k\lost-river\src\app\utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Code\js13k\lost-river\src\styles\entities" />
       <recent name="C:\Code\js13k\lost-river\src\app\entities" />
       <recent name="C:\Code\js13k\lost-river\src\app" />
       <recent name="C:\Code\js13k\lost-river\src\app\utils" />
       <recent name="C:\Code\js13k\lost-river\src\assets" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Code\js13k\lost-river\src\app\utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -329,14 +410,7 @@
       <workItem from="1504380961499" duration="21339000" />
       <workItem from="1504433180322" duration="16100000" />
       <workItem from="1504471967241" duration="13046000" />
-      <workItem from="1504534877484" duration="921000" />
-    </task>
-    <task id="LOCAL-00001" summary=".">
-      <created>1502911677411</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1502911677411</updated>
+      <workItem from="1504534877484" duration="11134000" />
     </task>
     <task id="LOCAL-00002" summary=".">
       <created>1502933214318</created>
@@ -674,11 +748,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504492367692</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="pos">
+      <created>1504535808710</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1504535808711</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206127000" />
+    <option name="totallyTimeSpent" value="216340000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -690,10 +771,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
+    <frame x="-7" y="-7" width="2063" height="1127" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21809562" sideWeight="0.5056543" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21000496" sideWeight="0.5046632" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -701,7 +782,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21809562" sideWeight="0.49434572" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21000496" sideWeight="0.4953368" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -745,7 +826,8 @@
     <MESSAGE value="sky" />
     <MESSAGE value="shard" />
     <MESSAGE value="edges" />
-    <option name="LAST_COMMIT_MESSAGE" value="edges" />
+    <MESSAGE value="pos" />
+    <option name="LAST_COMMIT_MESSAGE" value="pos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -754,18 +836,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="n#div#2;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main.js" />
     <entry file="file://$PROJECT_DIR$/src/styles/main.css" />
     <entry file="file://$PROJECT_DIR$/src/app/render.js" />
@@ -856,24 +926,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="966">
           <caret line="475" column="2" lean-forward="false" selection-start-line="475" selection-start-column="2" selection-end-line="475" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/entities/player.js" />
     <entry file="file://$PROJECT_DIR$/src/styles/animations.css" />
     <entry file="file://$PROJECT_DIR$/src/app/blur.js" />
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/postbuild.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -889,6 +953,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="61" column="16" lean-forward="true" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -903,6 +968,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="562">
           <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -928,31 +994,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/game-state.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/entities/hero.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!block;n#frame#0;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#keydownEventHandler#0;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#keyupEventHandler#0;n#Game#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -964,76 +1010,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/utils/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/game.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="803">
           <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/entities/backdrop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/entities/plane.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="113" column="22" lean-forward="false" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#Plane#0" expanded="false" />
-            <element signature="e#508#615#0" expanded="false" />
-            <element signature="n#!!block;n#renderOnce#0;n#Plane#0" expanded="false" />
-            <element signature="e#1906#2082#0" expanded="false" />
-            <element signature="e#2400#2623#0" expanded="false" />
-            <element signature="n#!!block;n#generateMap#0;n#Plane#0" expanded="false" />
-            <element signature="e#3887#4142#0" expanded="false" />
-            <element signature="e#3901#4132#0" expanded="false" />
-            <element signature="e#4195#4408#0" expanded="false" />
-            <element signature="e#4274#4398#0" expanded="false" />
-            <element signature="n#!!block;n#renderSegment#0;n#Plane#0" expanded="false" />
-            <element signature="e#4539#4594#0" expanded="false" />
-            <element signature="e#4839#5091#0" expanded="false" />
-            <element signature="e#4893#5081#0" expanded="false" />
-            <element signature="e#4935#5067#0" expanded="false" />
-            <element signature="n#!!block;n#update#0;n#Plane#0" expanded="false" />
-            <element signature="e#5468#5566#0" expanded="false" />
-            <element signature="e#5871#6013#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/entities/entities.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1210">
-          <caret line="55" column="71" lean-forward="false" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
+        <state relative-caret-position="220">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/perspective.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="306">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/utils/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/entities/entities.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/game-state.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/entities/hero.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="197" column="27" lean-forward="false" selection-start-line="197" selection-start-column="27" selection-end-line="197" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/entities/plane.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#Plane#0" expanded="false" />
+            <element signature="e#508#615#0" expanded="false" />
+            <element signature="n#!!block;n#generateMap#0;n#Plane#0" expanded="false" />
+            <element signature="e#1076#1331#0" expanded="false" />
+            <element signature="e#1090#1321#0" expanded="false" />
+            <element signature="e#1384#1597#0" expanded="false" />
+            <element signature="e#1463#1587#0" expanded="false" />
+            <element signature="n#!!block;n#renderSegment#0;n#Plane#0" expanded="false" />
+            <element signature="e#1728#1783#0" expanded="false" />
+            <element signature="e#2028#2280#0" expanded="false" />
+            <element signature="e#2082#2270#0" expanded="false" />
+            <element signature="e#2124#2256#0" expanded="false" />
+            <element signature="e#2684#2782#0" expanded="false" />
+            <element signature="e#3087#3229#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="67" column="9" lean-forward="false" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!block;n#frame#0;n#Game#0" expanded="false" />
+            <element signature="n#!!block;n#keydownEventHandler#0;n#Game#0" expanded="false" />
+            <element signature="n#!!block;n#keyupEventHandler#0;n#Game#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="330">
+          <caret line="15" column="58" lean-forward="false" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
           <folding>
             <element signature="n#div#2;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1042,10 +1113,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/entities/hero.js">
+    <entry file="file://$PROJECT_DIR$/src/app/entities/backdrop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="185" column="54" lean-forward="false" selection-start-line="185" selection-start-column="54" selection-end-line="185" selection-end-column="54" />
+        <state relative-caret-position="22">
+          <caret line="76" column="26" lean-forward="true" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#1455#1631#0" expanded="false" />
+            <element signature="e#1949#2172#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/entities/backdrop.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding />
         </state>
       </provider>

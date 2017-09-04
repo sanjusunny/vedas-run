@@ -2,11 +2,20 @@ export function xId(id) {
     return document.getElementById(id);
 }
 
-export function addEl(parent, type, name, id) {
+export function addEl(parent, type, name, id, w, h) {
     let el = document.createElement(type);
+    if(w) {
+        el.width = w;
+        el.height = h;
+    }
     el.className = 'b_' + name;
-    el.classList.add('b_' + id);
+    if(id) el.classList.add('b_' + id);
     return parent.appendChild(el);
+}
+
+export function addCl(el, cName) {
+    el.classList.add(cName);
+    //setTimeout(()=>el.classList.remove(cName), 500);
 }
 
 export function rnd(min, max) {
