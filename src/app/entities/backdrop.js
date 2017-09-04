@@ -49,13 +49,13 @@ export class Backdrop {
         let ctx3 = fxCvs.getContext('2d');
         for (let i = 0; i < 100; i++) {
             ctx3.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
-            ctx3.fillRect(rnd(0, fxCvs.width), rnd(0, fxCvs.height), rnd(1, fxCvs.width/5), 2);
+            ctx3.fillRect(rnd(0, fxCvs.width), rnd(0, fxCvs.height), rnd(1, fxCvs.width / 5), 2);
         }
 
         ctx2.restore();
         ctx2.fillStyle = '#fff';
         ctx2.globalAlpha = 0.5;
-        ctx2.fillRect(0,0,1200,660);
+        ctx2.fillRect(0, 0, 1200, 660);
         ctx2.globalCompositeOperation = 'soft-light';
         ctx2.globalAlpha = 0.75;
         ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
@@ -119,7 +119,7 @@ export class Backdrop {
         c.fillStyle = '#fcffed';
         for (let i = 0; i < 20; i++) {
             for (let j = 0; j < 50; j++) {
-                c.fillRect(-200 + i * 15, j * 5, rnd(2,4), rnd(0,2));
+                c.fillRect(-200 + i * 15, j * 5, rnd(2, 4), rnd(0, 2));
             }
         }
 
@@ -129,13 +129,13 @@ export class Backdrop {
     }
 
     update() {
-        if (state.ts % 30 === 0) {
+        if (state.ts % 50 === 0) {
             this.beam.style.transform = `translateX(${rnd(0, 4)}px) scaleX(${rnd(10, 60) / 10})`;
         }
 
         this.x = this.x - state.ix / 20;
-        this.sc = 1 + Math.round(state.tz*2) / 10000;
+        this.sc = 1 + state.tz * 2 / 10000;
         this.twr.style.transform = `translateX(${this.x}px)`;
-        this.mesh.style.transform = `translateY(${state.iy/2}px) scaleX(${this.sc}) scaleY(${this.sc})`;
+        this.mesh.style.transform = `translateY(${state.iy / 2}px) scaleX(${this.sc}) scaleY(${this.sc})`;
     }
 }

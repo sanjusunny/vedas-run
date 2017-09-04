@@ -13,11 +13,6 @@ export function addEl(parent, type, name, id, w, h) {
     return parent.appendChild(el);
 }
 
-export function addCl(el, cName) {
-    el.classList.add(cName);
-    //setTimeout(()=>el.classList.remove(cName), 500);
-}
-
 export function rnd(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

@@ -2,6 +2,7 @@
     width:1200px;
     height:720px;
     transform-origin: 50% 50%;
+    transition: all 0.2s;
 }
 
 #b_lake {
@@ -10,11 +11,11 @@
 
 #b_tower {
     top: 0px;
-    left: 400px;
+    left: 480px;
     overflow: hidden;
     width: 400px;
     height: 400px;
-    filter: blur(1px);
+    transition: all 0.2s;
 }
 
 .b_twr-flr {
@@ -35,5 +36,5 @@
     left:195px;
     background-color:white;
     filter:blur(2px);
-    transition: all 0.8s;
+    transition: all 0.7s;
 }
