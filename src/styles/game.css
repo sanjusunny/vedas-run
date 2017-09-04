@@ -5,7 +5,6 @@ html, body { width:100%; height:100%; background-color: #000; font-family:"Couri
 
 }
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -13,7 +12,7 @@ body {
   align-items: center;
   transition: background-color 1s ease-in;
   overflow: hidden;
-  transform: scaleX(1.24) scaleY(1.24);
+  //transform: scaleX(1.24) scaleY(1.24);
 }
 
 body.in-game {

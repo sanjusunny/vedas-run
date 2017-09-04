@@ -1,4 +1,4 @@
-import {rnd, xId} from '../utils/utils';
+import {addEl, rnd, xId} from '../utils/utils';
 import {addEntity} from "./entityMgr";
 import {state} from "../game-state";
 import {Object3D} from "../utils/obj3d";
@@ -9,6 +9,7 @@ export class Plane {
         this.y = 0;
         this.z = 0;
         this.mesh = xId('game-plane');
+        this.edges = xId('edges');
 
         this.gridSize = 60;
         this.mapWidth = 20;
@@ -78,6 +79,12 @@ export class Plane {
         ctx2.globalAlpha = 0.75;
         ctx2.globalCompositeOperation = 'overlay';
         ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
+
+        // draw edges
+        addEl(this.edges,'div','edge',1);
+        addEl(this.edges,'div','edge',2);
+        addEl(this.edges,'div','edge',3);
+        addEl(this.edges,'div','edge',4);
     }
 
     generateMap() {
@@ -144,6 +151,7 @@ export class Plane {
             this.activeSeg = currSeg;
         }
 
+        this.edges.style.transform = `translateX(${this.x}px)`;
         this.segs[currSeg].style.transform = `translateX(${this.x}px) translateY(${delta}px)`;
         this.segs[nextSeg].style.transform = `translateX(${this.x}px) translateY(${-this.segmentLength + delta}px)`;
 

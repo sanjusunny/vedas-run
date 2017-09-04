@@ -16,3 +16,35 @@
     transform-style: preserve-3d;
 }
 
+#edges {
+    width: 1200px;
+    height: 660px;
+}
+
+.b_edge {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 660px;
+    background: linear-gradient(to left, #B8EBF3 0%, #dbf2f4 100%);
+    transform-origin: 0% 0%;
+}
+
+.b_edge.b_1 {
+    transform: rotateY(-170deg);
+}
+
+.b_edge.b_2 {
+    width: 600px;
+    transform: translateX(-80px) translateZ(16px) rotateY(-175deg);
+}
+
+.b_edge.b_3 {
+    transform: translateX(1100px) rotateY(-10deg);
+}
+
+.b_edge.b_4 {
+    width: 600px;
+    transform: translateX(80px) translateZ(16px) translateX(1100px) rotateY(-5deg);
+}

@@ -2,6 +2,13 @@ export function xId(id) {
     return document.getElementById(id);
 }
 
+export function addEl(parent, type, name, id) {
+    let el = document.createElement(type);
+    el.className = 'b_' + name;
+    el.classList.add('b_' + id);
+    return parent.appendChild(el);
+}
+
 export function rnd(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
