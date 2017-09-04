@@ -12,11 +12,9 @@ export class Probe {
         this.mesh = state.plane.mesh.insertBefore(this.mesh, state.player.mesh);
         /*if(Math.toggle()>0) this.mesh.classList.add('active');
         if(Math.toggle()>0) this.mesh.classList.add('alert');*/
-
-        this.render(state);
     }
 
-    update(state) {
+    update() {
         this.y = Math.pong(this.y - state.iy, 0, state.vh); //-state.iy;
         this.mesh.style.top = this.y + 'px';
 
@@ -34,8 +32,5 @@ export class Probe {
         } else {
             this.mesh.classList.remove('active');
         }
-    }
-
-    render(state) {
     }
 }

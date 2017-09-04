@@ -89,6 +89,42 @@ export class Plane {
         addEl(this.edges,'div','edge',2);
         addEl(this.edges,'div','edge',3);
         addEl(this.edges,'div','edge',4);
+
+        this.renderTower();
+    }
+
+    renderTower() {
+        let c = xId('b_tower').getContext('2d');
+        c.fillStyle = '#2C99C9';
+        c.globalAlpha = '0.9';
+        c.translate(600, 400);
+        c.scale(1, -1);
+        c.fillRect(-10,0,2,200);
+        c.fillRect(10,0,4,300);
+        c.fillRect(0,0,24,100);
+        c.fillRect(-20,0,32,150);
+
+        c.globalCompositeOperation = 'screen';
+        c.globalAlpha = '0.4';
+        c.filter = 'blur(2px)';
+        c.fillStyle = '#94EBF2';
+        c.fillRect(-14,0,28,400);
+        c.globalAlpha = '1';
+        c.fillStyle = '#fff';
+        c.fillRect(-4,0,8,400);
+        c.filter = 'blur(0px)';
+
+        c.globalCompositeOperation = 'overlay';
+        c.globalAlpha = '0.4';
+        c.fillStyle = '#2C99C9';
+
+        c.beginPath();
+        c.arc(-40, 80, 100, 0, 2 * Math.PI, false);
+        c.lineWidth = 16;
+        c.strokeStyle = '#2C99C9';
+        c.stroke();
+        c.fillRect(-100,0,150,60);
+        c.fillRect(-60,0,70,80);
     }
 
     generateMap() {
@@ -139,7 +175,7 @@ export class Plane {
         }
     }
 
-    update(state) {
+    update() {
         if (this.z > this.mapLength) return;
 
         this.x = (this.x - state.ix);
@@ -162,8 +198,5 @@ export class Plane {
         if (state.iy > 0) {
             this.mesh.style.transform = `rotateX(97deg) translateZ(${-82 - state.iy}px) translateY(72px) scaleY(0.8) scaleX(0.5)`;
         }
-    }
-
-    render(state) {
     }
 }

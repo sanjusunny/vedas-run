@@ -203,7 +203,7 @@ export class Hero {
         this.a_fmax = (state.iy > 0 && !this.isInFall) ? 30 : 10;
     }
 
-    update(state) {
+    update() {
 
         this.updateState();
 
@@ -216,9 +216,4 @@ export class Hero {
         this.currFrame = (this.currFrame + 1) % this.frames.length;
         return this.frames[this.currFrame];
     }
-
-    render(state) {
-
-    }
-
 }

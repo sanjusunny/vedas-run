@@ -50,14 +50,18 @@
     left: 0px;
     height: 100px;
     width: 1200px;
-    opacity: 0.7;
+    opacity: 0.9;
     background: linear-gradient(to bottom, #fff 0%, #dbf2f4 40%, rgba(219, 242, 244, 0.2) 80%, transparent 100%);
     transform-origin: 50% 0%;
-    transform: rotateX(90deg) rotateZ(0deg) translateZ(-300px) scaleX(3) scaleY(2);
-    display: none;
+    transform: rotateX(90deg) rotateZ(0deg) translateZ(-100px) scaleX(3) scaleY(2);
 }
 
 #b_lake {
     position: absolute;
     top: 400px;
+}
+
+#b_tower {
+    position: absolute;
+    top: 0px;
 }

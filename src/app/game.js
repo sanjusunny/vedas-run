@@ -56,8 +56,8 @@ class Game {
         state.ix = 0;
         state.iz = 0;
 
-        state.player.update(state);
-        state.plane.update(state);
+        state.player.update();
+        state.plane.update();
 
         if(state.player.z%400 === 50) {
             xId('app-container').classList.add('a_hit');
