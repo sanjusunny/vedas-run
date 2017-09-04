@@ -163,9 +163,7 @@ export class Hero {
             if (state.pressedKeys[Keys.LEFT]) {
                 state.ix = -this.xInc;
                 newTransform = 'translateZ(200px) rotateY(110deg) scale3d(0.44,0.44,0.44)';
-            }
-
-            if (state.pressedKeys[Keys.RIGHT]) {
+            } else {
                 state.ix = this.xInc;
                 newTransform = 'translateZ(200px) rotateY(70deg) scale3d(0.44,0.44,0.44)';
             }
@@ -174,15 +172,8 @@ export class Hero {
         }
 
         if (state.pressedKeys[Keys.UP] || state.pressedKeys[Keys.DOWN]) {
-            if (state.pressedKeys[Keys.UP]) {
-                state.iz = this.zInc;
-                this.a_isAnimating = true;
-            }
-
-            if (state.pressedKeys[Keys.DOWN]) {
-                state.iz = -this.zInc;
-                this.a_isAnimating = true;
-            }
+            state.iz = (state.pressedKeys[Keys.UP]) ? this.zInc : -this.zInc;
+            this.a_isAnimating = true;
         } else {
             this.a_isAnimating = false;
         }

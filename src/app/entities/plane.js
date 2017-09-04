@@ -66,26 +66,24 @@ export class Plane {
         ctx2.drawImage(xId('b_stars'), 0, -260, 1200, 260);
 
         let fxCvs = document.createElement('canvas');
-        fxCvs.width = 20;
+        fxCvs.width = 5;
         fxCvs.height = 50;
         let ctx3 = fxCvs.getContext('2d');
         for (let i = 0; i < 100; i++) {
             ctx3.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
-            ctx3.beginPath();
-            ctx3.arc(rnd(0, fxCvs.width), rnd(0, fxCvs.height), rnd(0, 20) / 10, 0, 2 * Math.PI, false);
-            ctx3.fill();
+            ctx3.fillRect(rnd(0, fxCvs.width), rnd(0, fxCvs.height), rnd(1, fxCvs.width/5), 2);
         }
 
         ctx2.restore();
         ctx2.globalAlpha = 0.75;
         ctx2.globalCompositeOperation = 'overlay';
-        ctx2.drawImage(fxCvs, 0, 0, 1200, 1000);
+        ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
     }
 
     generateMap() {
         let map = [];
         let mapSrc = new Map([
-            ['100.6', 1],
+            /*['100.6', 1],
             ['200.10', 1],
             ['300.11', 1],
             ['400.12', 1],
@@ -93,7 +91,7 @@ export class Plane {
             ['600.8', 1],
             ['700.12', 1],
             ['800.10', 1],
-            ['1200.8', 1]
+            ['1200.8', 1]*/
         ]);
 
         for (let i = 0; i < this.mapLength; i++) {
