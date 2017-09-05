@@ -1,6 +1,5 @@
 import './app/game'
 /*import './app/sound'*/
-import './styles/weather.css'
 import './styles/perspective.css'
 import './styles/debug.css'
 import './styles/ui.css'

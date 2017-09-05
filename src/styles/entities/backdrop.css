@@ -55,8 +55,7 @@
 .b_ship {
     width: 18px;
     height: 2px;
-    background-color: #083b50;
-    border-bottom: solid 2px #1593c6;
+    background-color: #124F7B;
 }
 
 .b_ship::after {
