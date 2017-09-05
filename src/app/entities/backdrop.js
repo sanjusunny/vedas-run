@@ -1,4 +1,4 @@
-import {addCl, addEl, rnd, xId, xPath} from '../utils/utils';
+import {addEl, rnd, xId, xPath} from '../utils/utils';
 import {state} from "../game-state";
 import {Ship} from "./ship";
 
@@ -14,7 +14,7 @@ export class Backdrop {
         this.renderTower();
         this.renderCliffs();
         addEl(this.mesh, 'div', 'fog', 0, 1200, 300);
-        this.ships = [new Ship(this.mesh,0), new Ship(this.mesh,1), new Ship(this.mesh,2), new Ship(this.mesh,3)];
+        this.ships = (state.vfx) ? [new Ship(this.mesh, 0), new Ship(this.mesh, 1), new Ship(this.mesh, 2), new Ship(this.mesh, 3)] : [];
     }
 
     renderCliffs() {
@@ -110,7 +110,7 @@ export class Backdrop {
         ctx2.globalAlpha = 0.75;
         ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
 
-        // star
+        // stars
         for (let i = 0; i < 100; i++) {
             ctx.beginPath();
             ctx.arc(rnd(10, w), rnd(10, h * 0.8), rnd(0, 20) / 10, 0, 2 * Math.PI, false);
@@ -164,6 +164,7 @@ export class Backdrop {
         c.fillRect(-100, 0, 150, 60);
         c.fillRect(-60, 0, 70, 80);
 
+        // building lights
         c.globalCompositeOperation = 'source-atop';
         c.globalAlpha = '0.8';
         c.fillStyle = '#fcffed';
@@ -179,7 +180,7 @@ export class Backdrop {
 
     update() {
         if (state.ts % 5 === 0) {
-            this.beam.style.backgroundColor = (Math.toggle())?'white':'#ffcee9';
+            this.beam.style.backgroundColor = (Math.toggle()) ? 'white' : '#ffcee9';
             this.beam.style.transform = `translateX(${rnd(0, 8)}px) scaleX(${rnd(10, 60) / 10})`;
         }
 
@@ -190,6 +191,6 @@ export class Backdrop {
             this.mesh.style.transform = `translateY(${state.iy / 2}px) scaleX(${this.sc}) scaleY(${this.sc})`;
         }
 
-        this.ships.forEach((ship)=>ship.update());
+        this.ships.forEach((ship) => ship.update());
     }
 }

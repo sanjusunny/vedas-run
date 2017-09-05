@@ -1,4 +1,8 @@
+import {state} from "./game-state";
+
 export class TextureManager {
+    constructor() {
+    }
 
     static createUIFG() {
 
@@ -29,6 +33,7 @@ export class TextureManager {
         canvas.height = 256;
         var ctx = canvas.getContext('2d');
 
+        // TODO: Replace blurs with scaling
         ctx.filter = 'blur(25px)';
         ctx.fillStyle = '#000';
         ctx.font = "64px Arial";

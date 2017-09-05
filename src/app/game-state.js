@@ -13,8 +13,13 @@ export const state = {
     ix: 0,
     iy: 0,
     iz: 0, /* forward movement made by player each turn */
-    tz:0, /* accumulated movement */
+    tz: 0, /* accumulated movement */
     ts: 0, /* elapsed ticks */
+    vfx: true,
+    tx_fuzzy: null,
     console: null,
-    log: (msg) => {state.console.style.display = 'block';state.console.innerText = msg;}
+    log: (msg) => {
+        state.console.style.display = 'block';
+        state.console.innerText = msg;
+    }
 };

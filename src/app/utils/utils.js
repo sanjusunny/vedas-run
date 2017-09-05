@@ -1,7 +1,9 @@
 // ctx, 20px, #fff, [[x1,y1],...]
+import {state} from "../game-state";
+
 export function xPath(ctx, height, sX, sY, color1, color2, data) {
     ctx.strokeStyle = 'rgba(0,0,0,0.1)';
-    ctx.globalAlpha = 0.9;
+    ctx.globalAlpha = 1;
     for (let i = 0; i < data.length - 1; i++) {
         let x1 = data[i][0] * sX;
         let y1 = data[i][1] * sY;
@@ -23,6 +25,21 @@ export function xPath(ctx, height, sX, sY, color1, color2, data) {
             ctx.stroke();
         }
     }
+    ctx.globalCompositeOperation = 'source-atop';
+    ctx.drawImage(txFuzzy('#4DA9CF'), 0, 100, 400, height);
+}
+
+
+function txFuzzy(col) {
+    let cvs = addEl(null, 'canvas', 'x', 0, 256, 32);
+    var ctx = cvs.getContext('2d');
+    ctx.globalCompositeOperation = 'hard-light';
+    ctx.fillStyle = col;
+    for (let i = 0; i < 40; i++) {
+        ctx.globalAlpha = rnd(0, 10)/10;
+        ctx.fillRect(rnd(0, 256), rnd(0, 16), rnd(1, 7), rnd(0, 32));
+    }
+    return cvs;
 }
 
 function brighten(color, amount) {
@@ -51,7 +68,7 @@ export function addEl(parent, type, name, id, w, h) {
     }
     el.className = 'b_' + name;
     if (id) el.classList.add('b_' + id);
-    return parent.appendChild(el);
+    return (parent) ? parent.appendChild(el) : el;
 }
 
 export function rnd(min, max) {

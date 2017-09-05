@@ -46,7 +46,6 @@ class Game {
             }
 */
             this.startLoop();
-            //this.preRender();
         }
     }
 
@@ -72,10 +71,6 @@ class Game {
         this.stats.render();
     }
 
-    log(msg) {
-        state.console.innerText = msg;
-    }
-
     startLoop() {
         state.isRunning = true;
         this.last = performance.now();
@@ -89,6 +84,8 @@ class Game {
         this.dt = this.now - this.last;
         this.last = this.now;
 
+        // TODO: Start game after losing focus
+        // TODO: Ability to stop game
         // prevent updating the game with a very large dt if the game were to lose focus
         // and then regain focus later
         if (this.dt > 1000) {
