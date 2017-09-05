@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89b704a1-de39-4972-bba1-a8ae779cf05c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/entities/ship.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/utils/tween.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/entities/backdrop.js" afterPath="$PROJECT_DIR$/src/app/entities/backdrop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/texture-manager.js" afterPath="$PROJECT_DIR$/src/app/texture-manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/utils.js" afterPath="$PROJECT_DIR$/src/app/utils/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/entities/backdrop.css" afterPath="$PROJECT_DIR$/src/styles/entities/backdrop.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/entities/entities.css" afterPath="$PROJECT_DIR$/src/styles/entities/entities.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/entities/hero.css" afterPath="$PROJECT_DIR$/src/styles/entities/hero.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/perspective.css" afterPath="$PROJECT_DIR$/src/styles/perspective.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/entities/ship.js" afterPath="$PROJECT_DIR$/src/app/entities/ship.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.597896">
+    <splitter split-orientation="horizontal" split-proportion="0.6792929">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="plane.js" pinned="false" current-in-tab="false">
@@ -83,11 +75,9 @@
           <file leaf-file-name="ship.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/app/entities/ship.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="16" column="104" lean-forward="false" selection-start-line="16" selection-start-column="104" selection-end-line="16" selection-end-column="104" />
-                  <folding>
-                    <element signature="e#0#47#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="0">
+                  <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -403,14 +393,7 @@
       <workItem from="1504433180322" duration="16100000" />
       <workItem from="1504471967241" duration="13046000" />
       <workItem from="1504534877484" duration="12448000" />
-      <workItem from="1504554510580" duration="14197000" />
-    </task>
-    <task id="LOCAL-00005" summary="Version 1">
-      <created>1503001395876</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1503001395876</updated>
+      <workItem from="1504554510580" duration="14323000" />
     </task>
     <task id="LOCAL-00006" summary="Updates">
       <created>1503024369229</created>
@@ -748,11 +731,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504554330673</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="planes">
+      <created>1504570503669</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1504570503673</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231851000" />
+    <option name="totallyTimeSpent" value="231977000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,7 +757,7 @@
     <frame x="-7" y="-7" width="2063" height="1127" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1030213" sideWeight="0.73367876" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2154532" sideWeight="0.42176166" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -775,7 +765,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1030213" sideWeight="0.26632124" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2154532" sideWeight="0.57823837" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -821,7 +811,8 @@
     <MESSAGE value="edges" />
     <MESSAGE value="pos" />
     <MESSAGE value="parallax" />
-    <option name="LAST_COMMIT_MESSAGE" value="parallax" />
+    <MESSAGE value="planes" />
+    <option name="LAST_COMMIT_MESSAGE" value="planes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1027,12 +1018,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="794">
           <caret line="87" column="6110" lean-forward="false" selection-start-line="87" selection-start-column="6110" selection-end-line="87" selection-end-column="6110" />
-          <folding>
-            <element signature="e#9640#9646#1" expanded="false" />
-            <element signature="e#9837#9843#1" expanded="false" />
-            <element signature="e#10228#10234#1" expanded="false" />
-            <element signature="e#10348#10354#1" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,11 +1122,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/entities/ship.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="104" lean-forward="false" selection-start-line="16" selection-start-column="104" selection-end-line="16" selection-end-column="104" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

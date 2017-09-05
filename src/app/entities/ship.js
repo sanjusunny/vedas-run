@@ -1,4 +1,4 @@
-import {addEl, rnd, xId} from "../utils/utils";
+import {addEl, rnd} from "../utils/utils";
 import {state} from "../game-state";
 
 export class Ship {
