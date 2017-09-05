@@ -1,5 +1,6 @@
-import {addCl, addEl, rnd, xId} from '../utils/utils';
+import {addCl, addEl, rnd, xId, xPath} from '../utils/utils';
 import {state} from "../game-state";
+import {Ship} from "./ship";
 
 export class Backdrop {
     constructor() {
@@ -11,6 +12,55 @@ export class Backdrop {
 
         this.renderBackdrop();
         this.renderTower();
+        this.renderCliffs();
+        addEl(this.mesh, 'div', 'fog', 0, 1200, 300);
+        this.ships = [new Ship(this.mesh,0), new Ship(this.mesh,1), new Ship(this.mesh,2), new Ship(this.mesh,3)];
+    }
+
+    renderCliffs() {
+        let c = addEl(this.mesh, 'canvas', 'cliff', 0, 600, 400).getContext('2d');
+        xPath(c, 400, 20, 30, '#359bc7', '#9ee9f4', [
+            [0, 8, 0],
+            [2, 9, 1],
+            [5, 8, 0],
+            [6, 8, 2],
+            [9, 7, 0],
+            [9, 5, 1],
+            [11, 4, 1],
+            [11, 3, 2],
+            [13, 3, 3],
+            [17, 1, 1]
+        ]);
+        c = addEl(this.mesh, 'canvas', 'cliff', 1, 600, 400).getContext('2d');
+        xPath(c, 400, 20, 30, '#359bc7', '#9ee9f4', [
+            [0, 1, 1],
+            [1, 2, 0],
+            [2, 2, 0],
+            [4, 3, 2],
+            [4, 4, 1],
+            [6, 6, 0],
+            [9, 7, 2],
+            [9, 8, 1],
+            [10, 9, 0],
+            [11, 9, 1],
+            [11, 10, 0],
+            [14, 11, 0]
+        ]);
+
+        // mega cliffs
+
+        /*c = addEl(this.mesh, 'canvas', 'cliff-left-mega', 0, 600, 400).getContext('2d');
+        xPath(c, 400, 20, 30, '#444444', '#777777', [
+            [0, 8, 0],
+            [2, 9, 1],
+            [5, 8, 0],
+            [6, 8, 2],
+            [9, 7, 0],
+            [9, 5, 1],
+            [11, 4, 1],
+            [11, 3, 2],
+            [13, 2, 5]
+        ]);*/
     }
 
     renderBackdrop() {
@@ -123,19 +173,23 @@ export class Backdrop {
             }
         }
 
-        // flares
-        addEl(this.twr, 'div', 'twr-flr');
+        // beam
         this.beam = addEl(this.twr, 'div', 'twr-beam');
     }
 
     update() {
-        if (state.ts % 50 === 0) {
-            this.beam.style.transform = `translateX(${rnd(0, 4)}px) scaleX(${rnd(10, 60) / 10})`;
+        if (state.ts % 5 === 0) {
+            this.beam.style.backgroundColor = (Math.toggle())?'white':'#ffcee9';
+            this.beam.style.transform = `translateX(${rnd(0, 8)}px) scaleX(${rnd(10, 60) / 10})`;
         }
 
-        this.x = this.x - state.ix / 20;
-        this.sc = 1 + state.tz * 2 / 10000;
-        this.twr.style.transform = `translateX(${this.x}px)`;
-        this.mesh.style.transform = `translateY(${state.iy / 2}px) scaleX(${this.sc}) scaleY(${this.sc})`;
+        if (state.tz > 700) {
+            this.x = this.x - state.ix / 20;
+            this.sc = 1 + (state.tz - 700) * 2 / 10000;
+            this.twr.style.transform = `translateX(${this.x}px)`;
+            this.mesh.style.transform = `translateY(${state.iy / 2}px) scaleX(${this.sc}) scaleY(${this.sc})`;
+        }
+
+        this.ships.forEach((ship)=>ship.update());
     }
 }
