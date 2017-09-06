@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b704a1-de39-4972-bba1-a8ae779cf05c" name="Default" comment="">
+    <list default="true" id="89b704a1-de39-4972-bba1-a8ae779cf05c" name="Default" comment="Revert &quot;ice textures&quot;&#10;&#10;This reverts commit 36d66b2">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/lost-river.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,18 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -257,13 +248,6 @@
       <workItem from="1504534877484" duration="12448000" />
       <workItem from="1504554510580" duration="14334000" />
       <workItem from="1504570905548" duration="4595000" />
-    </task>
-    <task id="LOCAL-00010" summary="Updates">
-      <created>1503100881037</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1503100881037</updated>
     </task>
     <task id="LOCAL-00011" summary="Updates">
       <created>1503113461764</created>
@@ -601,11 +585,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504660026234</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Revert &quot;ice textures&quot;&#10;&#10;This reverts commit 36d66b2">
+      <created>1504660080860</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1504660080860</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236656000" />
+    <option name="totallyTimeSpent" value="236776000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
