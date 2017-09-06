@@ -60,11 +60,17 @@ export function xId(id) {
 }
 
 // create and add a DOM element to the parent, size it and give it a class name
-export function addEl(parent, type, name, id, w, h) {
+export function addEl(parent, type, name, id, w, h, x, y) {
     let el = document.createElement(type);
     if (w) {
         el.width = w;
         el.height = h;
+        el.style.width = w + 'px';
+        el.style.height = h + 'px';
+    }
+    if (x) {
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
     }
     el.className = 'b_' + name;
     if (id) el.classList.add('b_' + id);

@@ -36,15 +36,6 @@
     transition: all 0.7s;
 }
 
-.b_fog {
-    top: 250px;
-    left: 0px;
-    height: 150px;
-    width: 1200px;
-    background: linear-gradient(to top, #fff 0%, #dbf2f4 20%, rgba(219, 242, 244, 0.2) 70%, transparent 100%);
-    opacity: 0.9;
-    mix-blend-mode: screen;
-}
 
 @-moz-document url-prefix() {
     .b_fog {
