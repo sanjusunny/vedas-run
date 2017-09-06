@@ -87,27 +87,29 @@ export class Backdrop {
         ctx.globalAlpha = 1;
         ctx.globalCompositeOperation = 'lighten';
 
+        // lake
         let ctx2 = xId('b_lake').getContext('2d');
         ctx2.save();
         ctx2.scale(1, -1);
         ctx2.globalAlpha = 0.85;
-        ctx2.drawImage(xId('b_stars'), 0, -260, 1200, 260);
+        ctx2.drawImage(xId('b_stars'), 0, -260, 1200, 460);
 
+        // wavy texture
         let fxCvs = document.createElement('canvas');
         fxCvs.width = 5;
         fxCvs.height = 50;
         let ctx3 = fxCvs.getContext('2d');
         for (let i = 0; i < 100; i++) {
-            ctx3.fillStyle = `rgba(255,255,255,${rnd(2, 10) / 10})`;
+            ctx3.fillStyle = `rgba(0,0,0,${rnd(2, 10) / 10})`;
             ctx3.fillRect(rnd(0, fxCvs.width), rnd(0, fxCvs.height), rnd(1, fxCvs.width / 5), 2);
         }
 
         ctx2.restore();
-        ctx2.fillStyle = '#fff';
-        ctx2.globalAlpha = 0.5;
-        ctx2.fillRect(0, 0, 1200, 660);
-        ctx2.globalCompositeOperation = 'soft-light';
-        ctx2.globalAlpha = 0.75;
+        ctx2.fillStyle = '#124F7B';
+        ctx2.globalAlpha = 0.8;
+        //ctx2.fillRect(0, 0, 1200, 260);
+        ctx2.globalCompositeOperation = 'screen';
+        ctx2.globalAlpha = 0.9;
         ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
 
         // stars

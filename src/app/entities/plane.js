@@ -81,7 +81,7 @@ export class Plane {
         for (let i = 0; i < this.vertTiles; i++) {
             for (let j = 2; j < this.horizTiles - 2; j++) {
                 if (Math.toggle())
-                    addEl(seg, 'div', 'plate', id, this.gsW-5, this.gsH-5, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
+                    addEl(seg, 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
             }
         }
     }
