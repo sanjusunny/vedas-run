@@ -1,5 +1,4 @@
 // ctx, 20px, #fff, [[x1,y1],...]
-import {state} from "../game-state";
 
 export function xPath(ctx, height, sX, sY, color1, color2, data) {
     ctx.strokeStyle = 'rgba(0,0,0,0.1)';

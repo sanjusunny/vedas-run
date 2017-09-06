@@ -26,7 +26,7 @@ export class Plane {
             addEl(this.mesh, 'div', 'segment', 0, 1200, 660, 0, 0),
             addEl(this.mesh, 'div', 'segment', 1, 1200, 660, 0, 0)];
 
-        //this.map = this.generateMap();
+        //state.map = [];//this.generateMap();
 
         this.activeSeg = 0;
         this.renderSegment(0, 0);
@@ -75,14 +75,17 @@ export class Plane {
             seg.removeChild(seg.lastChild);
         }
 
-        let z1 = segNum * this.vertTiles; // starting grid number
-        let z2 = z1 + this.vertTiles; // ending grid number
-
         for (let i = 0; i < this.vertTiles; i++) {
-            for (let j = 2; j < this.horizTiles - 2; j++) {
-                if (Math.toggle())
+            let newRow = [];
+            for (let j = 0; j < this.horizTiles; j++) {
+                if (state.map.length < 4 || (j > 1 && j < (this.horizTiles - 2) && Math.toggle())) {
+                    newRow.push(1);
                     addEl(seg, 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
+                } else {
+                    newRow.push(0);
+                }
             }
+            state.map.push(newRow);
         }
     }
 

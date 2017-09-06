@@ -10,12 +10,13 @@ export const state = {
     player: null,
     probes: [],
     pressedKeys: {},
-    ix: 0,
-    iy: 0,
+    ix: 0, /* horizontal movement made by player each turn */
+    iy: 0, /* accumulated vertical player position */
     iz: 0, /* forward movement made by player each turn */
     tz: 0, /* accumulated movement */
     ts: 0, /* elapsed ticks */
     vfx: false,
+    map: [],
     tx_fuzzy: null,
     console: null,
     log: (msg) => {

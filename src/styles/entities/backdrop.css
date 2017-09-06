@@ -18,7 +18,7 @@
 }
 
 .b_cliff{
-    opacity: 0.9;
+    z-index:10;
 }
 
 .b_cliff.b_1 {

@@ -50,8 +50,27 @@ body.in-game {
 }
 
 .a_over {
-  animation: 4s ease k_exp;
+  animation: 4s ease-out k_end;
   animation-fill-mode: forwards;
+}
+
+@keyframes k_end {
+  0% {
+    filter: blur(0px) brightness(100%);
+  }
+  10% {
+    filter: blur(0px) brightness(110%);
+  }
+  52% {
+    filter: blur(10px) brightness(150%);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    filter: blur(20px) brightness(500%);
+    opacity: 0;
+  }
 }
 
 @keyframes k_exp {

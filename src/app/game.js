@@ -1,14 +1,12 @@
 import {xId} from './utils/utils';
-import {TextureManager} from './texture-manager';
 import {UI} from './ui'
 import {state} from './game-state';
-import {Probe} from './entities/probe';
 import {Stats} from './utils/stats';
 import {Plane} from "./entities/plane";
 import {Backdrop} from "./entities/backdrop";
 import {Hero} from "./entities/hero";
 
-window.onerror = function (msg, url, lineNo, columnNo, error) {
+window.onerror = function () {
     state.isRunning = false;
     document.getElementById('app-container').style.border = 'solid 4px #ff4444';
     return false;

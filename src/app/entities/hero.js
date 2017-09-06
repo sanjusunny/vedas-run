@@ -130,10 +130,12 @@ export class Hero {
         this.yInc = 1;
         this.yMax = 50; // max jump height
         this.isInFall = false;
+        this.coastX = 0; // coasting at the peak of the jump
         this.x = state.vw / 2;
         this.z = 0;
         this.baseTransform = 'translateZ(280px) rotateY(90deg) scale3d(0.27,0.27,0.27)';
         this.currTransform = null;
+        this.isHit = false;
 
         this.updateAnimation();
     }
@@ -162,10 +164,10 @@ export class Hero {
         if (state.pressedKeys[Keys.LEFT] || state.pressedKeys[Keys.RIGHT]) {
             if (state.pressedKeys[Keys.LEFT]) {
                 state.ix = -this.xInc;
-                newTransform = newTransform.replace('90deg','110deg');
+                newTransform = newTransform.replace('90deg', '110deg');
             } else {
                 state.ix = this.xInc;
-                newTransform = newTransform.replace('90deg','70deg');
+                newTransform = newTransform.replace('90deg', '70deg');
             }
         }
 
@@ -180,8 +182,12 @@ export class Hero {
             state.iy = Math.clamp(state.iy + this.yInc, 0, this.yMax);
             if (state.iy === this.yMax) {
                 this.isInFall = true;
+                this.coastX = 0;
             }
             newTransform = newTransform.replace('280', (280 - state.iy).toString());
+        } else if (this.coastX < 20) {
+            this.coastX++;
+            newTransform = newTransform.replace('280', (280 - this.yMax).toString());
         } else {
             state.iy = Math.clamp(state.iy - this.yInc, 0, this.yMax);
             if (state.iy === 0) {
@@ -199,6 +205,25 @@ export class Hero {
         this.x += state.ix;
 
         this.a_fmax = (state.iy > 0 && !this.isInFall) ? 30 : 10;
+
+        this.checkCollision();
+    }
+
+    checkCollision() {
+
+        // don't need to check if the player is in the air
+        if(state.iy === 0) {
+            let currRow = Math.floor(state.tz / state.plane.gsH);
+            let currCol = Math.floor((1200 / 2 - state.plane.x) / state.plane.gsW);
+            let hasTile = state.map[currRow][currCol];
+            if (!this.isHit && !hasTile) {
+                this.isHit = true;
+                xId('app-container').classList.add('a_over');
+                //setTimeout(() => xId('app-container').classList.remove('a_over'), 500);
+            } else if (this.isHit && hasTile) {
+                this.isHit = false;
+            }
+        }
     }
 
     update() {

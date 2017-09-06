@@ -18,26 +18,27 @@ export class Backdrop {
     }
 
     renderCliffs() {
-        let c = addEl(this.mesh, 'canvas', 'cliff', 0, 600, 400).getContext('2d');
-        xPath(c, 400, 20, 30, '#359bc7', '#9ee9f4', [
+        let c = addEl(this.mesh, 'canvas', 'cliff', 0, 600, 500).getContext('2d');
+        xPath(c, 400, 20, 40, '#359bc7', '#9ee9f4', [
             [0, 8, 0],
             [2, 9, 1],
             [5, 8, 0],
             [6, 8, 2],
             [9, 7, 0],
-            [9, 5, 1],
-            [11, 4, 1],
-            [11, 3, 2],
-            [13, 3, 3],
-            [17, 1, 1]
+            [9, 6, 1],
+            [11, 5, 1],
+            [11, 4, 2],
+            [13, 4, 1],
+            [17, 3, 1],
+            [20, 2, 0]
         ]);
-        c = addEl(this.mesh, 'canvas', 'cliff', 1, 600, 400).getContext('2d');
-        xPath(c, 400, 20, 30, '#359bc7', '#9ee9f4', [
-            [0, 1, 1],
-            [1, 2, 0],
-            [2, 2, 0],
-            [4, 3, 2],
-            [4, 4, 1],
+        c = addEl(this.mesh, 'canvas', 'cliff', 1, 600, 500).getContext('2d');
+        xPath(c, 400, 20, 40, '#359bc7', '#9ee9f4', [
+            [0, 2, 1],
+            [2, 4, 0],
+            [2, 5, 0],
+            [4, 5, 2],
+            [4, 6, 1],
             [6, 6, 0],
             [9, 7, 2],
             [9, 8, 1],
