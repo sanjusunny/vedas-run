@@ -42,7 +42,7 @@
     width: 1200px;
     height: 660px;
     background-color: white;
-    //-webkit-clip-path: polygon(7% 13%, 23% 9%, 38% 21%, 84% 20%, 93% 63%, 66% 76%, 15% 83%, 25% 45%);
+    -webkit-clip-path: polygon(7% 13%, 23% 9%, 38% 21%, 84% 20%, 93% 63%, 66% 76%, 15% 83%, 25% 45%);
 }
 
 #w_fog {
@@ -50,9 +50,9 @@
     left: 0px;
     height: 70px;
     width: 1200px;
+    //background: linear-gradient(to bottom, #fff 0%, #dbf2f4 20%, rgba(219, 242, 244, 0.2) 70%, transparent 100%);
     background: radial-gradient(ellipse at top, rgba(255,255,255,1) 30%,rgba(255,255,255,0) 70%);
     transform-origin: 50% 0%;
     transform: rotateX(90deg) rotateZ(0deg) translateZ(-100px) scaleX(1) scaleY(1);
-    opacity: 0.9;
 }
 
