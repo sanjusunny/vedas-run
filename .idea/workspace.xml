@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="89b704a1-de39-4972-bba1-a8ae779cf05c" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +21,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="88">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,7 +80,6 @@
         <option value="$PROJECT_DIR$/src/styles/animations.css" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/app/blur.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/styles/ui.css" />
         <option value="$PROJECT_DIR$/src/app/entities/grid.js" />
         <option value="$USER_HOME$/Downloads/kontra (1).js" />
@@ -114,6 +114,7 @@
         <option value="$PROJECT_DIR$/src/styles/game.css" />
         <option value="$PROJECT_DIR$/src/app/game-state.js" />
         <option value="$PROJECT_DIR$/src/app/texture-manager.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -256,13 +257,6 @@
       <workItem from="1504534877484" duration="12448000" />
       <workItem from="1504554510580" duration="14334000" />
       <workItem from="1504570905548" duration="4595000" />
-    </task>
-    <task id="LOCAL-00009" summary="Updates">
-      <created>1503098255932</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1503098255933</updated>
     </task>
     <task id="LOCAL-00010" summary="Updates">
       <created>1503100881037</created>
@@ -600,11 +594,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504660000716</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Revert &quot;ice textures&quot;&#10;&#10;This reverts commit 36d66b2">
+      <created>1504660026234</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1504660026234</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236614000" />
+    <option name="totallyTimeSpent" value="236656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -747,8 +748,8 @@
     <entry file="file://$PROJECT_DIR$/src/blur.js/ui.js" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="88">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
