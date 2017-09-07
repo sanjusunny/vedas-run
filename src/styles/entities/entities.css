@@ -28,16 +28,6 @@
     height: 660px;
 }
 
-/*.e_snowplate {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 1200px;
-    height: 660px;
-    background-color: white;
-    -webkit-clip-path: polygon(7% 13%, 23% 9%, 38% 21%, 84% 20%, 93% 63%, 66% 76%, 15% 83%, 25% 45%);
-}*/
-
 #w_fog {
     top: 0px;
     left: 0px;
@@ -51,12 +41,9 @@
 }
 
 .b_fog {
-    top: 100px;
-    left: 0px;
-    height: 20px;
-    width: 1200px;
     background: linear-gradient(to top, #fff 0%, #dbf2f4 20%, rgba(219, 242, 244, 0.2) 70%, transparent 100%);
-    opacity: 0.5;
+    opacity: 1;
+    z-index: 20;
     /*mix-blend-mode: screen;
     display: none;*/
 }

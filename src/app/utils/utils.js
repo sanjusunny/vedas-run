@@ -61,13 +61,13 @@ export function xId(id) {
 // create and add a DOM element to the parent, size it and give it a class name
 export function addEl(parent, type, name, id, w, h, x, y) {
     let el = document.createElement(type);
-    if (w) {
+    if (w !== undefined) {
         el.width = w;
         el.height = h;
         el.style.width = w + 'px';
         el.style.height = h + 'px';
     }
-    if (x) {
+    if (x !== undefined) {
         el.style.left = x + 'px';
         el.style.top = y + 'px';
     }

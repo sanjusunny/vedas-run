@@ -22,14 +22,16 @@
     height: 660px;
 }
 
+
 .b_edge {
     position: absolute;
     top: -200px;
     left: 0px;
     width: 100px;
     height: 800px;
-    background: linear-gradient(to left, #B8EBF3 0%, #dbf2f4 100%);
+    //background: linear-gradient(to left, #B8EBF3 0%, #dbf2f4 100%);
     transform-origin: 0% 0%;
+    display: none;
 }
 
 .b_edge.b_1 {
@@ -37,8 +39,9 @@
 }
 
 .b_edge.b_2 {
-    width: 600px;
-    transform: translateX(-80px) translateZ(16px) rotateY(-175deg);
+    width: 100px;
+    transform: translateZ(0px) rotateY(0deg);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, #2f86af 40%, #2f86af 100%);
 }
 
 .b_edge.b_3 {

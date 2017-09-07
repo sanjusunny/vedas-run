@@ -13,13 +13,13 @@ export class Backdrop {
         this.renderBackdrop();
         this.renderTower();
         this.renderCliffs();
-        addEl(this.mesh, 'div', 'fog', 0, 1200, 300);
+        addEl(this.mesh, 'div', 'fog', 0, 1200, 100, 0, 300);
         this.ships = (state.vfx) ? [new Ship(this.mesh, 0), new Ship(this.mesh, 1), new Ship(this.mesh, 2), new Ship(this.mesh, 3)] : [];
     }
 
     renderCliffs() {
         let c = addEl(this.mesh, 'canvas', 'cliff', 0, 600, 500).getContext('2d');
-        xPath(c, 400, 20, 40, '#359bc7', '#9ee9f4', [
+        xPath(c, 400, 20, 35, '#359bc7', '#9ee9f4', [
             [0, 8, 0],
             [2, 9, 1],
             [5, 8, 0],
@@ -33,7 +33,7 @@ export class Backdrop {
             [20, 2, 0]
         ]);
         c = addEl(this.mesh, 'canvas', 'cliff', 1, 600, 500).getContext('2d');
-        xPath(c, 400, 20, 40, '#359bc7', '#9ee9f4', [
+        xPath(c, 400, 20, 35, '#359bc7', '#9ee9f4', [
             [0, 2, 1],
             [2, 4, 0],
             [2, 5, 0],
@@ -67,7 +67,7 @@ export class Backdrop {
     renderBackdrop() {
         let ctx = xId('b_stars').getContext('2d');
         let w = state.vw;
-        let h = 400;
+        let h = 560;
 
         let g = ctx.createLinearGradient(0, 0, 0, h);
         g.addColorStop(0, '#19587B');

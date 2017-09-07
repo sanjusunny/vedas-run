@@ -38,11 +38,7 @@ class Game {
             state.plane = new Plane();
             state.backdrop = new Backdrop();
             state.player = new Hero(state);
-            //state.player = new Player(state);
-            /*for (var i = 0; i < 5; i++) {
-                state.probes.push(new Probe(state));
-            }
-*/
+
             this.startLoop();
         }
     }

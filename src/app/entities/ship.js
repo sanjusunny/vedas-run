@@ -5,7 +5,7 @@ export class Ship {
     constructor(parent, id) {
         this.isFlying = false;
         this.trigger = rnd(2, 20);
-        this.el = addEl(parent, 'div', 'ship', id, 50, 50);
+        this.el = addEl(parent, 'div', 'ship', id);
         this.reset();
     }
 

@@ -78,7 +78,7 @@ export class Plane {
         for (let i = 0; i < this.vertTiles; i++) {
             let newRow = [];
             for (let j = 0; j < this.horizTiles; j++) {
-                if (state.map.length < 4 || (j > 1 && j < (this.horizTiles - 2) && Math.toggle())) {
+                if ((j > 1 && j < (this.horizTiles - 2)) && (state.map.length < 4 || Math.toggle())) {
                     newRow.push(1);
                     addEl(seg, 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
                 } else {
