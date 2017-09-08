@@ -133,7 +133,7 @@ export class Hero {
         this.coastX = 0; // coasting at the peak of the jump
         this.x = state.vw / 2;
         this.z = 0;
-        this.baseTransform = 'translateZ(280px) rotateY(90deg) scale3d(0.27,0.27,0.27)';
+        this.baseTransform = 'translateZ(264px) rotateY(90deg) scale3d(0.24,0.24,0.24)';
         this.currTransform = null;
         this.isHit = false;
 
@@ -218,7 +218,7 @@ export class Hero {
             let hasTile = state.map[currRow][currCol];
             if (!this.isHit && !hasTile) {
                 this.isHit = true;
-                xId('app-container').classList.add('a_over');
+                //xId('app-container').classList.add('a_over');
                 //setTimeout(() => xId('app-container').classList.remove('a_over'), 500);
             } else if (this.isHit && hasTile) {
                 this.isHit = false;
