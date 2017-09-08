@@ -1,0 +1,40 @@
+#cavern {
+    width: 1200px;
+    height: 660px;
+    top: 0px;
+    left: 0px;
+    transform-style: preserve-3d;
+    transform: rotateX(96deg) translateZ(-82px) translateY(72px) scaleY(0.8) scaleX(0.5);
+}
+
+
+.b_segment {
+
+}
+
+.b_segment::before {
+    background-color: rgba(17, 77, 121, 0.8);
+    display:block;
+    content:'';
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 1200px;
+    height: 460px;
+    transform-origin:50% 50%;
+    transform: translateZ(-200px) translateX(-1000px) rotateY(65deg);
+}
+
+.b_segment::after {
+    background-color: rgba(255, 0, 0, 0.27);
+    border: solid 2px rgba(255, 0, 0, 0.76);
+    display:block;
+    content:'';
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 1200px;
+    height: 460px;
+    transform-origin:50% 50%;
+    transform: translateZ(-200px) translateX(1000px) rotateY(115deg);
+}

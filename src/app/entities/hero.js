@@ -123,7 +123,7 @@ export class Hero {
         this.a_startFrame = this.frames[0];
         this.a_endFrame = this.frames[1];
         this.a_fn = 0;
-        this.a_fmax = 10;
+        this.a_fmax = 10; // frame rate for the animation
 
         this.xInc = 5;
         this.zInc = 2;
@@ -131,6 +131,7 @@ export class Hero {
         this.yMax = 50; // max jump height
         this.isInFall = false;
         this.coastX = 0; // coasting at the peak of the jump
+        this.isRunning = false;
         this.x = state.vw / 2;
         this.z = 0;
         this.baseTransform = 'translateZ(264px) rotateY(90deg) scale3d(0.24,0.24,0.24)';
@@ -212,7 +213,7 @@ export class Hero {
     checkCollision() {
 
         // don't need to check if the player is in the air
-        if(state.iy === 0) {
+        if (state.iy === 0) {
             let currRow = Math.floor(state.tz / state.plane.gsH);
             let currCol = Math.floor((1200 / 2 - state.plane.x) / state.plane.gsW);
             let hasTile = state.map[currRow][currCol];

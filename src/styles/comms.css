@@ -1,0 +1,26 @@
+#msgs {
+    height: 140px;
+    width: 300px;
+    position: absolute;
+    top: 500px;
+    left: 16px;
+    overflow: hidden;
+}
+
+#msgs .msg {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 12px 16px;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+    transform: translateX(-300px);
+}
+
+.c1 {
+    opacity: 0.4;
+}

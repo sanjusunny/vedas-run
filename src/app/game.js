@@ -5,6 +5,8 @@ import {Stats} from './utils/stats';
 import {Plane} from "./entities/plane";
 import {Backdrop} from "./entities/backdrop";
 import {Hero} from "./entities/hero";
+import {Cavern} from "./entities/cavern";
+import {Comms} from "./comms";
 
 window.onerror = function () {
     state.isRunning = false;
@@ -37,7 +39,9 @@ class Game {
             state.console = xId('console');
             state.plane = new Plane();
             state.backdrop = new Backdrop();
+            state.cavern = new Cavern();
             state.player = new Hero(state);
+            state.comms = new Comms();
 
             this.startLoop();
         }
@@ -54,6 +58,8 @@ class Game {
         state.player.update();
         state.plane.update();
         state.backdrop.update();
+        state.cavern.update();
+        state.comms.update();
 
         if(state.player.z%400 === 50) {
             //xId('app-container').classList.add('a_hit');
