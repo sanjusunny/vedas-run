@@ -9,14 +9,14 @@ export const state = {
     plane: null, // 3d plane
     player: null,
     comms: null,
-    status: 2, /* 1.Pregame 2.Ingame 3.RestartMenu */
+    status: 2, /* 1.Pregame 2.In-game 3.RestartMenu */
     pressedKeys: {},
     ix: 0, /* horizontal movement made by player each turn */
     iy: 0, /* accumulated vertical player position */
     iz: 0, /* forward movement made by player each turn */
     tz: 0, /* accumulated movement */
     ts: 0, /* elapsed ticks */
-    vfx: false,
+    vfx: true,
     map: [],
     tx_fuzzy: null,
     console: null,

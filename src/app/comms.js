@@ -6,7 +6,7 @@ export class Comms {
     constructor() {
         this.el = xId('msgs');
         this.script = new Map([
-            [0, 'I\'m lost... i\'ve spent 2 years searching this wasteland. I need to keep moving, the machines have finished the Infinity Beam. I need to stop them... before they turn it on.'],
+            [0, 'I\'m lost... I\'ve spent 2 years searching this wasteland. I need to keep moving, the machines have finished the Infinity Beam. I need to stop them... before they turn it on.'],
             [100, 'The Arctic... it\'s unrecognizable now. How did it come to this? The machines... they were supposed to be our salvation.'],
             [300, 'The Infinity Beam has to be near, I need to find it... and shut it down.'],
             [500, 'The hangar doors are closed, there must be a switch here somewhere.'],
@@ -19,6 +19,7 @@ export class Comms {
         this.activeText = '';
         this.index = 0;
         this.length = 0;
+        this.pause = 0;
     }
 
     update() {
@@ -31,9 +32,12 @@ export class Comms {
             }
         }
 
-        if (state.ts%2 ===0 && this.index < this.length) {
+        if (state.ts%2 ===0 && this.index < this.length && this.pause === 0) {
             this.index++;
             this.activeEl.innerHTML = this.activeText.substr(0, this.index);
+            if(this.activeText.substr(this.index, 2) === '. ' || this.activeText.substr(this.index, 2) === ', ') this.pause = 30; // pause at breaks for more realistic speech
+        } else {
+            this.pause = Math.max(0,this.pause-1);
         }
 
         // keep it permanently on screen if the game is paused
@@ -53,11 +57,15 @@ export class Comms {
         let li = document.createElement('div');
         li.appendChild(document.createTextNode(msg));
         li.className = 'msg';
-        if (error) li.classList.add('end');
+        if (error) {
+            li.classList.add('end');
+        }
 
         this.el.appendChild(li);
-        li.style.height = li.clientHeight + 'px';
+
+        li.style.height = (li.clientHeight-24) + 'px';
         li.style.width = Math.min(300, li.clientWidth) + 'px';
+
         setTimeout(() => {
             li.style.transform = 'translateX(0px)';
             li.innerHTML = (error)?msg:'';

@@ -9,7 +9,7 @@
     top: 0px;
     left: 0px;
     transform-style: preserve-3d;
-    transform: rotateX(96deg) translateZ(-82px) translateY(72px) scaleY(0.8) scaleX(0.5);
+    transform: rotateX(96deg) translateZ(-82px) translateY(64px) scaleY(0.8) scaleX(0.5);
 }
 
 #layer-3d * {

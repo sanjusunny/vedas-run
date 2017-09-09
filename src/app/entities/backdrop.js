@@ -13,7 +13,7 @@ export class Backdrop {
         this.renderBackdrop();
         this.renderTower();
         this.renderCliffs();
-        addEl(this.mesh, 'div', 'fog', 0, 1200, 150, 0, 334);
+        addEl(this.mesh, 'div', 'fog', 0, 1200, 150, 0, 354);
         this.ships = (state.vfx) ? [new Ship(this.mesh, 0), new Ship(this.mesh, 1), new Ship(this.mesh, 2), new Ship(this.mesh, 3)] : [];
     }
 
@@ -67,7 +67,7 @@ export class Backdrop {
     renderBackdrop() {
         let ctx = xId('b_stars').getContext('2d');
         let w = state.vw;
-        let h = 560;
+        let h = 660;
 
         let g = ctx.createLinearGradient(0, 0, 0, h);
         g.addColorStop(0, '#19587B');
@@ -84,6 +84,11 @@ export class Backdrop {
         ctx.globalAlpha = 0.8;
         ctx.fillStyle = g;
         ctx.fillRect(0, 0, w, h);
+
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = '#41c2e5';
+        ctx.globalAlpha = 0.2;
+        ctx.fillRect(0, 380, w, 40);
 
         ctx.globalAlpha = 1;
         ctx.globalCompositeOperation = 'lighten';
@@ -123,6 +128,7 @@ export class Backdrop {
     }
 
     renderTower() {
+
         let c = addEl(this.twr, 'canvas', 'twr-cvs', 0, 600, 600).getContext('2d');
         c.fillStyle = '#2C99C9';
         c.globalAlpha = '0.6';

@@ -18,6 +18,7 @@
 
 .b_cliff{
     z-index:10;
+    top: 20px;
 }
 
 .b_cliff.b_1 {

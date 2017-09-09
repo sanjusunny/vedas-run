@@ -2,10 +2,10 @@
     height: 400px;
     width: 340px;
     position: absolute;
-    top: 300px;
+    top: 280px;
     left: 16px;
     line-height: 21px;
-    display: none;
+/*    display: none;*/
 }
 
 #msgs .msg {
@@ -15,11 +15,22 @@
     color: #cfcfcf;
     font-weight: normal;
     font-size: 14px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 1);
     padding: 16px 20px;
     display: inline-block;
     transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
     transform: translateX(-300px);
+}
+
+.msg:not(.c1):after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    bottom: -20px;
+    border: 20px solid;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 1);
 }
 
 .c1 {
@@ -30,4 +41,8 @@
     background-color: rgba(255, 0, 0, 0.9) !important;
     padding: 24px 20px !important;
     font-weight: bold !important;
+}
+
+.end:after {
+    display: none;
 }
