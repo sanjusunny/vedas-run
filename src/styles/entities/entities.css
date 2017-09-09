@@ -36,8 +36,20 @@
 
 .b_missile {
     background-color: red;
-    /*transform: rotateX(90deg);*/
-    /*display: none;*/
+    transform-origin: 50% 50%;
+    transform: rotateX(90deg) translateY(20px);
+    display: none;
+}
+
+.b_missile:before {
+    display: block;
+    content: '';
+    background-color: rgba(18, 79, 123, 0.2);
+    position: absolute;
+    transform: rotateX(270deg) translateZ(-14px);
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
 }
 
 .b_segment {

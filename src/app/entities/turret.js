@@ -15,14 +15,16 @@ export class Turret {
         this.yInc = 0;
         this.tX = 0; // missile target
         this.tY = 660;
+        this.absX = 0; // missile target in segment coordinates
         this.el = addEl(parent, 'div', 'turret', id, 8, 600, x, y);
         this.elHead = addEl(this.el, 'div', 'turret-head', id, 20, 20, -5, 10);
 
-        this.missile = addEl(xId('game-plane'), 'div', 'missile', id, 8, 8, this.x, this.y);
+        this.missile = addEl(xId('game-plane'), 'div', 'missile', id, 2, 2, this.x, this.y);
         this.pos = 500;
         this.busy = 0;
         this.missileActive = 0;
         this.parent = parent;
+        this.transform = '';
         id++;
 
         this.isActive = true;
@@ -55,8 +57,10 @@ export class Turret {
             this.missile.style.top = this.y + 'px';
             this.x += (this.xInc-state.ix);
             this.missile.style.left = this.x + 'px';
+
             this.missileActive = Math.max(0, this.missileActive - 1);
             if (this.missileActive === 0) {
+                state.player.checkHit(this.absX);
                 this.missile.style.display = 'none';
             }
         }
@@ -64,11 +68,12 @@ export class Turret {
 
     addMissile() {
         this.missile.style.display = 'block';
-        this.missileActive = 100;
-        this.x = this.bx;
+        this.missileActive = 150;
+        this.x = this.bx - state.tx;
         this.y = this.by + (state.tz - this.prevTz);
         this.tX = 600;
         this.tY = 660;
+        this.absX = this.tX - state.tx;
         this.xInc = (this.tX - this.x) / this.missileActive;
         this.yInc = (this.tY - this.y) / this.missileActive;
     }

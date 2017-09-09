@@ -112,8 +112,6 @@ export class Plane {
     }
 
     update() {
-        state.log(state.objects.length);
-
         if (this.z > this.mapLength) return;
 
         this.x = (this.x - state.ix);

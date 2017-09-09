@@ -1,4 +1,4 @@
-import {Keys, xId} from "../utils/utils";
+import {isClose, Keys, xId} from "../utils/utils";
 import {Object3D} from "../utils/obj3d";
 import {state} from "../game-state";
 
@@ -208,10 +208,19 @@ export class Hero {
 
         this.z += state.iz;
         this.x += state.ix;
+        state.tx = this.x - state.vw / 2;
 
         this.a_fmax = (state.iy > 0 && !this.isInFall) ? 30 : 10;
 
         this.checkCollision();
+    }
+
+    // check hit by missile, x/y in game-plane space
+    checkHit(mx) {
+        if (state.iy === 0 && isClose(-state.tx, mx - state.vw / 2, 40)) {
+            xId('app-container').classList.add('a_hit');
+            setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
+        }
     }
 
     checkCollision() {
@@ -237,7 +246,7 @@ export class Hero {
             state.ix = 0;
             state.iy = 0;
             this.zInc = Math.max(0, this.zInc - 0.01); // decelerate
-            if(this.zInc < 1.5) {
+            if (this.zInc < 1.5) {
                 xId('layer-3d').classList.add('a_over');
                 state.comms.showMsg('Watch your step and stay on the platforms. Press 1 to RESTART or 2 to QUIT', true);
                 state.status = 3;
