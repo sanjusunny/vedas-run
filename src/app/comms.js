@@ -6,7 +6,7 @@ export class Comms {
     constructor() {
         this.el = xId('msgs');
         this.script = new Map([
-            [0, 'I\'m lost...i\'ve spent 2 years searching this wasteland. I need to keep moving, the machines have finished the Infinity Beam. I need to stop them... before they turn it on.'],
+            [0, 'I\'m lost... i\'ve spent 2 years searching this wasteland. I need to keep moving, the machines have finished the Infinity Beam. I need to stop them... before they turn it on.'],
             [100, 'The Arctic... it\'s unrecognizable now. How did it come to this? The machines... they were supposed to be our salvation.'],
             [300, 'The Infinity Beam has to be near, I need to find it... and shut it down.'],
             [500, 'The hangar doors are closed, there must be a switch here somewhere.'],
@@ -16,6 +16,9 @@ export class Comms {
         this.timer = 1;
         this.activeId = -1;
         this.activeEl = null;
+        this.activeText = '';
+        this.index = 0;
+        this.length = 0;
     }
 
     update() {
@@ -28,7 +31,13 @@ export class Comms {
             }
         }
 
-        this.timer = (this.end) ? this.timer : Math.max(0, this.timer - 0.01);
+        if (state.ts%2 ===0 && this.index < this.length) {
+            this.index++;
+            this.activeEl.innerHTML = this.activeText.substr(0, this.index);
+        }
+
+        // keep it permanently on screen if the game is paused
+        this.timer = (state.status === 3) ? this.timer : Math.max(0, this.timer - 0.01);
         this.el.style.opacity = this.timer;
         if (this.timer === 0) {
             while (this.el.firstChild) {
@@ -47,7 +56,15 @@ export class Comms {
         if (error) li.classList.add('end');
 
         this.el.appendChild(li);
-        setTimeout(() => li.style.transform = 'translateX(0px)', 10);
+        li.style.height = li.clientHeight + 'px';
+        li.style.width = Math.min(300, li.clientWidth) + 'px';
+        setTimeout(() => {
+            li.style.transform = 'translateX(0px)';
+            li.innerHTML = (error)?msg:'';
+            this.activeText = msg;
+            this.index = 0;
+            this.length = msg.length;
+        }, 10);
 
         if (this.activeEl) {
             this.activeEl.classList.add('c1');
