@@ -5,10 +5,11 @@ export class Comms {
 
     constructor() {
         this.el = xId('msgs');
+        if(!state.text) this.el.style.display = 'none';
         this.script = new Map([
-            [0, 'I\'m lost... I\'ve spent 2 years searching this wasteland. I need to keep moving, the machines have finished the Infinity Beam. I need to stop them... before they turn it on.'],
+            [0, 'I\'m lost... I\'ve spent 2 years searching this wasteland. The machines have finished the Tachyon Beam. I need to stop them... before they turn it on.'],
             [100, 'The Arctic... it\'s unrecognizable now. How did it come to this? The machines... they were supposed to be our salvation.'],
-            [300, 'The Infinity Beam has to be near, I need to find it... and shut it down.'],
+            [300, 'The Tachyon Beam has to be near, I can feel the pulses. I need to find it... and shut it down.'],
             [500, 'The hangar doors are closed, there must be a switch here somewhere.'],
             [700, 'That did it. The bay doors are opening...'],
             [900, 'The Quantum Tower! It\'s active... I don\'t have much time.']
