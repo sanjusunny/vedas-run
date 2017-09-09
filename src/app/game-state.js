@@ -18,8 +18,8 @@ export const state = {
     tz: 0, /* accumulated movement */
     ts: 0, /* elapsed ticks */
     vfx: true,
-    text: true,
-    doChecks: true,
+    text: false,
+    doChecks: false,
     map: [],
     tx_fuzzy: null,
     console: null,

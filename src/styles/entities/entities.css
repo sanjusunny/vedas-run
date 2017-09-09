@@ -50,7 +50,7 @@
 .b_missile:before {
     display: block;
     content: '';
-    background-color: rgba(18, 79, 123, 0.2);
+    background-color: rgba(255,0,0,0.1);
     position: absolute;
     transform: rotateX(270deg) translateZ(-14px);
     width: 12px;

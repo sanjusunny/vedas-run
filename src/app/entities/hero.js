@@ -217,7 +217,7 @@ export class Hero {
 
     // check hit by missile, x/y in game-plane space
     checkHit(mx) {
-        if (state.iy === 0 && isClose(-state.tx, mx - state.vw / 2, 40)) {
+        if (state.doChecks && state.iy === 0 && isClose(-state.tx, mx - state.vw / 2, 20)) {
             xId('app-container').classList.add('a_hit');
             setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
             return true;
