@@ -12,6 +12,7 @@
 
 }
 
+/*
 .b_segment::before {
     background-color: rgba(17, 77, 121, 0.8);
     display:block;
@@ -37,4 +38,4 @@
     height: 460px;
     transform-origin:50% 50%;
     transform: translateZ(-200px) translateX(1000px) rotateY(115deg);
-}
+}*/

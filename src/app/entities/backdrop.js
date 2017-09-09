@@ -13,7 +13,7 @@ export class Backdrop {
         this.renderBackdrop();
         this.renderTower();
         this.renderCliffs();
-        addEl(this.mesh, 'div', 'fog', 0, 1200, 100, 0, 300);
+        addEl(this.mesh, 'div', 'fog', 0, 1200, 150, 0, 334);
         this.ships = (state.vfx) ? [new Ship(this.mesh, 0), new Ship(this.mesh, 1), new Ship(this.mesh, 2), new Ship(this.mesh, 3)] : [];
     }
 
@@ -102,7 +102,7 @@ export class Backdrop {
         let ctx3 = fxCvs.getContext('2d');
         for (let i = 0; i < 100; i++) {
             ctx3.fillStyle = `rgba(0,0,0,${rnd(2, 10) / 10})`;
-            ctx3.fillRect(rnd(0, fxCvs.width), rnd(0, fxCvs.height), rnd(1, fxCvs.width / 5), 2);
+            ctx3.fillRect(rnd(1, fxCvs.width), rnd(1, fxCvs.height), rnd(1, fxCvs.width / 5), 1);
         }
 
         ctx2.restore();
@@ -110,7 +110,7 @@ export class Backdrop {
         ctx2.globalAlpha = 0.8;
         //ctx2.fillRect(0, 0, 1200, 260);
         ctx2.globalCompositeOperation = 'screen';
-        ctx2.globalAlpha = 0.9;
+        ctx2.globalAlpha = 1;
         ctx2.drawImage(fxCvs, 0, 0, 1200, 700);
 
         // stars
@@ -187,8 +187,8 @@ export class Backdrop {
             this.beam.style.transform = `translateX(${rnd(0, 8)}px) scaleX(${rnd(10, 60) / 10})`;
         }
 
-        if (state.tz > 700) {
-            this.x = this.x - state.ix / 20;
+        if (state.tz >= 700) {
+            this.x = this.x - state.ix / 40;
             this.sc = 1 + (state.tz - 700) * 2 / 10000;
             this.twr.style.transform = `translateX(${this.x}px)`;
             this.mesh.style.transform = `translateY(${state.iy / 2}px) scaleX(${this.sc}) scaleY(${this.sc})`;

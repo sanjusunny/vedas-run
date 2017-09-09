@@ -5,6 +5,7 @@
     top: 300px;
     left: 16px;
     line-height: 21px;
+    display: none;
 }
 
 #msgs .msg {

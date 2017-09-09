@@ -9,15 +9,11 @@
 .b_plate:before {
     display: block;
     content:'';
-    background-color: rgba(18, 79, 123, 0.33);
+    background-color: rgba(18, 79, 123, 0.5);
     position: absolute;
     transform: translateZ(-4px);
     width: 120px;
-    height: 60px
-    /*transform-origin: 50% 0%;
-    transform: rotateX(90deg) rotateZ(0deg);
-    background: linear-gradient(to bottom, #B8EBF3 0%, #dbf2f4 40%, #dbf2f4 100%);
-    animation: 1s linear 0s infinite alternate kf-hov;*/
+    height: 60px;
 }
 
 .b_segment {
@@ -30,22 +26,17 @@
 
 #w_fog {
     top: 0px;
-    left: 0px;
-    height: 70px;
-    width: 1200px;
-    /*background: linear-gradient(to bottom, #fff 0 %, #dbf2f4 20 %, rgba(219, 242, 244, 0.2) 70 %, transparent 100 %);*/
-    background: radial-gradient(ellipse at top, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0) 70%);
-    transform-origin: 50% 0%;
-    transform: rotateX(90deg) rotateZ(0deg) translateZ(-100px) scaleX(1) scaleY(1);
-    /*display: none;*/
+    left: 400px;
+    height: 80px;
+    width: 400px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 20%, rgba(255, 255, 255, 0) 70%);
+    transform: rotateX(90deg) rotateZ(0deg) translateY(40px) scaleX(3) scaleY(2);
 }
 
 .b_fog {
-    background: linear-gradient(to top, #fff 0%, #dbf2f4 20%, rgba(219, 242, 244, 0.2) 70%, transparent 100%);
-    opacity: 1;
+    background: linear-gradient(to bottom, rgba(228,245,252,0) 20%,rgba(228,245,252,1) 40%,rgba(191,232,249,1) 55%,rgba(42,176,237,0) 80%);
+    opacity: 0.95;
     z-index: 20;
-    /*mix-blend-mode: screen;
-    display: none;*/
 }
 
 
