@@ -230,17 +230,17 @@ export class Hero {
                 //this.isHit = false;
                 //this.el.style.top = '270px';
             }
+        }
 
-            if (this.isHit) {
-                state.iz = this.zInc;
-                state.ix = 0;
-                state.iy = 0;
-                this.zInc = Math.max(0, this.zInc - 0.01); // decelerate
-                if(this.zInc < 1.5) {
-                    xId('layer-3d').classList.add('a_over');
-                    state.comms.showMsg('Watch your step and stay on the platforms. Press 1 to RESTART or 2 to QUIT', true);
-                    state.status = 3;
-                }
+        if (this.isHit) {
+            state.iz = this.zInc;
+            state.ix = 0;
+            state.iy = 0;
+            this.zInc = Math.max(0, this.zInc - 0.01); // decelerate
+            if(this.zInc < 1.5) {
+                xId('layer-3d').classList.add('a_over');
+                state.comms.showMsg('Watch your step and stay on the platforms. Press 1 to RESTART or 2 to QUIT', true);
+                state.status = 3;
             }
         }
     }
