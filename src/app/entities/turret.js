@@ -19,7 +19,7 @@ export class Turret {
         this.el = addEl(parent, 'div', 'turret', id, 8, 900, x, y);
         this.elHead = addEl(this.el, 'div', 'turret-head', id, 20, 20, -5, 10);
 
-        this.missile = addEl(xId('game-plane'), 'div', 'missile', id, 4, 2, this.x, this.y);
+        this.missile = addEl(xId('game-plane'), 'div', 'missile', id, 6, 3, this.x, this.y);
         this.pos = 500;
         this.busy = 0;
         this.missileActive = 0;

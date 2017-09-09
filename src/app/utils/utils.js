@@ -18,8 +18,8 @@ export function xPath(ctx, height, sX, sY, color1, color2, data) {
 
         if (x1 !== x2) {
             let grd = ctx.createLinearGradient(x1, height - y1, x1, height);
-            grd.addColorStop(0, brighten(color1, data[i][2] * 10));
-            grd.addColorStop(1, brighten(color2, data[i][2] * 10));
+            grd.addColorStop(0, brighten(color1, data[i][2] * 30));
+            grd.addColorStop(1, brighten(color2, data[i][2] * 30));
             ctx.fillStyle = grd;
 
             ctx.beginPath();
@@ -28,15 +28,16 @@ export function xPath(ctx, height, sX, sY, color1, color2, data) {
             ctx.lineTo(x2, height - y2);
             ctx.lineTo(x2, height);
             ctx.fill();
-            ctx.stroke();
+            //ctx.stroke();
         }
     }
     ctx.globalCompositeOperation = 'source-atop';
-    ctx.drawImage(txFuzzy('#4DA9CF'), 0, 100, 400, height);
+    ctx.globalAlpha = 0.7;
+    if(state.tx_fuzzy === null) state.tx_fuzzy = txFuzzy('#4DA9CF');
+    ctx.drawImage(state.tx_fuzzy, 0, 0, 400, height);
 }
 
-
-function txFuzzy(col) {
+/*function txFuzzy(col) {
     let cvs = addEl(null, 'canvas', 'x', 0, 256, 32);
     var ctx = cvs.getContext('2d');
     ctx.globalCompositeOperation = 'hard-light';
@@ -44,6 +45,19 @@ function txFuzzy(col) {
     for (let i = 0; i < 40; i++) {
         ctx.globalAlpha = rnd(0, 10) / 10;
         ctx.fillRect(rnd(0, 256), rnd(0, 16), rnd(1, 7), rnd(0, 32));
+    }
+    return cvs;
+}*/
+
+function txFuzzy(col) {
+    let cvs = addEl(null, 'canvas', 'x', 0, 256, 32);
+    var ctx = cvs.getContext('2d');
+    ctx.globalCompositeOperation = 'hard-light';
+    ctx.fillStyle = col;
+    for (let i = 0; i < 256; i++) {
+        ctx.globalAlpha = rnd(1, 10) / 10;
+        ctx.fillRect(i, 0, 1, rnd(16,32));
+        ctx.filter = 'blur(1px)';
     }
     return cvs;
 }

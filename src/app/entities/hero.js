@@ -251,8 +251,9 @@ export class Hero {
             this.zInc = Math.max(0, this.zInc - 0.01); // decelerate
             if (this.zInc < 1.5) {
                 xId('layer-3d').classList.add('a_over');
-                state.comms.showMsg('Watch your step and stay on the platforms. Press 1 to RESTART or 2 to QUIT', true);
+                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
                 state.status = 3;
+                state.doChecks = false;
             }
         }
     }

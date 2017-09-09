@@ -122,6 +122,8 @@ class Game {
             state.player.reset();
             state.plane.reset();
             state.backdrop.reset();
+            state.doChecks = true;
+
             xId('layer-3d').classList.remove('a_over');
             state.status = 2;
 

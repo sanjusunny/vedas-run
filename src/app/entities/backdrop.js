@@ -19,7 +19,7 @@ export class Backdrop {
 
     renderCliffs() {
         let c = addEl(this.mesh, 'canvas', 'cliff', 0, 600, 500).getContext('2d');
-        xPath(c, 400, 20, 35, '#359bc7', '#9ee9f4', [
+        xPath(c, 400, 20, 45, '#359bc7', '#9ee9f4', [
             [0, 8, 0],
             [2, 9, 1],
             [5, 8, 0],
@@ -27,41 +27,27 @@ export class Backdrop {
             [9, 7, 0],
             [9, 6, 1],
             [11, 5, 1],
-            [11, 4, 2],
-            [13, 4, 1],
-            [17, 3, 1],
-            [20, 2, 0]
+            [11, 4, 0],
+            [13, 5, 2],
+            [17, 3, 2],
+            [17, 2, 1],
+            [20, 1.5, 0]
         ]);
         c = addEl(this.mesh, 'canvas', 'cliff', 1, 600, 500).getContext('2d');
-        xPath(c, 400, 20, 35, '#359bc7', '#9ee9f4', [
+        xPath(c, 400, 20, 40, '#359bc7', '#9ee9f4', [
             [0, 2, 1],
+            [2, 3, 0],
             [2, 4, 0],
-            [2, 5, 0],
-            [4, 5, 2],
-            [4, 6, 1],
-            [6, 6, 0],
+            [3, 5, 2],
+            [4, 4, 0],
+            [6, 7, 1],
             [9, 7, 2],
-            [9, 8, 1],
-            [10, 9, 0],
-            [11, 9, 1],
-            [11, 10, 0],
-            [14, 11, 0]
+            [9, 8, 2],
+            [11, 9, 0],
+            [13, 9, 0],
+            [13, 9, 1],
+            [20, 10, 0]
         ]);
-
-        // mega cliffs
-
-        /*c = addEl(this.mesh, 'canvas', 'cliff-left-mega', 0, 600, 400).getContext('2d');
-        xPath(c, 400, 20, 30, '#444444', '#777777', [
-            [0, 8, 0],
-            [2, 9, 1],
-            [5, 8, 0],
-            [6, 8, 2],
-            [9, 7, 0],
-            [9, 5, 1],
-            [11, 4, 1],
-            [11, 3, 2],
-            [13, 2, 5]
-        ]);*/
     }
 
     renderBackdrop() {
@@ -208,5 +194,7 @@ export class Backdrop {
     reset() {
         this.x = 0;
         this.sc = 1;
+        this.twr.style.transform = `translateX(${this.x}px)`;
+        this.mesh.style.transform = `translateY(${state.iy / 2}px) scaleX(${this.sc}) scaleY(${this.sc})`;
     }
 }

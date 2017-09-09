@@ -286,12 +286,12 @@ var Music = {
         if ( this.ac ) {
             now = this.ac.currentTime;
             delay = now + ( 60 / tempo * 16 );
-            //this.lead.play( now );
-            //this.counterpoint.play( delay );
+            this.lead.play( now );
+            this.counterpoint.play( delay );
             this.bass.play( delay );
             this.kick.play( delay );
-            //this.pad1.play( delay );
-            //this.pad2.play( delay );
+            this.pad1.play( delay );
+            this.pad2.play( delay );
         }
     },
 
@@ -475,6 +475,5 @@ var Music = {
 
 };
 
-/*
 Music.init();
-Music.play();*/
+Music.play();

@@ -19,9 +19,6 @@
 .b_turret {
     background: linear-gradient(to bottom, rgba(228, 245, 252, 0) 20%, rgba(228, 245, 252, 1) 100%);
     border-left: solid 4px rgba(75, 198, 225, 0.9);
-    /*width: 40px !important;
-    height: 40px !important;
-    background-color:red;*/
     transform-origin: 0% 0%;
     transform: rotateX(90deg) translateY(-400px);
 }

@@ -8,7 +8,6 @@ export class Plane {
         this.y = 0;
         this.z = 0;
         this.mesh = xId('game-plane');
-        this.edges = xId('edges');
 
         this.segmentWidth = 1200;
         this.segmentLength = 660; // pixel height of a segment
@@ -32,42 +31,7 @@ export class Plane {
         this.activeSeg = 0;
         this.renderSegment(0, 0);
         this.renderSegment(1, 1);
-
-        this.renderOnce();
     }
-
-    renderOnce() {
-        // draw edges
-        addEl(this.edges, 'div', 'edge', 1);
-        addEl(this.edges, 'div', 'edge', 2);
-        addEl(this.edges, 'div', 'edge', 3);
-        addEl(this.edges, 'div', 'edge', 4);
-    }
-
-    /*generateMap() {
-        let map = [];
-        let mapSrc = new Map([
-            ['100.6', 1],
-            ['200.10', 1],
-            ['300.11', 1],
-            ['400.12', 1],
-            ['500.10', 1],
-            ['600.8', 1],
-            ['700.12', 1],
-            ['800.10', 1],
-            ['1200.8', 1]
-        ]);
-
-        for (let i = 0; i < this.mapLength; i++) {
-            map[i] = [];
-            for (let j = 0; j < this.mapWidth; j++) {
-                var val = mapSrc.get(`${i}.${j}`);
-                map[i][j] = (val !== undefined) ? val : 0
-            }
-        }
-
-        return map;
-    }*/
 
     // id of the segment to render, either 0 or 1
     renderSegment(id, segNum) {
@@ -128,7 +92,6 @@ export class Plane {
             this.activeSeg = currSeg;
         }
 
-        this.edges.style.transform = `translateX(${this.x}px)`;
         this.segs[currSeg].style.transform = `translateX(${this.x}px) translateY(${delta}px)`;
         this.segs[nextSeg].style.transform = `translateX(${this.x}px) translateY(${-this.segmentLength + delta}px)`;
 
