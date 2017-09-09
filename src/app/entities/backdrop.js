@@ -13,7 +13,7 @@ export class Backdrop {
         this.renderBackdrop();
         this.renderTower();
         this.renderCliffs();
-        addEl(this.mesh, 'div', 'fog', 0, 1200, 150, 0, 354);
+        addEl(this.mesh, 'div', 'fog', 0, 1200, 150, 0, 352);
         this.ships = (state.vfx) ? [new Ship(this.mesh, 0), new Ship(this.mesh, 1), new Ship(this.mesh, 2), new Ship(this.mesh, 3)] : [];
     }
 
@@ -203,5 +203,10 @@ export class Backdrop {
         }
 
         this.ships.forEach((ship) => ship.update());
+    }
+
+    reset() {
+        this.x = 0;
+        this.sc = 1;
     }
 }

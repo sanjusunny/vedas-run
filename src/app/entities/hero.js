@@ -220,7 +220,10 @@ export class Hero {
         if (state.iy === 0 && isClose(-state.tx, mx - state.vw / 2, 40)) {
             xId('app-container').classList.add('a_hit');
             setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
+            return true;
         }
+
+        return false;
     }
 
     checkCollision() {

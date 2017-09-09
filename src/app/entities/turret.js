@@ -5,7 +5,7 @@ let id = 0;
 
 export class Turret {
     constructor(parent, x, y) {
-        let pos = segmentToPlane(x,y);
+        let pos = segmentToPlane(x, y);
         this.prevTz = state.iz;
         this.x = pos[0]; // missile x
         this.y = pos[1];
@@ -16,15 +16,15 @@ export class Turret {
         this.tX = 0; // missile target
         this.tY = 660;
         this.absX = 0; // missile target in segment coordinates
-        this.el = addEl(parent, 'div', 'turret', id, 8, 600, x, y);
+        this.el = addEl(parent, 'div', 'turret', id, 8, 900, x, y);
         this.elHead = addEl(this.el, 'div', 'turret-head', id, 20, 20, -5, 10);
 
-        this.missile = addEl(xId('game-plane'), 'div', 'missile', id, 2, 2, this.x, this.y);
+        this.missile = addEl(xId('game-plane'), 'div', 'missile', id, 4, 2, this.x, this.y);
         this.pos = 500;
         this.busy = 0;
         this.missileActive = 0;
+        this.coasting = false;
         this.parent = parent;
-        this.transform = '';
         id++;
 
         this.isActive = true;
@@ -41,33 +41,45 @@ export class Turret {
     update() {
 
         if (this.busy === 0 && state.ts % 60 === 0 && Math.toggle()) {
-            this.pos = rnd(400, 580);
-            this.elHead.style.transform = `translateY(${this.pos}px)`;
+            this.pos = 400;
             this.busy = 120;
         } else if (this.busy > 0) {
             this.busy = Math.max(0, this.busy - 1);
             if (this.busy === 0 && this.missileActive === 0 && Math.toggle()) {
                 this.addMissile();
+                this.elHead.classList.add('fire');
+                setTimeout(() => {
+                    this.pos = rnd(300, 800);
+                    this.elHead.classList.remove('fire');
+                }, 500);
                 this.busy = 120;
             }
         }
 
+        this.elHead.style.transform = `translateY(${this.pos}px)`;
+
         if (this.missileActive > 0) {
-            this.y += (this.yInc+state.iz);
+            this.y += (this.yInc + state.iz);
             this.missile.style.top = this.y + 'px';
-            this.x += (this.xInc-state.ix);
+            this.x += (this.xInc - state.ix);
             this.missile.style.left = this.x + 'px';
 
             this.missileActive = Math.max(0, this.missileActive - 1);
-            if (this.missileActive === 0) {
-                state.player.checkHit(this.absX);
+            if (!this.coasting && this.missileActive === 0) {
+                if (state.player.checkHit(this.absX)) {
+                    this.missile.style.display = 'none';
+                } else {
+                    this.coasting = true;
+                    this.missileActive = 5;
+                }
+            } else if (this.coasting && this.missileActive === 0) {
+                this.coasting = false;
                 this.missile.style.display = 'none';
             }
         }
     }
 
     addMissile() {
-        this.missile.style.display = 'block';
         this.missileActive = 150;
         this.x = this.bx - state.tx;
         this.y = this.by + (state.tz - this.prevTz);
@@ -76,5 +88,9 @@ export class Turret {
         this.absX = this.tX - state.tx;
         this.xInc = (this.tX - this.x) / this.missileActive;
         this.yInc = (this.tY - this.y) / this.missileActive;
+
+        // only fire it if its a certain distance away
+        if ((this.tY - this.y) > 100)
+            this.missile.style.display = 'block';
     }
 }

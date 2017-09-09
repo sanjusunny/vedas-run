@@ -23,19 +23,25 @@
     height: 40px !important;
     background-color:red;*/
     transform-origin: 0% 0%;
-    transform: rotateX(90deg);
+    transform: rotateX(90deg) translateY(-400px);
 }
 
 .b_turret-head {
-    background-color: rgba(255, 254, 206, 0.4);
-    border-top: solid 4px rgba(255, 0, 0, 0.7);
+    background-color: white;
+    border-top: solid 4px rgba(75, 198, 225, 0.7);
     border-bottom: solid 2px rgba(255, 255, 255, 0.7);
-    transition: transform 1s cubic-bezier(.36, -0.64, .34, 1.76);
+    transition: all 1s cubic-bezier(.36, -0.64, .34, 1.76);
     transform: translateY(500px);
+}
+
+.b_turret-head.fire {
+    background-color: red;
+    height: 40px !important;
 }
 
 .b_missile {
     background-color: red;
+    border-radius:4px;
     transform-origin: 50% 50%;
     transform: rotateX(90deg) translateY(20px);
     display: none;
@@ -66,7 +72,7 @@
     height: 80px;
     width: 400px;
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 20%, rgba(255, 255, 255, 0) 70%);
-    transform: rotateX(90deg) rotateZ(0deg) translateY(20px) scaleX(3) scaleY(2);
+    transform: rotateX(90deg) rotateZ(0deg) translateY(10px) scaleX(3) scaleY(2);
 }
 
 .b_fog {
