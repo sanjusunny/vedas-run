@@ -60,6 +60,8 @@ class Game {
         state.backdrop.update();
         state.cavern.update();
 
+        state.objects.forEach(obj => obj.update());
+
         // 3.RestartMenu
         if(state.status !== 3)
             state.comms.update();

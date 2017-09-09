@@ -8,12 +8,26 @@
 
 .b_plate:before {
     display: block;
-    content:'';
+    content: '';
     background-color: rgba(18, 79, 123, 0.5);
     position: absolute;
     transform: translateZ(-4px);
     width: 120px;
     height: 60px;
+}
+
+.b_turret {
+    background: linear-gradient(to bottom, rgba(228, 245, 252, 0) 20%, rgba(228, 245, 252, 1) 100%);
+    border-left: solid 4px rgba(75, 198, 225, 0.9);
+    transform: rotateX(90deg) translateY(-100px);
+}
+
+.b_turret-head {
+    background-color: rgba(255, 254, 206, 0.4);
+    border-top: solid 4px rgba(255, 0, 0, 0.7);
+    border-bottom: solid 2px rgba(255, 255, 255, 0.7);
+    transition: transform 1s cubic-bezier(.36, -0.64, .34, 1.76);
+    transform: translateY(500px);
 }
 
 .b_segment {
@@ -34,11 +48,10 @@
 }
 
 .b_fog {
-    background: linear-gradient(to bottom, rgba(228,245,252,0) 20%,rgba(228,245,252,1) 40%,rgba(191,232,249,1) 55%,rgba(42,176,237,0) 80%);
+    background: linear-gradient(to bottom, rgba(228, 245, 252, 0) 20%, rgba(228, 245, 252, 1) 40%, rgba(191, 232, 249, 1) 55%, rgba(42, 176, 237, 0) 80%);
     opacity: 0.95;
     z-index: 20;
 }
-
 
 @keyframes kf-hov {
     0% {

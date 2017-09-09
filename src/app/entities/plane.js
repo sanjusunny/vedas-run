@@ -1,5 +1,6 @@
 import {addEl, rnd, xId} from '../utils/utils';
 import {state} from "../game-state";
+import {Turret} from "./turret";
 
 export class Plane {
     constructor() {
@@ -68,6 +69,7 @@ export class Plane {
         return map;
     }*/
 
+    // id of the segment to render, either 0 or 1
     renderSegment(id, segNum) {
 
         let seg = this.segs[id];
@@ -78,15 +80,31 @@ export class Plane {
         for (let i = 0; i < this.vertTiles; i++) {
             let newRow = [];
             for (let j = 0; j < this.horizTiles; j++) {
-                if ((j > 1 && j < (this.horizTiles - 2)) && (state.map.length < 1 || Math.toggle())) {
-                    newRow.push(1);
-                    addEl(seg, 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
+                let tile = this.getTile(id, i, j, segNum);
+                if (tile !== null) {
+                    newRow.push(tile);
                 } else {
                     newRow.push(0);
                 }
             }
             state.map.push(newRow);
         }
+    }
+
+    getTile(id, i, j, segNum) {
+
+        if ((j === 0 || j === (this.horizTiles - 1)) && i % 4 === 0 && segNum > 0) {
+            let t = new Turret(this.segs[id], j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
+            state.objects.push(t);
+            return 2;
+        }
+
+        if ((j > 1 && j < (this.horizTiles - 2)) && (state.map.length < 1 || Math.toggle())) {
+            addEl(this.segs[id], 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
+            return 1;
+        }
+
+        return null;
     }
 
     update() {
