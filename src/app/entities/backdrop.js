@@ -149,6 +149,7 @@ export class Backdrop {
         c.fillRect(-174, 0, 4, 100);
         c.fillRect(-124, 0, 2, 120);
 
+        // beam
         c.globalCompositeOperation = 'screen';
         c.globalAlpha = '0.2';
         c.fillStyle = '#94EBF2';
@@ -161,6 +162,7 @@ export class Backdrop {
         c.globalAlpha = '0.2';
         c.fillStyle = '#2C99C9';
 
+        // habitation domes
         c.lineWidth = 18;
         c.strokeStyle = '#2C99C9';
         c.beginPath();
