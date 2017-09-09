@@ -59,7 +59,10 @@ class Game {
         state.plane.update();
         state.backdrop.update();
         state.cavern.update();
-        state.comms.update();
+
+        // 3.RestartMenu
+        if(state.status !== 3)
+            state.comms.update();
 
         if(state.player.z%400 === 50) {
             //xId('app-container').classList.add('a_hit');
@@ -109,7 +112,17 @@ class Game {
     keydownEventHandler(e) {
         state.pressedKeys[e.which] = true;
         if (e.which === 49) {
-            document.getElementById('layer-backdrop-image').classList.toggle('hide');
+            state.iz = 0;
+            state.ix = 0;
+            state.iy = 0;
+            state.tz = 0;
+            state.ts = 0;
+            state.player.reset();
+            state.plane.reset();
+            xId('layer-3d').classList.remove('a_over');
+            state.status = 2;
+
+            state.comms.showMsg('Let\'s go');
         }
     }
 

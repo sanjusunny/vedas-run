@@ -69,4 +69,5 @@
     left: 50%;
     position: absolute;
     transform-origin: 0% 50%;
+    transition: top 2s;
 }

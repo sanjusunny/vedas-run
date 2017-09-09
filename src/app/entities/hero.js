@@ -73,6 +73,10 @@ export class Hero {
             [0, 0, 0, 0, 0, 24] // cape
         ];
 
+        /*this.sink = this.baseFrame.map((row, i) => {
+           return (i===0)?[0, -20, 0, 0, 0, 0]:row;
+        });*/
+
         let rightMax = [
             [0, 0, 0, 0, 0, 18],
             [0, 0, 0, 0, 0, 5],
@@ -219,10 +223,24 @@ export class Hero {
             let hasTile = state.map[currRow][currCol];
             if (!this.isHit && !hasTile) {
                 this.isHit = true;
-                //xId('app-container').classList.add('a_over');
-                //setTimeout(() => xId('app-container').classList.remove('a_over'), 500);
+                xId('app-container').classList.add('a_hit');
+                this.el.style.top = '360px';
+                setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
             } else if (this.isHit && hasTile) {
-                this.isHit = false;
+                //this.isHit = false;
+                //this.el.style.top = '270px';
+            }
+
+            if (this.isHit) {
+                state.iz = this.zInc;
+                state.ix = 0;
+                state.iy = 0;
+                this.zInc = Math.max(0, this.zInc - 0.01); // decelerate
+                if(this.zInc < 1.5) {
+                    xId('layer-3d').classList.add('a_over');
+                    state.comms.showMsg('Watch your step and stay on the platforms. Press 1 to RESTART or 2 to QUIT', true);
+                    state.status = 3;
+                }
             }
         }
     }
@@ -239,5 +257,19 @@ export class Hero {
     getNextFrame() {
         this.currFrame = (this.currFrame + 1) % this.frames.length;
         return this.frames[this.currFrame];
+    }
+
+    reset() {
+        this.xInc = 5;
+        this.zInc = 2;
+        this.yInc = 1;
+        this.isInFall = false;
+        this.coastX = 0; // coasting at the peak of the jump
+        this.isRunning = false;
+        this.x = state.vw / 2;
+        this.z = 0;
+        this.currTransform = this.baseTransform;
+        this.isHit = false;
+        this.el.style.top = '270px';
     }
 }

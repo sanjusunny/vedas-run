@@ -46,7 +46,10 @@ body.in-game {
 
 #layer-backdrop {
   background: white;
-  //background: linear-gradient(to bottom, #a6e0ec 0%,#d4f2fa 58.5%,#277c88 58.5%,#74abb3 100%);
+}
+
+.a_sink #game-plane {
+  transform: rotateX(110deg) translateZ(-82px) translateY(72px) scaleY(0.8) scaleX(0.5);
 }
 
 .a_over {

@@ -78,7 +78,7 @@ export class Plane {
         for (let i = 0; i < this.vertTiles; i++) {
             let newRow = [];
             for (let j = 0; j < this.horizTiles; j++) {
-                if ((j > 1 && j < (this.horizTiles - 2)) && (state.map.length < 4 || Math.toggle())) {
+                if ((j > 1 && j < (this.horizTiles - 2)) && (state.map.length < 1 || Math.toggle())) {
                     newRow.push(1);
                     addEl(seg, 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
                 } else {
@@ -113,5 +113,17 @@ export class Plane {
         if (state.iy > 0) {
             this.mesh.style.transform = `rotateX(97deg) translateZ(${-82 - state.iy}px) translateY(72px) scaleY(0.8) scaleX(0.5)`;
         }
+    }
+
+    reset() {
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+
+        state.map = [];
+
+        this.activeSeg = 0;
+        this.renderSegment(0, 0);
+        this.renderSegment(1, 1);
     }
 }

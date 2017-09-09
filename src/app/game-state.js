@@ -8,7 +8,8 @@ export const state = {
     grid: 60,
     plane: null, // 3d plane
     player: null,
-    probes: [],
+    comms: null,
+    status: 2, /* 1.Pregame 2.Ingame 3.RestartMenu */
     pressedKeys: {},
     ix: 0, /* horizontal movement made by player each turn */
     iy: 0, /* accumulated vertical player position */
