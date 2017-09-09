@@ -10,6 +10,7 @@
     left: 0px;
     transform-style: preserve-3d;
     transform: rotateX(96deg) translateZ(-82px) translateY(64px) scaleY(0.8) scaleX(0.5);
+    background-color:black;
 }
 
 #layer-3d * {

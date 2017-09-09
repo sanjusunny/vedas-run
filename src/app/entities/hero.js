@@ -217,7 +217,7 @@ export class Hero {
     checkCollision() {
 
         // don't need to check if the player is in the air
-        if (state.iy === 0) {
+        if (state.doChecks && state.iy === 0) {
             let currRow = Math.floor(state.tz / state.plane.gsH);
             let currCol = Math.floor((1200 / 2 - state.plane.x) / state.plane.gsW);
             let hasTile = state.map[currRow][currCol];

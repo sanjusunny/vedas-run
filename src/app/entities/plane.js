@@ -73,6 +73,10 @@ export class Plane {
     renderSegment(id, segNum) {
 
         let seg = this.segs[id];
+        state.objects.forEach(x=> {
+            if(x.parent === seg) x.destroy();
+        });
+        state.objects = state.objects.filter(x=>x.isActive); // remove objects attached to this segment and wipe out DOM nodes
         while (seg.hasChildNodes()) {
             seg.removeChild(seg.lastChild);
         }
@@ -93,8 +97,8 @@ export class Plane {
 
     getTile(id, i, j, segNum) {
 
-        if ((j === 0 || j === (this.horizTiles - 1)) && i % 4 === 0 && segNum > 0) {
-            let t = new Turret(this.segs[id], j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
+        if ((j === 0 || j === (this.horizTiles - 1)) && i % 4 === 0 && segNum === 1) {
+            let t = new Turret(this.segs[id], j * this.gsW + this.gsW/2, (this.vertTiles - i - 1) * this.gsH + this.gsH/2);
             state.objects.push(t);
             return 2;
         }
@@ -108,6 +112,8 @@ export class Plane {
     }
 
     update() {
+        state.log(state.objects.length);
+
         if (this.z > this.mapLength) return;
 
         this.x = (this.x - state.ix);

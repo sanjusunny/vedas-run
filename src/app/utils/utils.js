@@ -1,5 +1,12 @@
-// ctx, 20px, #fff, [[x1,y1],...]
+import {state} from "../game-state";
 
+export function segmentToPlane(x, y) {
+    let posX = x;
+    let posY = state.tz % 660 + (660 - y);
+    return [posX, -posY];
+}
+
+// ctx, 20px, #fff, [[x1,y1],...]
 export function xPath(ctx, height, sX, sY, color1, color2, data) {
     ctx.strokeStyle = 'rgba(0,0,0,0.1)';
     ctx.globalAlpha = 1;
@@ -35,7 +42,7 @@ function txFuzzy(col) {
     ctx.globalCompositeOperation = 'hard-light';
     ctx.fillStyle = col;
     for (let i = 0; i < 40; i++) {
-        ctx.globalAlpha = rnd(0, 10)/10;
+        ctx.globalAlpha = rnd(0, 10) / 10;
         ctx.fillRect(rnd(0, 256), rnd(0, 16), rnd(1, 7), rnd(0, 32));
     }
     return cvs;

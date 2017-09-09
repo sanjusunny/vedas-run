@@ -19,7 +19,11 @@
 .b_turret {
     background: linear-gradient(to bottom, rgba(228, 245, 252, 0) 20%, rgba(228, 245, 252, 1) 100%);
     border-left: solid 4px rgba(75, 198, 225, 0.9);
-    transform: rotateX(90deg) translateY(-100px);
+    /*width: 40px !important;
+    height: 40px !important;
+    background-color:red;*/
+    transform-origin: 0% 0%;
+    transform: rotateX(90deg);
 }
 
 .b_turret-head {
@@ -28,6 +32,12 @@
     border-bottom: solid 2px rgba(255, 255, 255, 0.7);
     transition: transform 1s cubic-bezier(.36, -0.64, .34, 1.76);
     transform: translateY(500px);
+}
+
+.b_missile {
+    background-color: red;
+    /*transform: rotateX(90deg);*/
+    /*display: none;*/
 }
 
 .b_segment {
@@ -44,7 +54,7 @@
     height: 80px;
     width: 400px;
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 20%, rgba(255, 255, 255, 0) 70%);
-    transform: rotateX(90deg) rotateZ(0deg) translateY(40px) scaleX(3) scaleY(2);
+    transform: rotateX(90deg) rotateZ(0deg) translateY(20px) scaleX(3) scaleY(2);
 }
 
 .b_fog {
