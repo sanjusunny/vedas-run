@@ -175,12 +175,11 @@ export class Backdrop {
         c.fill();
 
         // angled
-        c.globalAlpha = '0.9';
+        c.globalAlpha = '0.8';
         c.beginPath();
-        c.moveTo(-100, 0);
-        c.lineTo(30, 80);
-        c.lineTo(30, 130);
-        c.lineTo(30, 220);
+        c.moveTo(-130, 0);
+        c.lineTo(20, 70);
+        c.lineTo(20, 130);
         c.lineTo(120, 0);
         c.fill();
 

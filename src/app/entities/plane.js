@@ -26,7 +26,7 @@ export class Plane {
             addEl(this.mesh, 'div', 'segment', 0, 1200, 660, 0, 0),
             addEl(this.mesh, 'div', 'segment', 1, 1200, 660, 0, 0)];
 
-        //state.map = [];//this.generateMap();
+        addEl(this.mesh, 'div', 'shadow', 0, 24, 24, 588, 638);
 
         this.activeSeg = 0;
         this.renderSegment(0, 0);
@@ -61,11 +61,11 @@ export class Plane {
 
     getTile(id, i, j, segNum) {
 
-/*        if ((j === 0 || j === (this.horizTiles - 1)) && i % 4 === 0 && segNum === 1) {
+        if ((j === 0 || j === (this.horizTiles - 1)) && i % 4 === 0 && segNum === 1) {
             let t = new Turret(this.segs[id], j * this.gsW + this.gsW/2, (this.vertTiles - i - 1) * this.gsH + this.gsH/2);
             state.objects.push(t);
             return 2;
-        }*/
+        }
 
         if ((j > 1 && j < (this.horizTiles - 2)) && segNum === 0 && (i <2 || (i>4 && Math.toggle()) ) ) {//(state.map.length < 1 || Math.toggle())) {
             addEl(this.segs[id], 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);

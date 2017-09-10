@@ -18,7 +18,7 @@ export const state = {
     iz: 0, /* forward movement made by player each turn */
     tz: 0, /* accumulated movement */
     ts: 0, /* elapsed ticks */
-    vfx: true,
+    vfx: false,
     text: false,
     doChecks: false,
     attack: false,

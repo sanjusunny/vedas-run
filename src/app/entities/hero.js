@@ -11,7 +11,7 @@ export class Hero {
 
         this.leftLeg = this.hero.addChild(new Object3D('left-leg', -10, 110, 18, 90));
         this.leftLegLower = this.hero.mesh['left-leg'].addChild(new Object3D('lower', 0, 80, 18, 80));
-        this.leftLegFoot = this.hero.mesh['left-leg'].mesh['lower'].addChild(new Object3D('foot', 0, 70, 40, 10));
+        this.leftLegFoot = this.hero.mesh['left-leg'].mesh['lower'].addChild(new Object3D('foot', 0, 70, 40, 10,0,0,0,0,0,0, false));
 
         this.leftArm = this.hero.addChild(new Object3D('left-arm', 0, 38, 14, 60));
         this.leftArmLower = this.hero.mesh['left-arm'].addChild(new Object3D('lower', 0, 48, 10, 50));
@@ -22,7 +22,7 @@ export class Hero {
 
         this.rightLeg = this.hero.addChild(new Object3D('right-leg', -10, 110, 18, 90));
         this.rightLegLower = this.hero.mesh['right-leg'].addChild(new Object3D('lower', 0, 80, 18, 80));
-        this.rightLegFoot = this.hero.mesh['right-leg'].mesh['lower'].addChild(new Object3D('foot', 0, 70, 40, 10));
+        this.rightLegFoot = this.hero.mesh['right-leg'].mesh['lower'].addChild(new Object3D('foot', 0, 70, 40, 10,0,0,0,0,0,0, false));
 
         this.rightArm = this.hero.addChild(new Object3D('right-arm', 0, 38, 14, 60));
         this.rightArmLower = this.hero.mesh['right-arm'].addChild(new Object3D('lower', 0, 48, 10, 55));
@@ -72,10 +72,6 @@ export class Hero {
 
             [0, 0, 0, 0, 0, 24] // cape
         ];
-
-        /*this.sink = this.baseFrame.map((row, i) => {
-           return (i===0)?[0, -20, 0, 0, 0, 0]:row;
-        });*/
 
         let rightMax = [
             [0, 0, 0, 0, 0, 18],

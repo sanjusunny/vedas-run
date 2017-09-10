@@ -1,5 +1,5 @@
 export class Object3D {
-    constructor(name, left = 0, top = 0, w = 40, h = 40, x = 0, y = 0, z = 0, rotX = 0, rotY = 0, rotZ = 0) {
+    constructor(name, left = 0, top = 0, w = 40, h = 40, x = 0, y = 0, z = 0, rotX = 0, rotY = 0, rotZ = 0, split = true) {
         this.name = name;
 
         this.left = left;
@@ -17,32 +17,35 @@ export class Object3D {
 
         this.el = document.createElement('div');
         this.el.className = 'c_' + name;
-        this.el.style.cssText = 'position:absolute; transform-origin: 50% 0; background-color: transparent !important;';
+        this.el.classList.add('c_root');
+        this.el.style.cssText = 'position:absolute; transform-origin: 50% 0;' + ((split) ? 'background-color: transparent !important;' : '');
         this.el.style.top = this.top + 'px';
         this.el.style.left = this.left + 'px';
         this.el.style.width = this.w + 'px';
         this.el.style.height = this.h + 'px';
 
         // create segments
-        this.seg1 = document.createElement('div');
-        this.seg1.className = 'c_' + name;
-        this.seg1.classList.add('c_seg');
-        this.seg1.style.cssText = 'position:absolute; transform-origin: 0 0; top: 0px; left: 0px;';
-        this.seg1.style.width = this.w + 'px';
-        this.seg1.style.height = this.h + 'px';
-        this.seg1.style.transform = 'rotateY(45deg)';
+        if (split) {
+            this.seg1 = document.createElement('div');
+            this.seg1.className = 'c_' + name;
+            this.seg1.classList.add('c_seg');
+            this.seg1.style.cssText = 'position:absolute; transform-origin: 0 0; top: 0px; left: 0px;';
+            this.seg1.style.width = this.w + 'px';
+            this.seg1.style.height = this.h + 'px';
+            this.seg1.style.transform = 'rotateY(45deg)';
 
-        this.seg2 = document.createElement('div');
-        this.seg2.className = 'c_' + name;
-        this.seg2.classList.add('c_seg');
-        this.seg2.style.cssText = 'position:absolute; transform-origin: 0 0; top: 0px; left: 0px;';
-        this.seg2.style.width = this.w + 'px';
-        this.seg2.style.height = this.h + 'px';
-        this.seg2.style.transform = 'rotateY(-45deg)';
-        this.seg2.style.filter = 'brightness(80%)';
+            this.seg2 = document.createElement('div');
+            this.seg2.className = 'c_' + name;
+            this.seg2.classList.add('c_seg');
+            this.seg2.style.cssText = 'position:absolute; transform-origin: 0 0; top: 0px; left: 0px;';
+            this.seg2.style.width = this.w + 'px';
+            this.seg2.style.height = this.h + 'px';
+            this.seg2.style.transform = 'rotateY(-45deg)';
+            this.seg2.style.filter = 'brightness(80%)';
 
-        this.el.appendChild(this.seg1);
-        this.el.appendChild(this.seg2);
+            this.el.appendChild(this.seg1);
+            this.el.appendChild(this.seg2);
+        }
     }
 
     addChild(child) {

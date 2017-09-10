@@ -45,9 +45,11 @@ export class Turret {
             this.busy = 120;
         } else if (this.busy > 0) {
             this.busy = Math.max(0, this.busy - 1);
-            if (state.attack && this.busy === 0 && this.missileActive === 0 && Math.toggle()) {
-                this.addMissile();
-                this.elHead.classList.add('fire');
+            if (this.busy === 0 && this.missileActive === 0 && Math.toggle()) {
+                if (state.attack) {
+                    this.addMissile();
+                    this.elHead.classList.add('fire');
+                }
                 setTimeout(() => {
                     this.pos = rnd(300, 800);
                     this.elHead.classList.remove('fire');
