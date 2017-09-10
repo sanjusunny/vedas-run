@@ -12,7 +12,7 @@ body {
   align-items: center;
   transition: background-color 1s ease-in;
   overflow: hidden;
-  transform: scaleX(1.08) scaleY(1.08);
+  /*transform: scaleX(1.08) scaleY(1.08);*/
 }
 
 body.in-game {

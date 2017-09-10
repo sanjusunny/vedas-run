@@ -158,7 +158,7 @@ export class Backdrop {
         c.fillStyle = '#fff';
         c.fillRect(98, 0, 4, 400);
 
-        c.globalAlpha = '0.15';
+        c.globalAlpha = '0.25';
         c.fillStyle = '#2C99C9';
 
         // habitation domes
@@ -167,6 +167,8 @@ export class Backdrop {
         c.beginPath();
         c.arc(40, 80, 120, 0.7 * Math.PI, 0.9 * Math.PI, true);
         c.stroke();
+        c.globalAlpha = '0.15';
+
         c.beginPath();
         c.arc(280, 0, 120, 0, 2 * Math.PI, false);
         c.arc(-100, 20, 70, 0, 2 * Math.PI, false);
