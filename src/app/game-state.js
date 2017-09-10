@@ -21,6 +21,7 @@ export const state = {
     vfx: true,
     text: false,
     doChecks: false,
+    attack: false,
     map: [],
     tx_fuzzy: null,
     console: null,

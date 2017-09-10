@@ -43,7 +43,7 @@ class Game {
             state.cavern = new Cavern();
             state.player = new Hero(state);
             state.comms = new Comms();
-            state.omega = new Omega();
+            //state.omega = new Omega();
 
             this.startLoop();
         }
@@ -61,7 +61,7 @@ class Game {
         state.plane.update();
         state.backdrop.update();
         state.cavern.update();
-        state.omega.update();
+        if(state.omega) state.omega.update();
 
         state.objects.forEach(obj => obj.update());
 
