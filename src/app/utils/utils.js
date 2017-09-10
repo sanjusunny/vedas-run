@@ -37,18 +37,6 @@ export function xPath(ctx, height, sX, sY, color1, color2, data) {
     ctx.drawImage(state.tx_fuzzy, 0, 0, 400, height);
 }
 
-/*function txFuzzy(col) {
-    let cvs = addEl(null, 'canvas', 'x', 0, 256, 32);
-    var ctx = cvs.getContext('2d');
-    ctx.globalCompositeOperation = 'hard-light';
-    ctx.fillStyle = col;
-    for (let i = 0; i < 40; i++) {
-        ctx.globalAlpha = rnd(0, 10) / 10;
-        ctx.fillRect(rnd(0, 256), rnd(0, 16), rnd(1, 7), rnd(0, 32));
-    }
-    return cvs;
-}*/
-
 function txFuzzy(col) {
     let cvs = addEl(null, 'canvas', 'x', 0, 256, 32);
     var ctx = cvs.getContext('2d');

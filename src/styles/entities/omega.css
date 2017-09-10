@@ -1,0 +1,40 @@
+.b_omega-root {
+    animation: 4s ease k_mv infinite alternate forwards;
+}
+
+.b_omega {
+    /*opacity: 0.2;*/
+}
+
+@keyframes k_mv {
+    0% {
+        transform: rotateX(65deg) translateY(70px);
+    }
+    50% {
+        transform: rotateZ(5deg) rotateX(70deg) translateY(70px) translateX(20px);
+    }
+    100% {
+        transform: rotateZ(-7deg) rotateX(87deg) translateY(50px);
+    }
+}
+
+.b_omega-fg {
+    background-color: rgba(255, 0, 0, 1);
+    top: 300px;
+    left: 500px;
+}
+
+.b_omega-x {
+    background-color: white;
+    transform: translateZ(-20px);
+    box-shadow: 0px 0px 25px white;
+}
+
+.b_omega-x.closed {
+    background-color: rgba(10, 41, 65, 0.38);
+}
+
+.b_omega-tile {
+    background-color: #04131e;
+    transition: all 0.5s;
+}

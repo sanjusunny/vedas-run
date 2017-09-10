@@ -7,6 +7,7 @@ import {Backdrop} from "./entities/backdrop";
 import {Hero} from "./entities/hero";
 import {Cavern} from "./entities/cavern";
 import {Comms} from "./comms";
+import {Omega} from "./entities/omega";
 
 window.onerror = function () {
     state.isRunning = false;
@@ -42,6 +43,7 @@ class Game {
             state.cavern = new Cavern();
             state.player = new Hero(state);
             state.comms = new Comms();
+            state.omega = new Omega();
 
             this.startLoop();
         }
@@ -59,6 +61,7 @@ class Game {
         state.plane.update();
         state.backdrop.update();
         state.cavern.update();
+        state.omega.update();
 
         state.objects.forEach(obj => obj.update());
 
