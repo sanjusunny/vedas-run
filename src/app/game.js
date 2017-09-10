@@ -69,6 +69,8 @@ class Game {
         if(state.status !== 3)
             state.comms.update();
 
+        state.log(state.tz);
+
         if(state.player.z%400 === 50) {
             //xId('app-container').classList.add('a_hit');
             //setTimeout(()=>xId('app-container').classList.remove('a_hit'),500);

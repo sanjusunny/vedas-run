@@ -55,13 +55,6 @@
     border-radius: 12px;
 }
 
-.b_segment {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 1200px;
-    height: 660px;
-}
 
 #w_fog {
     top: 0px;

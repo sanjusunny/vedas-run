@@ -7,12 +7,11 @@ export class Comms {
         this.el = xId('msgs');
         if(!state.text) this.el.style.display = 'none';
         this.script = new Map([
-            [0, 'I\'m lost... I\'ve spent 2 years searching this wasteland. The machines have finished the Tachyon Beam. I need to stop them... before it\'s too late.'],
-            [100, 'The Arctic... it\'s unrecognizable now. How did it come to this? The machines... they were supposed to be our salvation.'],
-            [300, 'The Tachyon Beam has to be near, I can feel the pulses. I need to find it... and shut it down.'],
-            [500, 'The hangar doors are closed, there must be a switch here somewhere.'],
-            [700, 'That did it. The bay doors are opening...'],
-            [900, 'The Quantum Tower! It\'s active... I don\'t have much time.']
+            [0, 'I\'m lost... I\'ve spent 2 years searching this wasteland. The machines have finished the Quantum Beam, I can see it pulsing in the distance. I need to stop them... before it\'s too late.'],
+            [400, 'Hmm, that should be a short jump (Press SPACE while moving). I need to be careful not to slip off the platforms.'],
+            [730, 'Hmm, that\'s a really long way away but I should be able to clear it (Press and hold SPACE while moving to long jump).'],
+            [900, 'I made it!!'],
+            [22000, 'Beam Towers! I need to be careful through here, a hit from their cannons can kill me quickly.']
         ]);
         this.timer = 1;
         this.activeId = -1;

@@ -1,9 +1,10 @@
 import {state} from "../game-state";
 
-export function segmentToPlane(x, y) {
+export function segmentToPlane(x, y, segNum) {
     let posX = x;
-    let posY = state.tz % 660 + (660 - y);
-    return [posX, -posY];
+    let posY =  segNum * 660 + (660 - y) - state.tz;
+    //if(segNum%2 === 0) posY -= 660;
+    return [posX, 660-posY];
 }
 
 // ctx, 20px, #fff, [[x1,y1],...]
@@ -28,12 +29,11 @@ export function xPath(ctx, height, sX, sY, color1, color2, data) {
             ctx.lineTo(x2, height - y2);
             ctx.lineTo(x2, height);
             ctx.fill();
-            //ctx.stroke();
         }
     }
     ctx.globalCompositeOperation = 'source-atop';
     ctx.globalAlpha = 0.7;
-    if(state.tx_fuzzy === null) state.tx_fuzzy = txFuzzy('#4DA9CF');
+    if (state.tx_fuzzy === null) state.tx_fuzzy = txFuzzy('#4DA9CF');
     ctx.drawImage(state.tx_fuzzy, 0, 0, 400, height);
 }
 
@@ -44,7 +44,7 @@ function txFuzzy(col) {
     ctx.fillStyle = col;
     for (let i = 0; i < 256; i++) {
         ctx.globalAlpha = rnd(1, 10) / 10;
-        ctx.fillRect(i, 0, 1, rnd(16,32));
+        ctx.fillRect(i, 0, 1, rnd(16, 32));
         ctx.filter = 'blur(1px)';
     }
     return cvs;
@@ -81,7 +81,7 @@ export function addEl(parent, type, name, id, w, h, x, y) {
         el.style.top = y + 'px';
     }
     el.className = 'b_' + name;
-    if (id) el.classList.add('b_' + id);
+    if (id !== undefined) el.classList.add('b_' + id);
     return (parent) ? parent.appendChild(el) : el;
 }
 

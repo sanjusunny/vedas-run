@@ -4,13 +4,14 @@ import {state} from "../game-state";
 let id = 0;
 
 export class Turret {
-    constructor(parent, x, y) {
-        let pos = segmentToPlane(x, y);
+    constructor(parent, segNum, x, y) {
+        this.segNum = segNum;
+        let pos = segmentToPlane(x, y, segNum);
         this.prevTz = state.iz;
         this.x = pos[0]; // missile x
         this.y = pos[1];
-        this.bx = pos[0]; // turret x
-        this.by = pos[1];
+        this.bx = x;//pos[0]; // turret x
+        this.by = y;//pos[1];
         this.xInc = 0; // missile increment
         this.yInc = 0;
         this.tX = 0; // missile target
@@ -31,7 +32,6 @@ export class Turret {
     }
 
     destroy() {
-        console.warn('destroy');
         this.isActive = false;
         this.el.remove();
         this.elHead.remove();
@@ -45,8 +45,10 @@ export class Turret {
             this.busy = 120;
         } else if (this.busy > 0) {
             this.busy = Math.max(0, this.busy - 1);
-            if (this.busy === 0 && this.missileActive === 0 && Math.toggle()) {
-                if (state.attack) {
+            /*if (this.busy === 0 && this.missileActive === 0 && Math.toggle()) {*/
+            if (this.busy === 0 && this.missileActive === 0) {
+                if (state.attack)
+                {
                     this.addMissile();
                     this.elHead.classList.add('fire');
                 }
@@ -82,9 +84,13 @@ export class Turret {
     }
 
     addMissile() {
-        this.missileActive = 150;
+        this.missileActive = 100;
+
+        let pos = segmentToPlane(this.bx,this.by,this.segNum);
         this.x = this.bx - state.tx;
-        this.y = this.by + (state.tz - this.prevTz);
+        this.y = pos[1];
+        console.warn(this.segNum,this.y);
+
         this.tX = 600;
         this.tY = 660;
         this.absX = this.tX - state.tx;

@@ -2,6 +2,35 @@ import {addEl, rnd, xId} from '../utils/utils';
 import {state} from "../game-state";
 import {Turret} from "./turret";
 
+// 0 - 10x2 2x8
+// 1 - 4x2 Rx8
+// 2 - Rx8
+// 3 - Rx8 T0 T9
+// 4 - Rx8 T0 T9
+// 5 - Rx8 T0 T9
+// 6 - Rx8 T0 T9
+// 7 - 2x10
+// 8 - Rx6 6x4
+// 9 - 1 and 2 and secret tile
+
+let map = [
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0100000000',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000010',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000002,0000000000,0100000000',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000010',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0100000000',
+    '0001111000,0000110000,0000110000,0000110000,0000110000,0000110000,0000110000,0000110000,0000000000,0000110000',
+    '0001111000,0001111000,0001111000,0000000000,0000000000,0000000000,0001111000,0001111000,0077777700,0077777700',
+    '0077777700,0011111100,0077777700,0077777700,0077777700,0077777700,0077777700,0077777700,0077777700,0077777700',
+    '0001111000,0001111000,2000110002,0000110000,0000110000,2000110002,0000110000,0000000000,2000000002,0001111000',
+    '0001111000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000',
+    '0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000'
+];
+
 export class Plane {
     constructor() {
         this.x = 0;
@@ -37,10 +66,10 @@ export class Plane {
     renderSegment(id, segNum) {
 
         let seg = this.segs[id];
-        state.objects.forEach(x=> {
-            if(x.parent === seg) x.destroy();
+        state.objects.forEach(x => {
+            if (x.parent === seg) x.destroy();
         });
-        state.objects = state.objects.filter(x=>x.isActive); // remove objects attached to this segment and wipe out DOM nodes
+        state.objects = state.objects.filter(x => x.isActive); // remove objects attached to this segment and wipe out DOM nodes
         while (seg.hasChildNodes()) {
             seg.removeChild(seg.lastChild);
         }
@@ -48,12 +77,7 @@ export class Plane {
         for (let i = 0; i < this.vertTiles; i++) {
             let newRow = [];
             for (let j = 0; j < this.horizTiles; j++) {
-                let tile = this.getTile(id, i, j, segNum);
-                if (tile !== null) {
-                    newRow.push(tile);
-                } else {
-                    newRow.push(0);
-                }
+                newRow.push(this.getTile(id, i, j, segNum));
             }
             state.map.push(newRow);
         }
@@ -61,18 +85,25 @@ export class Plane {
 
     getTile(id, i, j, segNum) {
 
-        if ((j === 0 || j === (this.horizTiles - 1)) && i % 4 === 0 && segNum === 1) {
-            let t = new Turret(this.segs[id], j * this.gsW + this.gsW/2, (this.vertTiles - i - 1) * this.gsH + this.gsH/2);
-            state.objects.push(t);
-            return 2;
+        let t = 0;
+
+        // figure out what to render
+        if (map[segNum] !== '') {
+            let x = map[segNum].split(',')[i][j];
+            t = (x==='7')?((Math.toggle()) ? 1 : 0):parseInt(x);
         }
 
-        if ((j > 1 && j < (this.horizTiles - 2)) && segNum === 0 && (i <2 || (i>4 && Math.toggle()) ) ) {//(state.map.length < 1 || Math.toggle())) {
-            addEl(this.segs[id], 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
-            return 1;
+        // render it
+        switch (t) {
+            case 1:
+                addEl(this.segs[id], 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
+                break;
+            case 2:
+                state.objects.push(new Turret(this.segs[id], segNum, j * this.gsW + this.gsW / 2, (this.vertTiles - i - 1) * this.gsH + this.gsH / 2));
+                break;
         }
 
-        return null;
+        return t;
     }
 
     update() {
@@ -88,7 +119,7 @@ export class Plane {
         var nextSeg = Math.abs(currSeg - 1);
 
         if (currSeg !== this.activeSeg) {
-            this.renderSegment(nextSeg, segNum);
+            this.renderSegment(nextSeg, segNum + 1);
             this.activeSeg = currSeg;
         }
 
