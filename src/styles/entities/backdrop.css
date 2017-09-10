@@ -10,9 +10,9 @@
 
 #b_tower {
     top: 0px;
-    left: 480px;
+    left: 300px;
     overflow: hidden;
-    width: 400px;
+    width: 600px;
     height: 400px;
 }
 
@@ -22,14 +22,14 @@
 }
 
 .b_cliff.b_1 {
-    left:850px;
+    left:880px;
 }
 
 .b_twr-beam{
     mix-blend-mode: screen;
     height: 400px;
     width: 4px;
-    left:195px;
+    left:296px;
     background-color:white;
     filter:blur(2px);
     transition: all 0.7s;

@@ -19,7 +19,7 @@ export class Backdrop {
 
     renderCliffs() {
         let c = addEl(this.mesh, 'canvas', 'cliff', 0, 600, 500).getContext('2d');
-        xPath(c, 400, 20, 45, '#359bc7', '#9ee9f4', [
+        xPath(c, 400, 20, 34, '#359bc7', '#9ee9f4', [
             [0, 8, 0],
             [2, 9, 1],
             [5, 8, 0],
@@ -34,18 +34,18 @@ export class Backdrop {
             [20, 1.5, 0]
         ]);
         c = addEl(this.mesh, 'canvas', 'cliff', 1, 600, 500).getContext('2d');
-        xPath(c, 400, 20, 40, '#359bc7', '#9ee9f4', [
+        xPath(c, 400, 20, 28, '#359bc7', '#9ee9f4', [
             [0, 2, 1],
             [2, 3, 0],
-            [2, 4, 0],
-            [3, 5, 2],
-            [4, 4, 0],
-            [6, 7, 1],
+            [2, 4, 1],
+            [3, 5, 0],
+            [4, 4, 2],
+            [6, 7, 0],
             [9, 7, 2],
             [9, 8, 2],
             [11, 9, 0],
             [13, 9, 0],
-            [13, 9, 1],
+            [13, 9, 0.5],
             [20, 10, 0]
         ]);
     }
@@ -115,57 +115,91 @@ export class Backdrop {
 
     renderTower() {
 
-        let c = addEl(this.twr, 'canvas', 'twr-cvs', 0, 600, 600).getContext('2d');
+        let c = addEl(this.twr, 'canvas', 'twr-cvs', 0, 800, 600).getContext('2d');
         c.fillStyle = '#2C99C9';
-        c.globalAlpha = '0.6';
         c.globalCompositeOperation = 'screen';
         c.translate(200, 400);
         c.scale(1, -1);
-        c.fillRect(6, 0, 2, 280);
-        c.fillRect(-10, 0, 2, 200);
-        c.fillRect(0, 0, 24, 100);
-        c.fillRect(-20, 0, 32, 150);
 
-        c.fillRect(-54, 0, 3, 320);
-        c.fillRect(-62, 0, 18, 280);
+        // crashed ship
+        c.globalAlpha = '0.3';
+        c.beginPath();
+        c.moveTo(0, 0);
+        c.lineTo(330, 300);
+        c.lineTo(330, 250);
+        c.lineTo(200, 0);
+        c.fill();
 
-        c.fillRect(-110, 0, 34, 170);
-        c.fillRect(-40, 0, 44, 140);
+        c.globalAlpha = '0.7';
+        c.fillRect(62, 0, 34, 170);
+        c.fillRect(34, 0, 24, 120);
 
-        c.fillRect(-174, 0, 4, 100);
-        c.fillRect(-124, 0, 2, 120);
+        c.fillRect(120, 0, 2, 200);
+        c.fillRect(106, 0, 2, 280);
+        c.fillRect(120, 0, 32, 150);
+        c.fillRect(160, 0, 24, 100);
+
+        // tall building
+        c.fillRect(150, 0, 3, 320);
+        c.fillRect(142, 0, 18, 280);
+
+        // spikes
+        c.fillRect(-20, 0, 2, 110);
+        c.fillRect(-10, 0, 2, 80);
+        c.fillRect(37, 0, 2, 250);
+        c.fillRect(204, 0, 2, 220);
+        c.fillRect(234, 0, 2, 120);
 
         // beam
-        c.globalCompositeOperation = 'screen';
         c.globalAlpha = '0.2';
         c.fillStyle = '#94EBF2';
-        c.fillRect(-14, 0, 28, 400);
+        c.fillRect(86, 0, 28, 400);
         c.globalAlpha = '1';
         c.fillStyle = '#fff';
-        c.fillRect(-2, 0, 4, 400);
+        c.fillRect(98, 0, 4, 400);
 
-        c.globalCompositeOperation = 'overlay';
-        c.globalAlpha = '0.2';
+        c.globalAlpha = '0.15';
         c.fillStyle = '#2C99C9';
 
         // habitation domes
         c.lineWidth = 18;
         c.strokeStyle = '#2C99C9';
         c.beginPath();
-        c.arc(-40, 80, 120, 2 * Math.PI, 2.2 * Math.PI, true);
+        c.arc(40, 80, 120, 0.7 * Math.PI, 0.9 * Math.PI, true);
         c.stroke();
         c.beginPath();
-        c.arc(-20, 40, 90, 0, 2 * Math.PI, false);
-        c.arc(-140, 40, 50, 0, 2 * Math.PI, false);
+        c.arc(280, 0, 120, 0, 2 * Math.PI, false);
+        c.arc(-100, 20, 70, 0, 2 * Math.PI, false);
         c.fill();
-        c.fillRect(-100, 0, 150, 60);
-        c.fillRect(-60, 0, 70, 80);
+
+        // angled
+        c.globalAlpha = '0.9';
+        c.beginPath();
+        c.moveTo(-100, 0);
+        c.lineTo(30, 80);
+        c.lineTo(30, 130);
+        c.lineTo(30, 220);
+        c.lineTo(120, 0);
+        c.fill();
+
+        // mega building
+        c.globalAlpha = '0.4';
+        c.beginPath();
+        c.moveTo(140, 0);
+        c.lineTo(220, 70);
+        c.lineTo(220, 130);
+        c.lineTo(230, 180);
+        c.lineTo(260, 160);
+        c.lineTo(260, 80);
+        c.lineTo(280, 30);
+        c.lineTo(280, 0);
+        c.fill();
 
         // building lights
         c.globalCompositeOperation = 'source-atop';
         c.globalAlpha = '0.8';
         c.fillStyle = '#fcffed';
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 40; i++) {
             for (let j = 0; j < 50; j++) {
                 c.fillRect(-200 + i * 15, j * 5, rnd(2, 4), rnd(0, 2));
             }
