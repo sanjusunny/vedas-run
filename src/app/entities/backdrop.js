@@ -218,7 +218,7 @@ export class Backdrop {
 
         if (state.tz >= 700) {
             this.x = this.x - state.ix / 40;
-            this.sc = 1 + (state.tz - 700) * 2 / 10000;
+            this.sc = 1 + (state.tz - 700) * 2 / 16000;
             this.twr.style.transform = `translateX(${this.x}px)`;
             this.mesh.style.transform = `translateY(${state.iy / 2}px) scaleX(${this.sc}) scaleY(${this.sc})`;
         }

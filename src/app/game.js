@@ -5,7 +5,6 @@ import {Stats} from './utils/stats';
 import {Plane} from "./entities/plane";
 import {Backdrop} from "./entities/backdrop";
 import {Hero} from "./entities/hero";
-import {Cavern} from "./entities/cavern";
 import {Comms} from "./comms";
 import {Omega} from "./entities/omega";
 
@@ -40,7 +39,6 @@ class Game {
             state.console = xId('console');
             state.plane = new Plane();
             state.backdrop = new Backdrop();
-            state.cavern = new Cavern();
             state.player = new Hero(state);
             state.comms = new Comms();
             //state.omega = new Omega();
@@ -60,7 +58,6 @@ class Game {
         state.player.update();
         state.plane.update();
         state.backdrop.update();
-        state.cavern.update();
         if(state.omega) state.omega.update();
 
         state.objects.forEach(obj => obj.update());

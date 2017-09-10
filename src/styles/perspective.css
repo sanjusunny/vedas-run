@@ -10,11 +10,11 @@
     left: 0px;
     transform-style: preserve-3d;
     transform: rotateX(96deg) translateZ(-82px) translateY(64px) scaleY(0.8) scaleX(0.5);
-    transform: rotateX(76deg) translateZ(-82px) translateY(64px) scaleY(0.8) scaleX(0.5);
-    background-color: #444;
+/*    transform: rotateX(76deg) translateZ(-82px) translateY(64px) scaleY(0.8) scaleX(0.5);
+    background-color: #444;*/
 }
 
-.b_segment {
+/*.b_segment {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -25,7 +25,7 @@
 
 .b_segment.b_0    {
     background-color: #04131e;
-}
+}*/
 
 #layer-3d * {
     position: absolute;

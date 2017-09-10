@@ -178,7 +178,7 @@ export class Hero {
         }
 
         if (state.pressedKeys[Keys.UP] || state.pressedKeys[Keys.DOWN]) {
-            state.iz = (state.pressedKeys[Keys.UP]) ? this.zInc : -this.zInc;
+            state.iz = (state.pressedKeys[Keys.UP]) ? this.zInc : Math.max(0,-this.zInc);
             this.a_isAnimating = true;
         } else {
             this.a_isAnimating = false;
