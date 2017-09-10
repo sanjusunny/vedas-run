@@ -50,12 +50,13 @@
 }
 
 .c_head {
-    background-color: #a75826;
+    background-color: transparent;
+    border: none;
 }
 
 .c_head:after {
     background-color: #a75826;
-    width: 14px;
+    width: 12px;
     height: 40px;
     border-radius: 16px;
     content:'';
@@ -79,7 +80,7 @@
     border-style: solid;
     border-width: 20px 0 0 40px;
     border-color: transparent transparent transparent #a75826;
-    transform: translateX(-19px) translateY(14px) scaleY(1.2) rotateZ(250deg);
+    transform: translateX(-19px) translateY(14px) scaleY(1) rotateZ(250deg);
 }
 
 

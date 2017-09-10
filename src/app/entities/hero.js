@@ -29,7 +29,7 @@ export class Hero {
         this.rightArmHand = this.hero.mesh['right-arm'].mesh['lower'].addChild(new Object3D('hand', 2, 48, 4, 20));
 
         this.cape = this.hero.addChild(new Object3D('cape', -20, 105, 38, 70));
-        this.hair = this.hero.addChild(new Object3D('hair', -6, 30, 10, 50));
+        this.hair = this.hero.addChild(new Object3D('hair', -6, 30, 10, 46));
 
         this.el.appendChild(this.hero.el);
 
@@ -61,14 +61,14 @@ export class Hero {
             [0, 0, -12, -2, 0, 0], // leftLeg
             [0, 0, 0, 0, 0, 0], // leftLegLower
             [0, 0, 0, 0, 0, 0], // leftLegFoot
-            [0, 0, -25, -10, 0, 0], // leftArm
+            [0, 0, -22, -10, 0, 0], // leftArm
             [0, 0, 0, 0, 0, 0], // leftArmLower
             [0, 0, 0, 0, 0, 0], // leftArmHand
 
             [0, 0, 12, 2, 0, 0], // rightLeg
             [0, 0, 0, 0, 0, 0], // rightLegLower
             [0, 0, 0, 0, 0, 0], // rightLegFoot
-            [0, 0, 25, 10, 0, 0], // rightArm
+            [0, 0, 22, 10, 0, 0], // rightArm
             [0, 0, 0, 0, 0, 0], // rightArmLower
             [0, 0, 0, 0, 0, 0], // rightArmHand
 
