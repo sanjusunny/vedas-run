@@ -45,14 +45,14 @@
 .b_ship {
     width: 18px;
     height: 2px;
-    background-color: #124F7B;
+    background-color: #082539;
 }
 
 .b_ship::after {
     position: absolute;
     top:-6px;
     left:5px;
-    color: #0c4359;
+    color: #082539;
     font: bold 14px 'Courier New';
     content:'W';
 }

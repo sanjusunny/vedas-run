@@ -5,7 +5,7 @@ export class Comms {
 
     constructor() {
         this.el = xId('msgs');
-        if(!state.text) this.el.style.display = 'none';
+        if (!state.text) this.el.style.display = 'none';
         this.script = new Map([
             [0, 'I\'m lost... I\'ve spent 2 years searching this wasteland. The machines have finished the Quantum Beam, I can see it pulsing in the distance. I need to stop them... before it\'s too late.'],
             [400, 'Hmm, that should be a short jump (Press SPACE while moving). I need to be careful not to slip off the platforms.'],
@@ -32,12 +32,12 @@ export class Comms {
             }
         }
 
-        if (state.ts%2 ===0 && this.index < this.length && this.pause === 0) {
+        if (this.index < this.length && this.pause === 0) {
             this.index++;
             this.activeEl.innerHTML = this.activeText.substr(0, this.index);
-            if(this.activeText.substr(this.index, 2) === '. ' || this.activeText.substr(this.index, 2) === ', ') this.pause = 30; // pause at breaks for more realistic speech
+            if (this.activeText.substr(this.index, 2) === '. ' || this.activeText.substr(this.index, 2) === ', ') this.pause = 24; // pause at breaks for more realistic speech
         } else {
-            this.pause = Math.max(0,this.pause-1);
+            this.pause = Math.max(0, this.pause - 1);
         }
 
         // keep it permanently on screen if the game is paused
@@ -63,12 +63,12 @@ export class Comms {
 
         this.el.appendChild(li);
 
-        li.style.height = (li.clientHeight-24) + 'px';
+        li.style.height = (li.clientHeight - 24) + 'px';
         li.style.width = Math.min(300, li.clientWidth) + 'px';
 
         setTimeout(() => {
             li.style.transform = 'translateX(0px)';
-            li.innerHTML = (error)?msg:'';
+            li.innerHTML = (error) ? msg : '';
             this.activeText = msg;
             this.index = 0;
             this.length = msg.length;
