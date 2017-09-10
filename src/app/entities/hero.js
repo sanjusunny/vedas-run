@@ -128,7 +128,7 @@ export class Hero {
         this.a_startFrame = this.frames[0];
         this.a_endFrame = this.frames[1];
         this.a_fn = 0;
-        this.a_fmax = 10; // frame rate for the animation
+        this.a_fmax = 8; // frame rate for the animation
 
         this.xInc = 5;
         this.zInc = 2;
@@ -142,6 +142,7 @@ export class Hero {
         this.baseTransform = 'translateZ(264px) rotateY(90deg) scale3d(0.24,0.24,0.24)';
         this.currTransform = null;
         this.isHit = false;
+        this.health = 5;
 
         this.updateAnimation();
     }
@@ -178,7 +179,7 @@ export class Hero {
         }
 
         if (state.pressedKeys[Keys.UP] || state.pressedKeys[Keys.DOWN]) {
-            state.iz = (state.pressedKeys[Keys.UP]) ? this.zInc : Math.max(0,-this.zInc);
+            state.iz = (state.pressedKeys[Keys.UP]) ? this.zInc : -this.zInc;
             this.a_isAnimating = true;
         } else {
             this.a_isAnimating = false;
@@ -211,7 +212,7 @@ export class Hero {
         this.x += state.ix;
         state.tx = this.x - state.vw / 2;
 
-        this.a_fmax = (state.iy > 0 && !this.isInFall) ? 30 : 10;
+        this.a_fmax = (state.iy > 0 && !this.isInFall) ? 30 : 8;
 
         this.checkCollision();
     }
@@ -219,8 +220,14 @@ export class Hero {
     // check hit by missile, x/y in game-plane space
     checkHit(mx) {
         if (state.doChecks && state.iy === 0 && isClose(-state.tx, mx - state.vw / 2, 20)) {
+            this.health--;
             xId('app-container').classList.add('a_hit');
             setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
+
+            if(this.health==0) {
+                state.game.fatal();
+            }
+
             return true;
         }
 
@@ -239,9 +246,6 @@ export class Hero {
                 xId('app-container').classList.add('a_hit');
                 this.el.style.top = '360px';
                 setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
-            } else if (this.isHit && hasTile) {
-                //this.isHit = false;
-                //this.el.style.top = '270px';
             }
         }
 
@@ -251,10 +255,7 @@ export class Hero {
             state.iy = 0;
             this.zInc = Math.max(0, this.zInc - 0.01); // decelerate
             if (this.zInc < 1.5) {
-                xId('layer-3d').classList.add('a_over');
-                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
-                state.status = 3;
-                state.doChecks = false;
+                state.game.fatal();
             }
         }
     }
@@ -282,6 +283,7 @@ export class Hero {
         this.isRunning = false;
         this.x = state.vw / 2;
         this.z = 0;
+        this.health = 5;
         this.currTransform = this.baseTransform;
         this.isHit = false;
         this.el.style.top = '270px';

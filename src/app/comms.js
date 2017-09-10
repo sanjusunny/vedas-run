@@ -10,7 +10,7 @@ export class Comms {
             [0, 'I\'m lost... I\'ve spent 2 years searching this wasteland. The machines have finished the Quantum Beam, I can see it pulsing in the distance. I need to stop them... before it\'s too late.'],
             [400, 'Hmm, that should be a short jump (Press SPACE while moving). I need to be careful not to slip off the platforms.'],
             [730, 'Hmm, that\'s a really long way away but I should be able to clear it (Press and hold SPACE while moving to long jump).'],
-            [900, 'I made it!!'],
+            [1000, 'I made it!!'],
             [22000, 'Beam Towers! I need to be careful through here, a hit from their cannons can kill me quickly.']
         ]);
         this.timer = 1;

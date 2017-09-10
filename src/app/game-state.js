@@ -6,6 +6,7 @@ export const state = {
     vw: 1200,
     vh: 660,
     grid: 60,
+    game: null,
     plane: null, // 3d plane
     player: null,
     comms: null,
@@ -19,8 +20,8 @@ export const state = {
     tz: 0, /* accumulated movement */
     ts: 0, /* elapsed ticks */
     vfx: true,
-    text: false,
-    doChecks: false,
+    text: true,
+    doChecks: true,
     attack: true,
     map: [],
     tx_fuzzy: null,

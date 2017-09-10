@@ -36,6 +36,7 @@ class Game {
 
             UI.init();
 
+            state.game = this;
             state.console = xId('console');
             state.plane = new Plane();
             state.backdrop = new Backdrop();
@@ -43,11 +44,24 @@ class Game {
             state.comms = new Comms();
             //state.omega = new Omega();
 
+            this.dist = xId('distEl');
+            this.health = xId('healthEl');
+
             this.startLoop();
         }
     }
 
+    fatal() {
+        xId('layer-3d').classList.add('a_over');
+        state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+        state.status = 3;
+        state.doChecks = false;
+    }
+
     update() {
+
+        this.dist.textContent = Math.round((state.plane.mapLength - state.tz)/100).toLocaleString();
+        this.health.textContent = state.player.health;
 
         state.ts++;
 

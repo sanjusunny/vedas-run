@@ -110,7 +110,7 @@ export class Plane {
         if (this.z > this.mapLength) return;
 
         this.x = (this.x - state.ix);
-        this.z = (this.z + state.iz);
+        this.z = Math.max(0,(this.z + state.iz));
         state.tz = this.z;
 
         var delta = this.z % this.segmentLength;
