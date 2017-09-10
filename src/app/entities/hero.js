@@ -17,7 +17,7 @@ export class Hero {
         this.leftArmLower = this.hero.mesh['left-arm'].addChild(new Object3D('lower', 0, 48, 10, 50));
         this.leftArmHand = this.hero.mesh['left-arm'].mesh['lower'].addChild(new Object3D('hand', 2, 48, 4, 20));
 
-        this.head = this.hero.addChild(new Object3D('head', 10, 6, 18, 32));
+        this.head = this.hero.addChild(new Object3D('head', -10, 2, 18, 32,0,0,0,0,0,0, false));
         this.torso = this.hero.addChild(new Object3D('torso', -10, 35, 40, 90));
 
         this.rightLeg = this.hero.addChild(new Object3D('right-leg', -10, 110, 18, 90));
@@ -29,6 +29,7 @@ export class Hero {
         this.rightArmHand = this.hero.mesh['right-arm'].mesh['lower'].addChild(new Object3D('hand', 2, 48, 4, 20));
 
         this.cape = this.hero.addChild(new Object3D('cape', -20, 105, 38, 70));
+        this.hair = this.hero.addChild(new Object3D('hair', -6, 30, 10, 50));
 
         this.el.appendChild(this.hero.el);
 
@@ -48,7 +49,8 @@ export class Hero {
             this.rightArm,
             this.rightArmLower,
             this.rightArmHand,
-            this.cape
+            this.cape,
+            this.hair
         ];
 
         this.baseFrame = [
@@ -70,7 +72,8 @@ export class Hero {
             [0, 0, 0, 0, 0, 0], // rightArmLower
             [0, 0, 0, 0, 0, 0], // rightArmHand
 
-            [0, 0, 0, 0, 0, 24] // cape
+            [0, 0, 0, 0, 0, 24], // cape
+            [0, 0, 0, 0, 0, 36] // cape
         ];
 
         let rightMax = [
@@ -92,7 +95,8 @@ export class Hero {
             [0, 0, 0, 0, 0, -90],
             [0, 0, 0, 0, 0, -10],
 
-            [0, 0, 0, -5, -10, 50] // cape
+            [0, 0, 0, -5, -10, 50],
+            [0, 0, 0, 15, 10, 50]
         ];
 
         let leftMax = [
@@ -114,7 +118,8 @@ export class Hero {
             [0, 0, 0, 0, 0, -80],
             [0, 0, 0, 0, 0, -10],
 
-            [0, 0, 0, 5, 10, 50]
+            [0, 0, 0, 5, 10, 50],
+            [0, 0, 0, -15, -10, 50]
         ];
 
         this.frames = [this.baseFrame, rightMax, this.baseFrame, leftMax];

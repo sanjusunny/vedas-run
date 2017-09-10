@@ -4,7 +4,7 @@ export class Object3D {
 
         this.left = left;
         this.top = top;
-        this.w = w;
+        this.w = w/1.5;
         this.h = h;
         this.x = x;
         this.y = y;
@@ -28,19 +28,19 @@ export class Object3D {
         if (split) {
             this.seg1 = document.createElement('div');
             this.seg1.className = 'c_' + name;
-            this.seg1.classList.add('c_seg');
+            this.seg1.classList.add('c_seg','c_0');
             this.seg1.style.cssText = 'position:absolute; transform-origin: 0 0; top: 0px; left: 0px;';
             this.seg1.style.width = this.w + 'px';
             this.seg1.style.height = this.h + 'px';
-            this.seg1.style.transform = 'rotateY(45deg)';
+            this.seg1.style.transform = 'rotateY(60deg)';
 
             this.seg2 = document.createElement('div');
             this.seg2.className = 'c_' + name;
-            this.seg2.classList.add('c_seg');
+            this.seg2.classList.add('c_seg','c_1');
             this.seg2.style.cssText = 'position:absolute; transform-origin: 0 0; top: 0px; left: 0px;';
             this.seg2.style.width = this.w + 'px';
             this.seg2.style.height = this.h + 'px';
-            this.seg2.style.transform = 'rotateY(-45deg)';
+            this.seg2.style.transform = 'rotateY(-60deg)';
             this.seg2.style.filter = 'brightness(80%)';
 
             this.el.appendChild(this.seg1);
