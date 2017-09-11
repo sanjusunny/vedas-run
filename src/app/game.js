@@ -46,34 +46,41 @@ class Game {
             this.dist = xId('distEl');
             this.health = xId('healthEl');
 
-            this.startLoop();
+            window.gs = state;
+
+            if (!state.intro)
+                this.startLoop();
+            else
+                this.update();
         }
     }
 
     end(type) {
-        switch(type) {
+        let base = ' Press 1 to RESTART';
+        switch (type) {
             case 1:
-                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+                state.comms.showMsg('The AI is strong... I feel it probing, try1ng t0 contr01 my m1nd... I cann0t g1ve 1n... 1 n10d 10 f1g10... 01101100 01101111 01110011 01110100' + base, true);
                 break;
             case 2:
-                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+                state.comms.showMsg('I see them... There are so many... Must... fight... I can\'t survive this... I have lost.' + base, true);
                 break;
             case 3:
-                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+                state.comms.showMsg('It is done. The beam has been shutdown, the machines are disabled. It\'s time to breach the tower and finish this for good. THE END / PART II.    ' + base, true);
                 break;
             case 4:
-                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons.' + base, true);
                 break;
         }
 
         xId('layer-3d').classList.add('a_over');
         state.status = 3;
         state.doChecks = false;
+        state.player.a_isAnimating = false;
     }
 
     update() {
 
-        this.dist.textContent = Math.max(0,Math.round((state.plane.mapLength - state.tz) / 100)).toLocaleString();
+        this.dist.textContent = Math.max(0, Math.round((state.plane.mapLength - state.tz) / 100)).toLocaleString();
         this.health.textContent = state.player.health;
 
         state.ts++;
@@ -94,12 +101,6 @@ class Game {
             if (state.omega === null)
                 state.omega = new Omega();
             state.omega.update();
-
-            if (state.plane.z > (state.plane.mapLength - 2 * state.plane.gsH))
-                state.iz = -state.player.zInc;
-
-            //xId('app-container').classList.add('a_hit');
-            //setTimeout(()=>xId('app-container').classList.remove('a_hit'),500);
         }
 
         state.plane.update();
@@ -158,17 +159,20 @@ class Game {
             state.player.reset();
             state.plane.reset();
             state.backdrop.reset();
-            if(state.omega) {
+            if (state.omega) {
                 state.omega.reset();
                 state.omega = null;
             }
             state.doChecks = true;
+            state.text = false;
 
             xId('layer-3d').classList.remove('a_over');
             state.status = 2;
 
             state.comms.showMsg('Let\'s go');
         }
+
+        //state.game.end(e.which - 51);
     }
 
     keyupEventHandler(e) {

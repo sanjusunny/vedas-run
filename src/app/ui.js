@@ -1,5 +1,6 @@
 import {TextureManager} from "./texture-manager";
 import {xId} from "./utils/utils";
+import {state} from "./game-state";
 
 export class UI {
     static init() {
@@ -14,7 +15,7 @@ export class UI {
                 e.stopPropagation();
                 document.body.classList.add('in-game');
                 xId('layer-ui').classList.add('tx-hide');
-                setTimeout(()=> xId('layer-story').classList.add('reveal'), 3000);
+                setTimeout(() => state.game.startLoop(), 2000);
             });
         }
     }

@@ -37,8 +37,13 @@
     padding: 16px;
     content: 'SHUTDOWN AI';
     background-color: #48dd7d;
+    border-top: solid 4px #2e8f52;
     color: white;
     transform: rotateX(300deg);
+}
+
+.b_plate.b_6:nth-child(even):before {
+    display: none;
 }
 
 .b_turret {

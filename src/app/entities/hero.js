@@ -166,6 +166,8 @@ export class Hero {
 
     updateState() {
 
+        if(state.status !== 2) return;
+
         let newTransform = this.baseTransform;
 
         if (state.pressedKeys[Keys.LEFT] || state.pressedKeys[Keys.RIGHT]) {
@@ -240,15 +242,6 @@ export class Hero {
         let currCol = Math.floor((1200 / 2 - state.plane.x) / state.plane.gsW);
         let hasTile = state.map[currRow][currCol];
 
-        state.log(currRow + ',' + currCol);
-
-        if(currRow === state.plane.endRow) {
-            state.game.end((currCol===0)?1:2);
-
-        } else if(currRow === state.plane.endRow + 7) {
-            state.game.end(3);
-        }
-
         // don't need to check if the player is in the air
         if (state.doChecks && state.iy === 0) {
 
@@ -268,6 +261,14 @@ export class Hero {
             this.zInc = Math.max(0, this.zInc - 0.03); // decelerate
             if (this.zInc < 1.5) {
                 state.game.end(4);
+            }
+        }
+
+        if(state.iy === 0) {
+            if (currRow === state.plane.endRow && (currCol === 0 || currCol === 9)) {
+                state.game.end((currCol === 0) ? 1 : 2); // the game ends when either of the two end tiles are reached
+            } else if (currRow > (state.plane.endRow + 17)) {
+                state.game.end(3); // or the secret end tile is reached
             }
         }
     }

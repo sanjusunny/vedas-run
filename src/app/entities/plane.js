@@ -26,8 +26,8 @@ let map = [
     '0001111000,0001111000,0011000000,0011000000,0011000000,0011110000,0000110000,0000110000,0000110000,0000110000',// 9
     '0077777700,0077777700,0077777700,0000000000,0000000000,0077777700,0077777700,0077777700,0077777700,0077777700',// 10
     '0000110000,0000000000,0000000000,0000110000,0000110000,0000110000,0000110000,0000110000,1111111111,1000000001',// 11
-    '1000000001,4000000005,0000000000,0000000000,0000000000,2222222222,0000000000,0000110000,0000110000,0000110000',
-    '0000110000,0000110000,0000660000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000',
+    '1000000001,4000000005,1000000001,1000000001,1000000001,2222222222,0000000000,0000110000,0000110000,0000110000',
+    '0000110000,0000110000,0000110000,0000110000,0000110000,0000110000,0000110000,0000110000,0000110000,0000660000',
     'x'
 ];
 
@@ -40,10 +40,10 @@ export class Plane {
 
         this.segmentWidth = 1200;
         this.segmentLength = 660; // pixel height of a segment
-        this.maxSegments = 13; // how many segments till the end of the game
+        this.maxSegments = 14; // how many segments till the end of the game
         this.horizTiles = 10; // num of horiz tiles in a segment
         this.vertTiles = 10; // num of vert tiles in a segment
-        this.endRow = (this.maxSegments-1) * this.vertTiles; // victor/defeat tiles
+        this.endRow = (this.maxSegments-2) * this.vertTiles; // victory/defeat tiles
 
         // tile size
         this.gsW = this.segmentWidth / this.horizTiles;
@@ -114,7 +114,7 @@ export class Plane {
 
     update() {
         this.x = (this.x - state.ix);
-        this.z = Math.max((this.z + state.iz), 0); // stop 2 tiles short of the end
+        this.z = Math.max((this.z + state.iz), 0);
         state.tz = this.z;
 
         var delta = this.z % this.segmentLength;
