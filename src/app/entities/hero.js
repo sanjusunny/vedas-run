@@ -131,7 +131,7 @@ export class Hero {
         this.a_fmax = 8; // frame rate for the animation
 
         this.xInc = 5;
-        this.zInc = 2;
+        this.zInc = 32;//2;
         this.yInc = 1;
         this.yMax = 50; // max jump height
         this.isInFall = false;

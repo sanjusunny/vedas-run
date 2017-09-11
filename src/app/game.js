@@ -42,7 +42,6 @@ class Game {
             state.backdrop = new Backdrop();
             state.player = new Hero(state);
             state.comms = new Comms();
-            //state.omega = new Omega();
 
             this.dist = xId('distEl');
             this.health = xId('healthEl');
@@ -60,7 +59,7 @@ class Game {
 
     update() {
 
-        this.dist.textContent = Math.round((state.plane.mapLength - state.tz)/100).toLocaleString();
+        this.dist.textContent = Math.round((state.plane.mapLength - state.tz) / 100).toLocaleString();
         this.health.textContent = state.player.health;
 
         state.ts++;
@@ -70,22 +69,29 @@ class Game {
         state.iz = 0;
 
         state.player.update();
-        state.plane.update();
-        state.backdrop.update();
-        if(state.omega) state.omega.update();
 
-        state.objects.forEach(obj => obj.update());
 
         // 3.RestartMenu
-        if(state.status !== 3)
+        if (state.status !== 3)
             state.comms.update();
 
-        state.log(state.tz);
+        if (state.tz > 7500) {
+            state.attack = false;
+            if (state.omega === null)
+                state.omega = new Omega();
+            state.omega.update();
 
-        if(state.player.z%400 === 50) {
+            if (state.plane.z > (state.plane.mapLength - 2 * state.plane.gsH))
+                state.iz = -state.player.zInc;
+
             //xId('app-container').classList.add('a_hit');
             //setTimeout(()=>xId('app-container').classList.remove('a_hit'),500);
         }
+
+        state.plane.update();
+        state.backdrop.update();
+
+        state.objects.forEach(obj => obj.update());
     }
 
     render() {
@@ -99,7 +105,7 @@ class Game {
     }
 
     frame(timestamp) {
-        if(!state.isRunning) return false;
+        if (!state.isRunning) return false;
 
         this.now = performance.now();
         this.dt = this.now - this.last;

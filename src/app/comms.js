@@ -11,7 +11,8 @@ export class Comms {
             [400, 'Hmm, that should be a short jump (Press SPACE while moving). I need to be careful not to slip off the platforms.'],
             [730, 'Hmm, that\'s a really long way away but I should be able to clear it (Press and hold SPACE while moving to long jump).'],
             [1000, 'I made it!!'],
-            [22000, 'Beam Towers! I need to be careful through here, a hit from their cannons can kill me quickly.']
+            [2200, 'Beam cannons! Need to be careful here and avoid the pulses. I can only take 5 before my shields are down.'],
+            [7500, 'Something\'s not right... What are they waiting for?']
         ]);
         this.timer = 1;
         this.activeId = -1;
