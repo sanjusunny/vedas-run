@@ -12,7 +12,7 @@ export class Comms {
             [730, 'Hmm, that\'s a really long way away but I should be able to clear it (Press and hold SPACE while moving to long jump).'],
             [1000, 'I made it!!'],
             [2200, 'Beam cannons! Need to be careful here and avoid the pulses. I can only take 5 before my shields are down.'],
-            [7500, 'Something\'s not right... What are they waiting for?']
+            [7000, 'Something\'s not right... It\'s too quiet.']
         ]);
         this.timer = 1;
         this.activeId = -1;
@@ -67,6 +67,13 @@ export class Comms {
         li.style.height = (li.clientHeight - 24) + 'px';
         li.style.width = Math.min(300, li.clientWidth) + 'px';
 
+        if (this.activeEl) {
+            this.activeEl.innerHTML = this.activeText;
+            this.activeEl.classList.add('c1');
+            this.activeEl.style.transform = `translateY(-105%)`;
+        }
+        this.activeEl = li;
+
         setTimeout(() => {
             li.style.transform = 'translateX(0px)';
             li.innerHTML = (error) ? msg : '';
@@ -74,12 +81,6 @@ export class Comms {
             this.index = 0;
             this.length = msg.length;
         }, 10);
-
-        if (this.activeEl) {
-            this.activeEl.classList.add('c1');
-            this.activeEl.style.transform = `translateY(-105%)`;
-        }
-        this.activeEl = li;
 
         if (this.el.children.length > 2) {
             this.el.removeChild(this.el.firstChild);

@@ -50,16 +50,30 @@ class Game {
         }
     }
 
-    fatal() {
+    end(type) {
+        switch(type) {
+            case 1:
+                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+                break;
+            case 2:
+                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+                break;
+            case 3:
+                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+                break;
+            case 4:
+                state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
+                break;
+        }
+
         xId('layer-3d').classList.add('a_over');
-        state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons. Press 1 to RESTART or 2 to QUIT', true);
         state.status = 3;
         state.doChecks = false;
     }
 
     update() {
 
-        this.dist.textContent = Math.round((state.plane.mapLength - state.tz) / 100).toLocaleString();
+        this.dist.textContent = Math.max(0,Math.round((state.plane.mapLength - state.tz) / 100)).toLocaleString();
         this.health.textContent = state.player.health;
 
         state.ts++;

@@ -131,7 +131,7 @@ export class Hero {
         this.a_fmax = 8; // frame rate for the animation
 
         this.xInc = 5;
-        this.zInc = 32;//2;
+        this.zInc = state.speed;
         this.yInc = 1;
         this.yMax = 50; // max jump height
         this.isInFall = false;
@@ -225,7 +225,7 @@ export class Hero {
             setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
 
             if(this.health==0) {
-                state.game.fatal();
+                state.game.end(4);
             }
 
             return true;
@@ -236,15 +236,27 @@ export class Hero {
 
     checkCollision() {
 
+        let currRow = Math.floor(state.tz / state.plane.gsH);
+        let currCol = Math.floor((1200 / 2 - state.plane.x) / state.plane.gsW);
+        let hasTile = state.map[currRow][currCol];
+
+        state.log(currRow + ',' + currCol);
+
+        if(currRow === state.plane.endRow) {
+            state.game.end((currCol===0)?1:2);
+
+        } else if(currRow === state.plane.endRow + 7) {
+            state.game.end(3);
+        }
+
         // don't need to check if the player is in the air
         if (state.doChecks && state.iy === 0) {
-            let currRow = Math.floor(state.tz / state.plane.gsH);
-            let currCol = Math.floor((1200 / 2 - state.plane.x) / state.plane.gsW);
-            let hasTile = state.map[currRow][currCol];
+
             if (!this.isHit && !hasTile) {
                 this.isHit = true;
                 xId('app-container').classList.add('a_hit');
-                this.el.style.top = '360px';
+                this.el.style.top = '450px';
+                state.plane.shadow.style.display = 'none';
                 setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
             }
         }
@@ -253,9 +265,9 @@ export class Hero {
             state.iz = this.zInc;
             state.ix = 0;
             state.iy = 0;
-            this.zInc = Math.max(0, this.zInc - 0.01); // decelerate
+            this.zInc = Math.max(0, this.zInc - 0.03); // decelerate
             if (this.zInc < 1.5) {
-                state.game.fatal();
+                state.game.end(4);
             }
         }
     }
@@ -276,7 +288,7 @@ export class Hero {
 
     reset() {
         this.xInc = 5;
-        this.zInc = 2;
+        this.zInc = state.speed;
         this.yInc = 1;
         this.isInFall = false;
         this.coastX = 0; // coasting at the peak of the jump
@@ -287,5 +299,6 @@ export class Hero {
         this.currTransform = this.baseTransform;
         this.isHit = false;
         this.el.style.top = '270px';
+        state.plane.shadow.style.display = 'block';
     }
 }

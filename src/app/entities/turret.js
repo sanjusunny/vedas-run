@@ -53,7 +53,7 @@ export class Turret {
                 setTimeout(() => {
                     this.pos = rnd(300, 800);
                     this.elHead.classList.remove('fire');
-                }, 250);
+                }, 500);
                 this.busy = 200;
             }
         }

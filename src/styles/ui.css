@@ -1,11 +1,12 @@
 #console {
-    right: 1rem;
+    right: 12rem;
     top: 1rem;
     width: 100px;
     height: 20px;
     padding: 0.5rem;
     background: white;
     color: #111;
+    position: absolute;
     display: none;
 }
 

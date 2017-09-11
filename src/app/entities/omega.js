@@ -65,6 +65,7 @@ export class Omega {
     }
 
     reset() {
+        xId('app-container').classList.remove('boss')
         this.root.remove();
     }
 

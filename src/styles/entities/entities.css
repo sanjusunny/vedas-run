@@ -1,9 +1,5 @@
 .b_plate {
     background-color: white;
-    /*transform-origin: 50% 0%;
-    transform: rotateX(90deg) rotateZ(0deg);
-    background: linear-gradient(to bottom, #B8EBF3 0%, #dbf2f4 40%, #dbf2f4 100%);
-    animation: 1s linear 0s infinite alternate kf-hov;*/
 }
 
 .b_plate:before {
@@ -14,6 +10,35 @@
     transform: translateZ(-4px);
     width: 120px;
     height: 60px;
+    text-align: center;
+    color: rgb(0, 141, 193);
+    font-weight:bold;
+}
+
+.b_plate.b_4:before {
+    padding: 16px;
+    content: 'MERGE WITH AI';
+    background-color: rgba(255,255,255, 0.4);
+    border: solid 4px white;
+    border-bottom: none;
+    transform: rotateX(270deg) translateY(-44px) translateX(-40px);
+}
+
+.b_plate.b_5:before {
+    padding: 16px;
+    content: 'FIGHT AI';
+    background-color: rgba(255,255,255, 0.4);
+    border: solid 4px white;
+    border-bottom: none;
+    transform: rotateX(270deg) translateY(-44px) translateX(-40px);
+}
+
+.b_plate.b_6:before {
+    padding: 16px;
+    content: 'SHUTDOWN AI';
+    background-color: #48dd7d;
+    color: white;
+    transform: rotateX(300deg);
 }
 
 .b_turret {

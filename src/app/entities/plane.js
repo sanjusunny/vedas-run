@@ -25,8 +25,9 @@ let map = [
     '0077777700,0077777700,0011111100,2000000002,2000000002,0011111100,0077777700,0077777700,0077777700,0077777700',// 8
     '0001111000,0001111000,0011000000,0011000000,0011000000,0011110000,0000110000,0000110000,0000110000,0000110000',// 9
     '0077777700,0077777700,0077777700,0000000000,0000000000,0077777700,0077777700,0077777700,0077777700,0077777700',// 10
-    '0000110000,0000000000,0000000000,2000110002,0000110000,0000110000,0000110000,0000110000,0001111000,0000000000',// 11
-    '0000000000,,0000000000,0000000000,0000000000,2222222222,0000000000,0000110000,0000110000,0000110000',
+    '0000110000,0000000000,0000000000,0000110000,0000110000,0000110000,0000110000,0000110000,1111111111,1000000001',// 11
+    '1000000001,4000000005,0000000000,0000000000,0000000000,2222222222,0000000000,0000110000,0000110000,0000110000',
+    '0000110000,0000110000,0000660000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000,0000000000',
     'x'
 ];
 
@@ -39,9 +40,10 @@ export class Plane {
 
         this.segmentWidth = 1200;
         this.segmentLength = 660; // pixel height of a segment
-        this.maxSegments = 12; // how many segments till the end of the game
+        this.maxSegments = 13; // how many segments till the end of the game
         this.horizTiles = 10; // num of horiz tiles in a segment
         this.vertTiles = 10; // num of vert tiles in a segment
+        this.endRow = (this.maxSegments-1) * this.vertTiles; // victor/defeat tiles
 
         // tile size
         this.gsW = this.segmentWidth / this.horizTiles;
@@ -54,7 +56,7 @@ export class Plane {
             addEl(this.mesh, 'div', 'segment', 0, 1200, 660, 0, 0),
             addEl(this.mesh, 'div', 'segment', 1, 1200, 660, 0, 0)];
 
-        addEl(this.mesh, 'div', 'shadow', 0, 24, 24, 588, 638);
+        this.shadow = addEl(this.mesh, 'div', 'shadow', 0, 24, 24, 588, 638);
 
         this.activeSeg = 0;
         this.renderSegment(0, 0);
@@ -97,7 +99,10 @@ export class Plane {
         // render it
         switch (t) {
             case 1:
-                addEl(this.segs[id], 'div', 'plate', id, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
+            case 4:
+            case 5:
+            case 6:
+                addEl(this.segs[id], 'div', 'plate', t, this.gsW, this.gsH, j * this.gsW, (this.vertTiles - i - 1) * this.gsH);
                 break;
             case 2:
                 state.objects.push(new Turret(this.segs[id], segNum, j * this.gsW + this.gsW / 2, (this.vertTiles - i - 1) * this.gsH + this.gsH / 2));
