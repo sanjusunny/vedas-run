@@ -87,7 +87,6 @@ export class Turret {
         let pos = segmentToPlane(this.bx, this.by, this.segNum);
         this.x = this.bx - state.tx;
         this.y = pos[1];
-        console.warn(this.segNum, this.y);
 
         this.tX = 600;
         this.tY = 660;
