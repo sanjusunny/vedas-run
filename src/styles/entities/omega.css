@@ -3,7 +3,18 @@
 }
 
 .b_omega {
-    /*opacity: 0.2;*/
+    transform: translateY(-300px);
+    transition: 5s transform cubic-bezier(.36, -0.64, .34, 1.76);
+}
+
+.boss .b_omega {
+    transform: translateY(20px);
+}
+
+.boss #b_base,
+.boss #w_fog {
+    transition: filter 4s ease;
+    filter: brightness(120%) contrast(120%) saturate(40%);
 }
 
 @keyframes k_mv {

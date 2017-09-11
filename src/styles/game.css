@@ -44,10 +44,6 @@ body.in-game {
   position: absolute;
 }
 
-#layer-backdrop {
-  background: white;
-}
-
 .a_sink #game-plane {
   transform: rotateX(110deg) translateZ(-82px) translateY(72px) scaleY(0.8) scaleX(0.5);
 }

@@ -3,7 +3,6 @@ import {addEl, rnd, xId} from "../utils/utils";
 
 export class Omega {
     constructor() {
-
         this.root = addEl(xId('game-plane'), 'div', 'omega-root', 0, 300, 180, 400, 300);
         this.el = addEl(this.root, 'div', 'omega', 0, 300, 200, 0, 0);
         addEl(this.el, 'div', 'omega-tile', 1, 40, 10, -1 * 42, 200 - 3 * 12);
@@ -62,10 +61,11 @@ export class Omega {
             }
         }
         this.update();
+        setTimeout(()=>xId('app-container').classList.add('boss'),1000);
     }
 
     reset() {
-
+        this.root.remove();
     }
 
     update() {
@@ -85,10 +85,6 @@ export class Omega {
                     index++;
                 }
             }
-        }
-
-        if(state.ts%1000 && Math.toggle()) {
-            //this.root.style.transform = 'translateX(400px)';
         }
     }
 }
