@@ -3,11 +3,10 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/entities/backdrop.css">
 </head>
 <body>
 <div id="app-container">
-    <div id="layer-intro" class="game-layer"></div>
-
     <div id="layer-3d" class="game-layer">
         <div id="b_base">
             <canvas id="b_stars" width="1200px" height="660px"></canvas>
@@ -20,7 +19,6 @@
         <div id="hero">
         </div>
     </div>
-    <div id="layer-sandbox" class="game-layer"></div>
     <div id="layer-comms">
         <div id="msgs"></ul></div>
         <div id="stats">
@@ -35,22 +33,21 @@
         </div>
     </div>
     <div id="layer-ui" class="game-layer">
-        <div class="split-container">
-            <div class="split-item split-left">
-                <div class="logo">
-                    <img id="logo-bg"/>
-                    <img id="logo-bg-1"/>
-                    <img id="logo-bg-2"/>
-                    <img id="logo-fg"/>
-                </div>
-            </div>
-            <div class="split-item split-right">
-                <ul class="menu">
-                    <li><a id="btn-start" href="#" class="active">New Game</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </div>
+        <img id="uibg"/>
+        <div class="logo">
+            <span id="a1">VEDA'S</span><span id="a2">RUN</span>
         </div>
+        <div id="intro">
+            I'm <strong>Veda</strong>, last of the Tech Savants. It's been 12 years since the Machines took over. The world is unrecognizable, humanity on it's last breath. <strong>X3n0S</strong> has activated the Quantum Tower. It needs to be shut down. It ends now.
+        </div>
+        <button autofocus id="btn-start">START GAME</button>
+        <div id="guide">
+            <div><span>&#8593;</span><span>&#8595;</span><span>&#8592;</span><span>&#8594;</span> to move</div>
+            <div><span>SPACE</span> while moving to Jump</div>
+            <div><span>F11</span> toggle Fullscreen</div>
+
+        </div>
+        <div id="ff">Optimized for 60fps in Chrome</div>
     </div>
 </div>
 </body>

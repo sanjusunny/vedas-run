@@ -4,7 +4,7 @@
 
 .b_omega {
     transform: translateY(-300px);
-    transition: 5s transform cubic-bezier(.36, -0.64, .34, 1.76);
+    transition: 3s transform cubic-bezier(.36, -0.64, .34, 1.76);
 }
 
 .boss .b_omega {

@@ -115,7 +115,8 @@ export class Backdrop {
 
     renderTower() {
 
-        let c = addEl(this.twr, 'canvas', 'twr-cvs', 0, 800, 600).getContext('2d');
+        state.bgRender = addEl(this.twr, 'canvas', 'twr-cvs', 0, 800, 600);
+        let c = state.bgRender.getContext('2d');
         c.fillStyle = '#2C99C9';
         c.globalCompositeOperation = 'screen';
         c.translate(200, 400);
@@ -205,6 +206,8 @@ export class Backdrop {
                 c.fillRect(-200 + i * 15, j * 5, rnd(2, 4), rnd(0, 2));
             }
         }
+
+        xId('uibg').src = state.bgRender.toDataURL();
 
         // beam
         this.beam = addEl(this.twr, 'div', 'twr-beam');

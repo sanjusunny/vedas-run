@@ -96,7 +96,7 @@ class Game {
         if (state.status !== 3)
             state.comms.update();
 
-        if (state.tz > 7500) {
+        if (state.tz > 7400) {
             state.attack = false;
             if (state.omega === null)
                 state.omega = new Omega();
