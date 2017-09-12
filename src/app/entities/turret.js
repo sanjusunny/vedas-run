@@ -40,22 +40,18 @@ export class Turret {
 
     update() {
 
-        if (this.busy === 0 && state.ts % 60 === 0 && Math.toggle()) {
-            this.pos = 400;
+        if (state.ts % 20 === 0 && this.busy === 0 && this.missileActive === 0 && Math.toggle()) {
+            if (state.attack) {
+                this.addMissile();
+                this.elHead.classList.add('fire');
+            }
+            setTimeout(() => {
+                this.pos = rnd(300, 800);
+                this.elHead.classList.remove('fire');
+            }, 500);
             this.busy = 200;
         } else if (this.busy > 0) {
             this.busy = Math.max(0, this.busy - 1);
-            if (this.busy === 0 && this.missileActive === 0 && Math.toggle()) {
-                if (state.attack) {
-                    this.addMissile();
-                    this.elHead.classList.add('fire');
-                }
-                setTimeout(() => {
-                    this.pos = rnd(300, 800);
-                    this.elHead.classList.remove('fire');
-                }, 500);
-                this.busy = 200;
-            }
         }
 
         this.elHead.style.transform = `translateY(${this.pos}px)`;

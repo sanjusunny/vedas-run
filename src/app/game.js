@@ -79,7 +79,7 @@ class Game {
     }
 
     update() {
-
+        state.log(state.tz);
         this.dist.textContent = Math.max(0, Math.round((state.plane.mapLength - state.tz) / 100)).toLocaleString();
         this.health.textContent = state.player.health;
 
@@ -96,8 +96,9 @@ class Game {
         if (state.status !== 3)
             state.comms.update();
 
-        if (state.tz > 7400) {
+        if (state.tz > 7000) {
             state.attack = false;
+            state.vfx = false;
             if (state.omega === null)
                 state.omega = new Omega();
             state.omega.update();
@@ -164,6 +165,7 @@ class Game {
                 state.omega = null;
             }
             state.doChecks = true;
+            state.vfx = true;
             state.text = false;
 
             xId('layer-3d').classList.remove('a_over');

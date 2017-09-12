@@ -81,7 +81,7 @@ export class Omega {
                         el.classList.add('closed');
                         setTimeout(() => el.classList.remove('closed'), 250);
                     } else {
-                        if(Math.toggle()) this.els[index].style.transform = `translateZ(${rnd(0,8)-16}px)`;
+                        if(Math.toggle()) this.els[index].style.transform = `translateZ(${rnd(0,10)-20}px)`;
                     }
                     index++;
                 }

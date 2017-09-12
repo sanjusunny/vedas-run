@@ -10,7 +10,7 @@ export class UI {
                 e.stopPropagation();
                 document.body.classList.add('in-game');
                 xId('layer-ui').classList.add('ui-hide');
-                setTimeout(() => state.game.startLoop(), 2000);
+                setTimeout(() => state.game.startLoop(), 750);
             });
         }
     }

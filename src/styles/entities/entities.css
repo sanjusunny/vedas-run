@@ -93,6 +93,11 @@
     width: 400px;
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 20%, rgba(255, 255, 255, 0) 70%);
     transform: rotateX(90deg) rotateZ(0deg) translateY(10px) scaleX(3) scaleY(2);
+    display: none;
+}
+
+.in-game #w_fog {
+    display: block;
 }
 
 .b_fog {
