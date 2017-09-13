@@ -7,3 +7,13 @@ Arrow Keys to Move, Space to Jump
 Chrome is preferred for the higher fidelity effects, Firefox takes a hit on framerates.
 
 Cheat Code: window.gs.doChecks = false in the JavaScript console to explore the game in God mode
+
+Credits:
+
+Chiara Porri's Run Cycle Sketches and Tutorial
+http://www.iamag.co/features/tutorial-how-to-create-a-run-cycle/
+
+Webpack Starter
+https://github.com/sz-piotr/js13k-webpack-starter
+
+Lot's of good and bad sci-fi movies, books, and games.
