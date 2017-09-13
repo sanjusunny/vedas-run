@@ -62,18 +62,21 @@ class Game {
                 state.comms.showMsg('The AI is strong... I feel it probing, try1ng t0 contr01 my m1nd... I cann0t g1ve 1n... 1 n10d 10 f1g10... 01101100 01101111 01110011 01110100' + base, true);
                 break;
             case 2:
-                state.comms.showMsg('I see them... There are so many... Must... fight... I can\'t survive this... I have lost.' + base, true);
+                state.comms.showMsg('I see them coming over the horizon... they are so many, thousands of them... I must... fight... I can\'t... I have lost.' + base, true);
                 break;
             case 3:
+                if(document.querySelector('.b_plate.b_6')) document.querySelector('.b_plate.b_6').style.opacity = 0;
                 state.status = 3;
                 state.doChecks = false;
                 state.player.a_isAnimating = false;
                 state.omega.outro();
-                setTimeout(()=> {
-                    state.omega.reset();
+                setTimeout(() => {
                     xId('layer-3d').classList.add('a_over');
-                    state.comms.showMsg('It is done. The beam has been shutdown, the machines are disabled. It\'s time to breach the tower and finish this for good. THE END', true);
-                },5000);
+                    xId('app-container').classList.remove('boss');
+                }, 2500);
+                setTimeout(() => {
+                    state.comms.showMsg('It is done. The beam has been shutdown, the machines are disabled. This battle is won but the war is only getting started. Humanity will prevail. THE END', true);
+                }, 3000);
 
                 return;
 
@@ -121,7 +124,7 @@ class Game {
     }
 
     render() {
-        this.stats.render();
+        //this.stats.render();
     }
 
     startLoop() {

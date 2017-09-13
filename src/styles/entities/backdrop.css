@@ -31,11 +31,14 @@
     width: 4px;
     left:296px;
     background-color:white;
-    filter:blur(2px);
+    box-shadow: 0px 0px 5px #fff;
+    opacity: 0.6;
     transition: all 0.7s;
 }
 
-
+.a_over .b_twr-beam {
+    display: none;
+}
 
 .b_ship {
     width: 18px;

@@ -66,7 +66,6 @@ export class Omega {
 
         this.update();
         this.intro();
-        state.log('Omega');
         setTimeout(()=>xId('app-container').classList.add('boss'),10);
     }
 
@@ -89,13 +88,8 @@ export class Omega {
                     } else {
                         if(Math.toggle()) this.els[index].style.transform = `translateZ(${rnd(0,this.entropy)-this.entropy/2}px)`;
                     }
-                    if(this.exploding) {
-                        this.els[index].style.backgroundColor = `rgba(4, 19, 30, ${this.opacity})`;
-                    }
                     index++;
                 }
-
-                if(this.exploding) this.opacity = Math.max(0, this.opacity - 0.01);
             }
 
             if(this.exploding) {

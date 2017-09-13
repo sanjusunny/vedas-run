@@ -11,10 +11,15 @@
     transform: translateY(20px);
 }
 
-.boss #b_base,
+.boss #b_base {
+    transition: opacity 2s ease;
+    /*filter: brightness(120%) contrast(120%) saturate(40%);*/
+    opacity: 0.4;
+}
+
+.a_over #w_fog,
 .boss #w_fog {
-    transition: filter 4s ease;
-    filter: brightness(120%) contrast(120%) saturate(40%);
+    display: none;
 }
 
 @keyframes k_mv {

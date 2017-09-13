@@ -54,7 +54,7 @@ export class Comms {
     }
 
     showMsg(msg, error = false, type = 0) {
-        if (state.status === 3) return;
+        if (state.status === 3 && !error) return;
 
         let li = document.createElement('div');
         li.appendChild(document.createTextNode(msg));

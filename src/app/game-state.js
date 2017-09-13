@@ -21,9 +21,9 @@ export const state = {
     ts: 0, /* elapsed ticks */
     vfx: true,
     text: true,
-    doChecks: true,
+    doChecks: false,
     attack: true,
-    speed: 4,
+    speed: 40,
     intro: true,
     map: [],
     tx_fuzzy: null,
