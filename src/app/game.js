@@ -178,6 +178,7 @@ class Game {
                 state.omega = null;
             }
             state.doChecks = true;
+            state.attack = true;
             state.vfx = true;
 
             xId('layer-3d').classList.remove('a_over');
