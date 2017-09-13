@@ -265,9 +265,9 @@ export class Hero {
         }
 
         if(state.iy === 0) {
-            if (currRow === state.plane.endRow && (currCol === 0 || currCol === 9)) {
+            if (state.tz > 8000 && (currCol === 0 || currCol === 9)) {
                 state.game.end((currCol === 0) ? 1 : 2); // the game ends when either of the two end tiles are reached
-            } else if (currRow > (state.plane.endRow + 17)) {
+            } else if (state.tz > 9000 ) {
                 state.game.end(3); // or the secret end tile is reached
             }
         }

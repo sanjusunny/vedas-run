@@ -7,14 +7,13 @@ export class Comms {
         this.el = xId('msgs');
         this.script = new Map([
             [0, 'The Arctic... It\'s unrecognizable now. The endgame is near... the machines have finished the Quantum Beam, I can see it pulsing in the distance. I need to stop them... before it\'s too late.'],
-            [400, 'Hmm, that should be a short jump (Press SPACE while moving). I need to be careful not to slip off the platforms.'],
+            [400, 'I can jump really high (Hold SPACE while moving) but I need to be careful not to slip off the platforms.'],
             [730, 'Hmm, that\'s a really long way away but I should be able to clear it (Press and hold SPACE while moving to long jump).'],
             [1000, 'I made it!'],
             [2000, 'Beam cannons ahead! Need to be careful here and avoid the pulses. I can only take 5 before my shields are down.'],
             [3000, 'That was close!'],
             [3800, 'The platforms are unstable, I need to tread carefully here.'],
-            [6200, 'Something\'s not right... It\'s too quiet.'],
-            [7200, 'CERBERUS!']
+            [6200, 'Something\'s not right... It\'s too quiet.']
         ]);
         this.timer = 1;
         this.activeId = -1;
@@ -54,12 +53,13 @@ export class Comms {
         }
     }
 
-    showMsg(msg, error = false) {
+    showMsg(msg, error = false, type = 0) {
         if (state.status === 3) return;
 
         let li = document.createElement('div');
         li.appendChild(document.createTextNode(msg));
         li.className = 'msg';
+        if(type === 1) li.classList.add('boss');
         if (error) {
             li.classList.add('end');
         }

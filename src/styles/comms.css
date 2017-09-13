@@ -29,7 +29,7 @@
     left: 0px;
     bottom: -20px;
     border: 20px solid;
-    border-color: transparent transparent transparent rgba(0, 0, 0, 1);
+    border-color: transparent transparent transparent rgb(0, 0, 0);
 }
 
 .c1 {
@@ -46,4 +46,14 @@
 
 .end:after {
     display: none;
+}
+
+
+#msgs .msg.boss {
+    background-color: rgba(89, 24, 112, 0.9);
+    text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F
+}
+
+.msg.boss:not(.c1):after {
+    border-color: transparent transparent transparent rgb(89, 24, 112);
 }

@@ -15,31 +15,35 @@
     font-weight:bold;
 }
 
+.b_plate.b_4,
+.b_plate.b_5 {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
 .b_plate.b_4:before {
     padding: 16px;
-    content: 'MERGE WITH AI';
-    background-color: rgba(255,255,255, 0.4);
-    border: solid 4px white;
-    border-bottom: none;
-    transform: rotateX(270deg) translateY(-44px) translateX(-40px);
+    content: 'MERGE WITH CERBERUS';
+    background-color: rgba(255,255,255, 0.3);
+    border-top: solid 4px white;
+    transform: rotateX(270deg) translateY(-54px) translateX(-40px);
 }
 
 .b_plate.b_5:before {
     padding: 16px;
-    content: 'FIGHT AI';
-    background-color: rgba(255,255,255, 0.4);
-    border: solid 4px white;
-    border-bottom: none;
-    transform: rotateX(270deg) translateY(-44px) translateX(-40px);
+    content: 'FIGHT CERBERUS';
+    background-color: rgba(255,255,255, 0.3);
+    border-top: solid 4px white;
+    transform: rotateX(270deg) translateY(-54px) translateX(-40px);
 }
 
 .b_plate.b_6:before {
     padding: 16px;
-    content: 'SHUTDOWN AI';
+    content: 'SHUTDOWN CERBERUS';
     background-color: #48dd7d;
     border-top: solid 4px #2e8f52;
     color: white;
-    transform: rotateX(300deg);
+    transform: rotateX(270deg) translateY(-20px) translateX(40px);
 }
 
 .b_plate.b_6:nth-child(even):before {

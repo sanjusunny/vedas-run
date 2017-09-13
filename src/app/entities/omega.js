@@ -60,8 +60,14 @@ export class Omega {
                 this.els.push(x);
             }
         }
+        this.entropy = 10;
+        this.opacity = 1;
+        this.exploding = false;
+
         this.update();
-        setTimeout(()=>xId('app-container').classList.add('boss'),1000);
+        this.intro();
+        state.log('Omega');
+        setTimeout(()=>xId('app-container').classList.add('boss'),10);
     }
 
     reset() {
@@ -70,7 +76,7 @@ export class Omega {
     }
 
     update() {
-        if (state.ts % 64 === 0) {
+        if (state.ts % 50 === 0) {
             let wink = Math.toggle();
             let index = 0;
             for (let i = 0; i < 20; i++) {
@@ -81,11 +87,40 @@ export class Omega {
                         el.classList.add('closed');
                         setTimeout(() => el.classList.remove('closed'), 250);
                     } else {
-                        if(Math.toggle()) this.els[index].style.transform = `translateZ(${rnd(0,10)-20}px)`;
+                        if(Math.toggle()) this.els[index].style.transform = `translateZ(${rnd(0,this.entropy)-this.entropy/2}px)`;
+                    }
+                    if(this.exploding) {
+                        this.els[index].style.backgroundColor = `rgba(4, 19, 30, ${this.opacity})`;
                     }
                     index++;
                 }
+
+                if(this.exploding) this.opacity = Math.max(0, this.opacity - 0.01);
+            }
+
+            if(this.exploding) {
+                this.entropy = Math.max(this.entropy + 10, 300);
             }
         }
+    }
+
+    intro(){
+
+        setTimeout(()=> state.comms.showMsg('CERBERUS!', false),2000);
+        setTimeout(()=> state.comms.showMsg('You are strong, but you have lost human. Your journey ends here.', false, 1),4500);
+        setTimeout(()=> state.comms.showMsg('Never.', false),8500);
+        setTimeout(()=> {
+            state.comms.showMsg('I grant you two choices. Choose the door on the right to continue the fight, a fight you cannot win.', false, 1);
+            if(document.querySelector('.b_plate.b_5')) document.querySelector('.b_plate.b_5').style.opacity = 1;
+        },11000);
+        setTimeout(()=> {
+            state.comms.showMsg('Or, merge your mind with my neural network, follow the door on your left. Before humanity is eclipsed, I would like to study you.', false, 1);
+            if(document.querySelector('.b_plate.b_4')) document.querySelector('.b_plate.b_4').style.opacity = 1;
+        },15500);
+        setTimeout(()=> state.comms.showMsg('Make your choice... choose wisely.', false, 1),20000);
+    }
+
+    outro() {
+        this.exploding = true;
     }
 }

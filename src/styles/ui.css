@@ -24,7 +24,7 @@
 }
 
 #guide {
-    top: 290px;
+    top: 280px;
     left: 60px;
     color: #777;
     font-size: 12px;
@@ -48,17 +48,19 @@
 }
 
 #ff {
-    padding-top: 8px;
+    display: none !important;
 }
 
 #intro {
     color: #bbb;
     font-size: 16px;
+    font-weight:bold;
     top: 50px;
     left: 60px;
-    text-shadow: 1px 2px 1px rgba(0,0,0,0.1);
-    width: 680px;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.2);
+    width: 700px;
     line-height: 24px;
+    letter-spacing: -1px;
 }
 
 #intro div {
@@ -77,7 +79,7 @@ button {
     cursor: pointer;
     font-family: Arial, SansSerif;
     letter-spacing: 2px;
-    top:212px;
+    top:190px;
     left: 60px;
 }
 

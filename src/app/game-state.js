@@ -21,7 +21,7 @@ export const state = {
     ts: 0, /* elapsed ticks */
     vfx: true,
     text: true,
-    doChecks: false,
+    doChecks: true,
     attack: true,
     speed: 4,
     intro: true,

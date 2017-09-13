@@ -1,0 +1,10 @@
+@-moz-document url-prefix() {
+    .b_fog {
+        mix-blend-mode: initial;
+    }
+
+    #ff {
+        display: block !important;
+    }
+
+}

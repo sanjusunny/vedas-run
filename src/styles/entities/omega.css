@@ -1,5 +1,5 @@
 .b_omega-root {
-    animation: 2s ease k_mv infinite alternate forwards;
+    animation: 3s ease k_mv infinite alternate forwards;
 }
 
 .b_omega {
@@ -47,6 +47,6 @@
 }
 
 .b_omega-tile {
-    background-color: #04131e;
+    background-color: rgba(4, 19, 30, 1);
     transition: all 0.5s;
 }

@@ -4,6 +4,7 @@ import {state} from "./game-state";
 export class UI {
     static init() {
         if (xId('layer-ui')) {
+            if(!state.intro) xId('layer-ui').style.display = 'none';
 
             xId('btn-start').addEventListener('click', (e) => {
                 e.preventDefault();

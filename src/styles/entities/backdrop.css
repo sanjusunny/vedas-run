@@ -36,11 +36,6 @@
 }
 
 
-@-moz-document url-prefix() {
-    .b_fog {
-        mix-blend-mode: initial;
-    }
-}
 
 .b_ship {
     width: 18px;

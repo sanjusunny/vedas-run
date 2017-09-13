@@ -65,21 +65,31 @@ class Game {
                 state.comms.showMsg('I see them... There are so many... Must... fight... I can\'t survive this... I have lost.' + base, true);
                 break;
             case 3:
-                state.comms.showMsg('It is done. The beam has been shutdown, the machines are disabled. It\'s time to breach the tower and finish this for good. THE END / PART II.    ' + base, true);
+                state.status = 3;
+                state.doChecks = false;
+                state.player.a_isAnimating = false;
+                state.omega.outro();
+                setTimeout(()=> {
+                    state.omega.reset();
+                    xId('layer-3d').classList.add('a_over');
+                    state.comms.showMsg('It is done. The beam has been shutdown, the machines are disabled. It\'s time to breach the tower and finish this for good. THE END', true);
+                },5000);
+
+                return;
+
                 break;
             case 4:
                 state.comms.showMsg('Watch your step and stay on the platforms. Avoid getting hit by the beam cannons.' + base, true);
                 break;
         }
 
-        xId('layer-3d').classList.add('a_over');
         state.status = 3;
         state.doChecks = false;
         state.player.a_isAnimating = false;
+        xId('layer-3d').classList.add('a_over');
     }
 
     update() {
-        state.log(state.tz);
         this.dist.textContent = Math.max(0, Math.round((state.plane.mapLength - state.tz) / 100)).toLocaleString();
         this.health.textContent = state.player.health;
 
@@ -166,7 +176,6 @@ class Game {
             }
             state.doChecks = true;
             state.vfx = true;
-            state.text = false;
 
             xId('layer-3d').classList.remove('a_over');
             state.status = 2;
