@@ -2,7 +2,6 @@ Veda's Run is a 3D third-person runner with a conversational UI, basic skeletal 
 
 This was so much fun to build, and it blows me away just what can be done in the browser these days, in 13K no less!
 
-Arrow Keys to Move
-Space to Jump 
+Arrow Keys to Move, Space to Jump 
 
 Chrome is preferred for the higher fidelity effects, Firefox takes a hit on framerates.
