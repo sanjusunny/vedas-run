@@ -8,7 +8,7 @@ Chrome is preferred for the higher fidelity effects, Firefox takes a hit on fram
 
 Cheat Code: window.gs.doChecks = false in the JavaScript console to explore the game in God mode
 
-Credits:
+### Credits:
 
 Chiara Porri's Run Cycle Sketches and Tutorial
 http://www.iamag.co/features/tutorial-how-to-create-a-run-cycle/
