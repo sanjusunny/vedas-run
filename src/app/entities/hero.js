@@ -227,6 +227,8 @@ export class Hero {
             setTimeout(() => xId('app-container').classList.remove('a_hit'), 500);
 
             if(this.health==0) {
+                this.el.style.top = '450px';
+                state.plane.shadow.style.display = 'none';
                 state.game.end(4);
             }
 

@@ -75,7 +75,7 @@ class Game {
                     xId('app-container').classList.remove('boss');
                 }, 2500);
                 setTimeout(() => {
-                    state.comms.showMsg('It is done. The beam has been shutdown, the machines are disabled. This battle is won but the war is only getting started. Humanity will prevail. THE END', true);
+                    state.comms.showMsg('It is done. The beam has been shutdown, the machines are disabled. This battle is won but the war is only getting started. Humanity... will prevail.', true);
                 }, 3000);
 
                 return;

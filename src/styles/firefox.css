@@ -7,6 +7,32 @@
         display: block !important;
     }
 
+    .a_hit {
+        animation: 0.3s ease k_hit2;
+    }
+
+    .a_hit #fader {
+        transition: 0.1s;
+        opacity: 0.4;
+    }
+
+
+    @keyframes k_hit2 {
+        0% {
+
+        }
+        30% {
+            transform: translateX(-2px) rotateZ(0.5deg);
+        }
+        40% {
+            transform: translateZ(2px) rotateZ(-0.5deg);
+        }
+        70% {
+            transform: translateZ(-2px) rotateZ(0.5deg);
+        }
+        100% {
+        }
+    }
 }
 
 
